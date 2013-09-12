@@ -1,0 +1,3 @@
+./xia-core/experiments/planetlab/refresh.sh
+./xia-core/experiments/planetlab/scripts/local_server.py
+./xia-core/experiments/planetlab/scripts/plcommon.py
