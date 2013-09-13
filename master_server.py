@@ -214,9 +214,24 @@ class Printer(threading.Thread):
             f.close()
 
             s = ''
+            s += 'Node:\n'
+            nodeMap = {}
+            for i,key in enumerate(HOSTNAME_LOOKUP):
+                nodeMap[key] = i
+                s += 'n_%d\n' % (i)
+            s += 'Link:\n'
+            i = 1
             for key, value in DSTATSD.iteritems():
-                s += '%s:\t %s\n' % (key,value)
+                for k, v in value.iteritems():
+                    s += 'l_%d\t%dkbps\tn_%d\tn_%d\n' % (i, v, nodeMap[k], nodeMap[key])
+                    i += 1
+                    
+            s += 'Groups:\n'
+            s += 'g_1\t2.0\t{200kbps, 400kbps, 800kbps}\t{n_0=1.0}\n'
+            s += 'g_2\t1.0\t{100kbps, 300kbps, 900kbps}\t{n_0=1.0}\n'
+
             f = open(STATS_FILE, 'w')
+
             f.write(s)
             f.close()
             

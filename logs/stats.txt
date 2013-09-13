@@ -1,3 +1,13 @@
-planetlab2.cs.colorado.edu:	 {'planetlab01.cs.washington.edu': 6248, 'planetslug4.cse.ucsc.edu': 6405}
-planetlab01.cs.washington.edu:	 {'planetlab1.cs.ucla.edu': 580}
-planetslug4.cse.ucsc.edu:	 {'planetlab1.cs.ucla.edu': 1110}
+Node:
+n_0
+n_1
+n_2
+n_3
+Link:
+l_1	6756kbps	n_1	n_0
+l_2	6688kbps	n_2	n_0
+l_3	597kbps	n_3	n_1
+l_4	1158kbps	n_3	n_2
+Groups:
+g_1	2.0	{200kbps, 400kbps, 800kbps}	{n_0=1.0}
+g_2	1.0	{100kbps, 300kbps, 900kbps}	{n_0=1.0}
