@@ -155,8 +155,8 @@ class MasterService(rpyc.Service):
     def exposed_discovery_stats(self, stats):
         if not self._host in DSTATSD:
             DSTATSD[self._host] = {}
-        DSTASD[self._host][stats[0]] = stats[1]
-        if 'stats' in PRINT_VERB: printtime('\t %s\n' % (DSTATSD[self._host]))
+        DSTATSD[self._host][stats[0]] = stats[1]
+        if 'stats' in PRINT_VERB: printtime('%s\t %s' % (self._host, DSTATSD[self._host]))
 
     def exposed_error(self, msg, host):
         printtime('<<<< %s  (error (not doing anything about it)!): %s >>>>' % (host, msg))
@@ -180,9 +180,8 @@ class MasterService(rpyc.Service):
         host = self._host if host == None else host
         if 'master' in PRINT_VERB: printtime('MASTER: %s checked in for commands' % host)
 
-        cmd = []
+        cmd = ["self.exposed_start_httpd()"]
         if host in NODES[0]: #EDGES
-            cmd += ["self.exposed_gather_dstats()"]
             pass
         elif host in NODES[1]: #REFLECTORS
             pass
