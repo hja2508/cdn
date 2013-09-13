@@ -22,8 +22,11 @@ class MyService(rpyc.Service):
     def exposed_get_hello(self):
         return 'hello'
 
-    def exposed_gather_stats(self):
-        printtime('<<<<GATHER STATS>>>>')
+    def exposed_gather_dstats(self):
+        printtime('<<<<GATHER DSTATS>>>>')
+        nodes_to_check = rpc(MASTER_SERVER, 'get_nodes_to_check', ())
+        for node in nodes_to_check:
+            
 
     def exposed_run_commands(self):
         printtime('requesting commands!')
@@ -53,7 +56,7 @@ class Mapper(threading.Thread):
     def run(self):
         while self.goOnEvent.isSet():
             try:
-                rpc(MASTER_SERVER, 'heartbeat', (my_name,))
+                rpc(MASTER_SERVER, 'heartbeat', ())
             except Exception, e:
                 pass
             time.sleep(BEAT_PERIOD)

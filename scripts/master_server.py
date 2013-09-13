@@ -1,11 +1,9 @@
 #!/usr/bin/python
 
-import rpyc, time, threading, sys, socket, thread, os, signal, copy
+import rpyc, time, threading, sys, socket, thread, os, signal
 from threading import Thread
 from rpyc.utils.server import ThreadPoolServer
-from os.path import splitext
-from plcommon import TimedThreadedDict, check_output, rpc, printtime, stime
-from random import sample, choice, randint, seed, shuffle
+from plcommon import TimedThreadedDict, rpc, printtime, stime
 from subprocess import Popen, PIPE
 import logging
 logging.basicConfig()
@@ -16,7 +14,7 @@ CHECK_PERIOD = 3
 STATS_TIMEOUT = 3
 
 HEARTBEATS = TimedThreadedDict() # hostname --> [color, lat, lon, [neighbor latlon]]
-STATSD = {} # (hostname,hostname) --> [((hostname, hostname), backbone | test, ping, hops)]
+DSTATSD = {} # hostname --> {key: hostname, value: throughput}
 LATLOND = {} # IP --> [lat, lon]
 NAMES = [] # names
 NAME_LOOKUP = {} # names --> hostname
@@ -30,16 +28,15 @@ LOG_DIR = CDN_DIR + 'logs/'
 STATS_FILE = LOG_DIR + 'stats.txt'
 LATLON_FILE = CDN_DIR + 'IPLATLON'
 NAMES_FILE = CDN_DIR + 'names'
+NODE_TOPO_FILE = CDN_DIR + 'node_topo'
 
 # note that killing local server is not in this one
 STOP_CMD = '"sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"'
-KILL_LS = '"sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 5; sudo killall local_server.py; sudo killall python"'
+KILL_LS = '"sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"'
 START_CMD = '"curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/scripts/local_server.py"'
 SSH_CMD = 'ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 cmu_xia@'
 
-EDGES = [] # hostname
-REFLECTORS = [] # hostname
-SOURCES = [] # hostname
+NODES = [[],[],[]] # hostname
 
 PRINT_VERB = [] # print verbosity
 NODE_WATCHERS = {} # hostname -> [(NodeWatcher Thread, goOnEvent)]
@@ -137,31 +134,29 @@ class MasterService(rpyc.Service):
     def on_disconnect(self):
         pass
 
+    def exposed_get_nodes_to_check(self):
+        if self._host in NODES[0]: #EDGES
+            return NODES[1] #REFLECTORS
+        if self._host in NODES[1]: #REFLECTORS
+            return NODES[2] #SOURCES
+        return []
+
     def exposed_heartbeat(self):
         lat, lon = LATLOND[socket.gethostbyname(self._host)]
         nlatlon = []
-        color = 'red' if self._host in EDGES
-        color = 'blue' if self._host in REFLECTORS
-        color = 'green' if self._host in SOURCES
+        if self._host in NODES[0]: #EDGES
+            color = 'red'
+        elif self._host in NODES[1]: #REFLECTORS
+            color = 'blue'
+        elif self._host in NODES[2]: #SOURCES
+            color = 'green'
         HEARTBEATS[self._host] = [color, lat, lon]
 
-    def exposed_get_edges(self):
-        return EDGES
-
-    def exposed_get_reflectors(self):
-        return REFLECTORS
-
-    def exposed_get_sources(self):
-        return SOURCES
-
-    def exposed_stats(self, stats):
-        pass
-#         STATSD[self._host] = (self._host, stats)
-#         if 'stats' in PRINT_VERB: printtime('%s:\t %s\n' % (cur_exp,STATSD[cur_exp]))
-
-    def init_statsd(self, new_clients):
-        pass
-#         STATSD[self._host] = {}
+    def exposed_discovery_stats(self, stats):
+        if not self._host in DSTATSD:
+            DSTATSD[self._host] = {}
+        DSTASD[self._host][stats[0]] = stats[1]
+        if 'stats' in PRINT_VERB: printtime('\t %s\n' % (DSTATSD[self._host]))
 
     def exposed_error(self, msg, host):
         printtime('<<<< %s  (error (not doing anything about it)!): %s >>>>' % (host, msg))
@@ -185,15 +180,16 @@ class MasterService(rpyc.Service):
         host = self._host if host == None else host
         if 'master' in PRINT_VERB: printtime('MASTER: %s checked in for commands' % host)
 
-        if host in EDGES:
+        cmd = []
+        if host in NODES[0]: #EDGES
+            cmd += ["self.exposed_gather_dstats()"]
             pass
-        elif host in REFLECTORS:
+        elif host in NODES[1]: #REFLECTORS
             pass
-        elif host in SOUCES:
+        elif host in NODES[2]: #SOUCES
             pass
 
-#         cmd = ["my_backbone = self.exposed_gather_stats()[1]"]
-#         return cmd
+        return cmd
 
         
 class Printer(threading.Thread):
@@ -219,7 +215,7 @@ class Printer(threading.Thread):
             f.close()
 
             s = ''
-            for key, value in STATSD.iteritems():
+            for key, value in DSTATSD.iteritems():
                 s += '%s:\t %s\n' % (key,value)
             f = open(STATS_FILE, 'w')
             f.write(s)
@@ -230,19 +226,18 @@ class Printer(threading.Thread):
 
 class Runner(threading.Thread):
     def run(self):
-        for node in ALLNODES:
-            while True:
-                try:
-                    rpc('localhost', 'hard_restart', (node, ))
-                    break;
-                except Exception, e:
-                    printtime('%s' % e)
-                    time.sleep(1)
+        for t in NODES:
+            for node in t:
+                while True:
+                    try:
+                        rpc('localhost', 'hard_restart', (node, ))
+                        break;
+                    except Exception, e:
+                        printtime('%s' % e)
+                        time.sleep(1)
 
 
 if __name__ == '__main__':
-    seed()
-
     latlonfile = open(LATLON_FILE, 'r').read().split('\n')
     for ll in latlonfile:
         ll = ll.split(' ')
@@ -257,18 +252,22 @@ if __name__ == '__main__':
     topo_file = NODE_TOPO_FILE
 
     lines = open(topo_file,'r').read().split('\n')
-#     for line in lines:
-#         BACKBONES.append(NAME_LOOKUP[line.split(':')[0]])
-#         BACKBONE_TOPO[NAME_LOOKUP[line.split(':')[0].strip()]] = tuple([NAME_LOOKUP[l.strip()] for l in line.split(':')[1].split(',')])
-#     for backbone in BACKBONES:
-#         IP_LOOKUP[socket.gethostbyname(backbone)] = backbone
-#         NAMES.remove(HOSTNAME_LOOKUP[backbone])
+    type = 0
+    for line in lines:
+        if line == "":
+            type += 1
+            continue
+        NODES[type].append(NAME_LOOKUP[line])
+    for t in NODES:
+        for node in t:
+            IP_LOOKUP[socket.gethostbyname(node)] = node
 
     IP_LOOKUP['127.0.0.1'] = socket.gethostbyaddr('127.0.0.1')
 
     PRINT_VERB.append('stats')
     PRINT_VERB.append('master')
-    [PRINT_VERB.append(b) for b in ALLNODES]
+    for t in NODES:
+        [PRINT_VERB.append(node) for node in t]
 
     printtime(('Threaded heartbeat server listening on port %d\n' 
               'press Ctrl-C to stop\n') % RPC_PORT)
