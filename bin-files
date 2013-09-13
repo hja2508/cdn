@@ -1,3 +1,3 @@
-./scripts/local_server.py
-./scripts/plcommon.py
-./scripts/rpyc
+./local_server.py
+./plcommon.py
+./rpyc

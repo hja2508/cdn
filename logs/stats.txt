@@ -1,0 +1,3 @@
+planetlab2.cs.colorado.edu:	 {'planetlab01.cs.washington.edu': 6248, 'planetslug4.cse.ucsc.edu': 6405}
+planetlab01.cs.washington.edu:	 {'planetlab1.cs.ucla.edu': 580}
+planetslug4.cse.ucsc.edu:	 {'planetlab1.cs.ucla.edu': 1110}
