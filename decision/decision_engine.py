@@ -315,9 +315,10 @@ def DecisionEngine(file_name):
             G_br += [g_b]
     total_br += [s]
 
-#     total_d = 0
-#     for g,v in enumerate(G):
-#         total_d += sum([value(x) for x in d[g]])
+    total_d = []
+    for g,v in enumerate(G):
+        total_d.append(sum([value(x) for x in d[g]]))
+    print total_d
 
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
 
