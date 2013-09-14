@@ -5,7 +5,7 @@ from plcommon import check_output, rpc, printtime
 from rpyc.utils.server import ThreadPoolServer
 
 RPC_PORT = 43278
-MASTER_SERVER = 'GS11698.SP.CS.CMU.EDU'
+MASTER_SERVER = 'ec2-54-200-36-219.us-west-2.compute.amazonaws.com' #'GS11698.SP.CS.CMU.EDU'
 BEAT_PERIOD = 3
 DISCOVERY_PERIOD = 3
 HTTP_PORT = 8881
