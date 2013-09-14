@@ -159,29 +159,23 @@ def LPStep(ST):
                     fs += [f[ST.index(g)][g.index(s)]]
         prob += lpSum(fs) <= c
 
-    for g,v in enumerate(ST): # groups
-        for t,v2 in enumerate(v): # terminals
-            pass
-            #prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
-            #prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
+    for g,v in enumerate(G): # groups
+        for t,v2 in enumerate(v[2]): # terminals
+            prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
+            prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
             # do we need this last constraint?
 
     w = [g[0] for g in G] # group weights
-    #n = [len(g[2]) for g in G] # number of terminals
-    #wn = [x*y for x,y in zip(w,n)]
+    n = [len(g[2]) for g in G] # number of terminals
+    wn = [x*y for x,y in zip(w,n)]
 
     # v[g][t]
     v = []
     for g in G:
         v += [[t[1] for t in g[2]]]
 
-    print w
-    print v
-    print G
-
     # w_0*n_0*[v_0,1 * d_0_1] + ....
-    #prob += lpDot(w, [lpDot(v[g], d[g]) for g,v in enumerate(G)])
-    prob += lpSum([lpSum(d[g]) for g,v in enumerate(G)])
+    prob += lpDot(w, [lpDot(v[g], d[g]) for g,v in enumerate(G)])
 
     status = prob.solve(GLPK(msg = 0))
 
@@ -321,14 +315,11 @@ def DecisionEngine(file_name):
             G_br += [g_b]
     total_br += [s]
 
-    total_d = 0
-    for g,v in enumerate(G):
-        total_d += sum([value(x) for x in d[g]])
-    print total_d
+#     total_d = 0
+#     for g,v in enumerate(G):
+#         total_d += sum([value(x) for x in d[g]])
 
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
-    print G_br
-    print G
 
 
 DecisionEngine(sys.argv[1])
