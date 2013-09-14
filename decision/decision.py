@@ -175,7 +175,7 @@ def LPStep(ST):
         v += [[t[1] for t in g[2]]]
 
     # w_0*n_0*[v_0,1 * d_0_1] + ....
-    prob += lpDot(wn, [lpDot(v[g], d[g]) for g,v in enumerate(G)])
+    prob += lpDot(wn, [lpDot(v[g], d[g]) for g,k in enumerate(G)])
 
     status = prob.solve(GLPK(msg = 0))
 
@@ -188,8 +188,8 @@ def nodesin(A):
     return False
 
 
-def DecisionEngine(file_name):
-    global G, E, Ei, RE, REi, BL
+def file_parse(file_name):
+    global G
     sorted_E = []
     unsorted_RE = []
 
@@ -245,7 +245,20 @@ def DecisionEngine(file_name):
                 T = l[3].translate(string.maketrans("","",), '{}[]').strip().split(',')
                 T = [(node_map[eval(t.split('=')[0].split('_')[1])], eval(t.split('=')[1])) for t in T]
                 G += [[eval(l[1]), br, T]]
-        
+    return (sorted_E, unsorted_RE)
+
+
+
+def DecisionEngine(g, sorted_E, unsorted_RE):
+    global G, E, Ei, RE, REi, BL
+    G = g
+    E = []
+    Ei = []
+    RE = []
+    REi = []
+    BL = []
+    
+
     # Build up flat edge list (E) and edge index (Ei)
     E = [item for sublist in sorted_E for item in sublist]
     Ei = [len(sorted_E[0])]
@@ -323,4 +336,6 @@ def DecisionEngine(file_name):
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
 
 
-DecisionEngine(sys.argv[1])
+if __name__ == '__main__':
+    (sE, usRE) = file_parse(sys.argv[1])
+    DecisionEngine(G, sE, usRE)

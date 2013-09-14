@@ -4,6 +4,7 @@ import rpyc, time, threading, sys, socket, thread, os, signal
 from threading import Thread
 from rpyc.utils.server import ThreadPoolServer
 from plcommon import TimedThreadedDict, rpc, printtime, stime, check_output
+from decision.decision import DecisionEngine
 from subprocess import Popen, PIPE
 import logging
 logging.basicConfig()
@@ -137,10 +138,10 @@ class MasterService(rpyc.Service):
         pass
 
     def exposed_get_nodes_to_check(self):
-        if self._host in NODES[0]: #EDGES
+        if self._host in NODES[2]: #SOURCES
             return NODES[1] #REFLECTORS
         if self._host in NODES[1]: #REFLECTORS
-            return NODES[2] #SOURCES
+            return NODES[0] #EDGES
         return []
 
     def exposed_heartbeat(self):
@@ -215,33 +216,33 @@ class Printer(threading.Thread):
             f.write(self.buildMap(beats))
             f.close()
 
-            s = ''
-            s += 'Node:\n'
+
             nodeMap = {}
             for i,key in enumerate(HOSTNAME_LOOKUP):
                 nodeMap[key] = i
-                s += 'n_%d\n' % (i)
-            s += 'Link:\n'
-            i = 1
+
+            sorted_E = []
+            unsorted_RE = []
             for key, value in DSTATSD.iteritems():
+                temp = []
                 for k, v in value.iteritems():
-                    s += 'l_%d\t%dkbps\tn_%d\tn_%d\n' % (i, v, nodeMap[k], nodeMap[key])
-                    i += 1
-                    
-            s += 'Groups:\n'
-            s += 'g_1\t2.0\t{200kbps, 400kbps, 800kbps}\t{n_0=1.0}\n'
-            s += 'g_2\t1.0\t{100kbps, 300kbps, 900kbps}\t{n_0=1.0}\n'
+                    link = (nodeMap[key], nodeMap[k], v)
+                    unsorted_RE += [link]
+                    temp += [link]
+                sorted_E.append(temp)
 
-            f = open(STATS_FILE, 'w')
+            G = [[2.0, [200, 400, 800], [(0, 1.0)]], 
+                 [1.0, [100, 300, 900], [(0, 1.0)]]]
 
-            f.write(s)
-            f.close()
-            
-            try:
-                out = check_output(DECISION_SCRIPT + ' ' + STATS_FILE)
-                printtime(out)
-            except Exception, e:
-                print e
+            print G
+            print sorted_E
+            print unsorted_RE
+
+            if sorted_E:
+                try:
+                    DecisionEngine(G, sorted_E, unsorted_RE)
+                except Exception, e:
+                    print e
 
             time.sleep(CHECK_PERIOD)
 
