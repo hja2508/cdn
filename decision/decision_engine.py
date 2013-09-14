@@ -175,7 +175,7 @@ def LPStep(ST):
         v += [[t[1] for t in g[2]]]
 
     # w_0*n_0*[v_0,1 * d_0_1] + ....
-    prob += lpDot(wn, [lpDot(v[g], d[g]) for g,v in enumerate(G)])
+    prob += lpDot(wn, [lpDot(v[g], d[g]) for g,k in enumerate(G)])
 
     status = prob.solve(GLPK(msg = 0))
 
