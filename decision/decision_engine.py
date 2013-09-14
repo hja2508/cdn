@@ -137,8 +137,10 @@ def CalcBitrateLevel(g):
 # Given a list of lists (i.e. all the steiner trees for all the groups) of ST's 
 # calc the global optimal based on our LP problem
 def LPStep(ST):
-    # d[g] for g \in G
-    d = [LpVariable("d" + str(G.index(g)), 0) for g in G]
+    # d[g][t] for t \in g \in G
+    d = []
+    for g,v in enumerate(G):
+        d += [[LpVariable("d" + str(v[2].index(t)) + "-" + str(g), 0) for t in v[2]]]
 
     # f[g][st] for g \in G, st \in ST \in G
     f = []
@@ -158,15 +160,28 @@ def LPStep(ST):
         prob += lpSum(fs) <= c
 
     for g,v in enumerate(ST): # groups
-        prob += d[g] <= lpSum(f[g])   # bitrate level must be less than all ST for group
-        prob += d[g] <= BL[g][-1]     # don't exceed maximum bitrate level for group
-        # do we need this last constraint?
+        for t,v2 in enumerate(v): # terminals
+            pass
+            #prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
+            #prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
+            # do we need this last constraint?
 
     w = [g[0] for g in G] # group weights
-    n = [len(g[2]) for g in G] # number of terminals
-    wn = [x*y for x,y in zip(w,n)]
+    #n = [len(g[2]) for g in G] # number of terminals
+    #wn = [x*y for x,y in zip(w,n)]
 
-    prob += lpDot(wn, d)   # w_0*n_0*d_0 + w_1*n_1*d_1......
+    # v[g][t]
+    v = []
+    for g in G:
+        v += [[t[1] for t in g[2]]]
+
+    print w
+    print v
+    print G
+
+    # w_0*n_0*[v_0,1 * d_0_1] + ....
+    #prob += lpDot(w, [lpDot(v[g], d[g]) for g,v in enumerate(G)])
+    prob += lpSum([lpSum(d[g]) for g,v in enumerate(G)])
 
     status = prob.solve(GLPK(msg = 0))
 
@@ -271,67 +286,45 @@ def DecisionEngine(file_name):
     
     G_br = []
 
-    while nodesin(G):
-        print 'Starting New Algorithm Round'
-        print 'Groups (' + str(len(G)) + '): ' + str(G)
-        print 'Bitrate Levels: ' + str(BL)
+    print 'Starting Algorithm'
+    print 'Groups (' + str(len(G)) + '): ' + str(G)
+    print 'Bitrate Levels: ' + str(BL)
 
-        ST = []
-        for i,g in enumerate(G):
-            P = []
-            print 'Working on next group (%s)' % i
-            for t in g[2]:
-                p = []
-                FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
-                P += [p]
-                #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
-            ST += [MakeAllSteinerTrees(P)]
-            #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
+    ST = []
+    for i,g in enumerate(G):
+        P = []
+        print 'Working on next group (%s)' % i
+        for t in g[2]:
+            p = []
+            FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
+            P += [p]
+            #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
+        ST += [MakeAllSteinerTrees(P)]
+        #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
 
 
-        # Group, ST, [nodes, edges]
-        for i,s in enumerate(ST):
-            print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
+    # Group, ST, [nodes, edges]
+    for i,s in enumerate(ST):
+        print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
 
-        (d,f) = LPStep(ST)
+    (d,f) = LPStep(ST)
 
-        # lower the BW on all links according to the LP step
-        for g,v in enumerate(ST): #groups
-            for t,v2 in enumerate(v): # diff ST's
-                for i,j in enumerate(v2):
-                    if j:
-                        E[i] = (E[i][0], E[i][1], E[i][2] - value(f[g][t]))
+    s = 0
+    for i,group in enumerate(f):
+        g_b = 0
+        for x in group:
+            s += len(G[i][2])*value(x)
+            g_b += value(x)
+        if len(G_br) > i:
+            G_br[i] += g_b
+        else:
+            G_br += [g_b]
+    total_br += [s]
 
-        s = 0
-        for i,group in enumerate(f):
-            g_b = 0
-            for x in group:
-                s += len(G[i][2])*value(x)
-                g_b += value(x)
-            if len(G_br) > i:
-                G_br[i] += g_b
-            else:
-                G_br += [g_b]
-        total_br += [s]
-        #total_d += [sum([value(x) for x in d])]
-        print 'Total data pushed to edge this round: ' + str(total_br[-1]) + '\n'
-
-        # lower the max BRL
-        for i,g in enumerate(G):
-            BL[i] = [max(0,b-value(d[i])) for b in BL[i]]
-            if not BL[i][-1]:
-                # If we've already gotten max BW remove the group
-                #del BL[i]
-                #del G[i]
-                pass
-
-        # remove the terminal with the least weight
-        for g in G:
-            if g[2]:
-                t = min(g[2], key=lambda x:x[1])
-                g[2].remove(t)
-        #G = [g for g in G if g[2]]
-        
+    total_d = 0
+    for g,v in enumerate(G):
+        total_d += sum([value(x) for x in d[g]])
+    print total_d
 
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
     print G_br
