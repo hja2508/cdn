@@ -238,11 +238,15 @@ class Printer(threading.Thread):
             print sorted_E
             print unsorted_RE
 
+            req = []
             if sorted_E:
                 try:
-                    DecisionEngine(G, sorted_E, unsorted_RE)
+                    req = DecisionEngine(G, sorted_E, unsorted_RE)
                 except Exception, e:
                     print e
+
+            print '<<<<<<REQ!!'
+            print req
 
             time.sleep(CHECK_PERIOD)
 

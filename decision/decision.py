@@ -291,8 +291,6 @@ def DecisionEngine(g, sorted_E, unsorted_RE):
 
     # Main algorithm
     
-    G_br = []
-
     print 'Starting Algorithm'
     print 'Groups (' + str(len(G)) + '): ' + str(G)
     print 'Bitrate Levels: ' + str(BL)
@@ -316,16 +314,25 @@ def DecisionEngine(g, sorted_E, unsorted_RE):
 
     (d,f) = LPStep(ST)
 
+    print f
+    print ST
+    req = {}
+    for i in xrange(len(REi)):
+        req[i] = {}
+    for g,ss in enumerate(ST):
+        for j,s in enumerate(ss):
+            for k in xrange(len(E)):
+                if s[k] and value(f[g][j]):
+                    try:
+                        req[E[k][1]][g] += [(E[k][0], value(f[g][j]))]
+                    except:
+                        req[E[k][1]][g] = [(E[k][0], value(f[g][j]))]
+    print req
+
     s = 0
     for i,group in enumerate(f):
-        g_b = 0
         for x in group:
             s += len(G[i][2])*value(x)
-            g_b += value(x)
-        if len(G_br) > i:
-            G_br[i] += g_b
-        else:
-            G_br += [g_b]
     total_br += [s]
 
     total_d = []
@@ -334,7 +341,7 @@ def DecisionEngine(g, sorted_E, unsorted_RE):
     print total_d
 
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
-
+    return req
 
 if __name__ == '__main__':
     (sE, usRE) = file_parse(sys.argv[1])
