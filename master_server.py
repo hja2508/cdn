@@ -3,7 +3,7 @@
 import rpyc, time, threading, sys, socket, thread, os, signal
 from threading import Thread
 from rpyc.utils.server import ThreadPoolServer
-from plcommon import TimedThreadedDict, rpc, printtime, stime
+from plcommon import TimedThreadedDict, rpc, printtime, stime, check_output
 from subprocess import Popen, PIPE
 import logging
 logging.basicConfig()
@@ -25,6 +25,8 @@ FINISHED_EVENT = threading.Event()
 
 CDN_DIR = '/home/cmu_xia/cdn/'
 LOG_DIR = CDN_DIR + 'logs/'
+DECISION_DIR = CDN_DIR + 'decision/'
+DECISION_SCRIPT = DECISION_DIR + 'decision_engine.py'
 STATS_FILE = LOG_DIR + 'stats.txt'
 LATLON_FILE = CDN_DIR + 'IPLATLON'
 NAMES_FILE = CDN_DIR + 'names'
@@ -235,6 +237,12 @@ class Printer(threading.Thread):
             f.write(s)
             f.close()
             
+            try:
+                out = check_output(DECISION_SCRIPT + ' ' + STATS_FILE)
+                printtime(out)
+            except Exception, e:
+                print e
+
             time.sleep(CHECK_PERIOD)
 
 

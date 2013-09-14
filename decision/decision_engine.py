@@ -7,7 +7,7 @@
 # $ brew install glpk
 # that last one is if you're on a mac system with homebrew installed
 
-import itertools, sys, copy, operator
+import itertools, sys, copy, operator, string
 from bitarray import bitarray
 from pulp import *
 from threading import Thread
@@ -221,7 +221,7 @@ def DecisionEngine(file_name):
                     node_map[eval(l[3].split('_')[1])] = max_node
                     dest = max_node
                     max_node += 1
-                weight = eval(l[1].translate(None,'[]{}kbps'))
+                weight = eval(l[1].translate(string.maketrans("","",),'[]{}kbps'))
 #                 if weight < 5: # remove edges that are erroneous
 #                     continue
                 try:
@@ -231,9 +231,9 @@ def DecisionEngine(file_name):
 
                 unsorted_RE += [(src,dest,weight)]
             if group_on:
-                br = l[2].translate(None, '{}[]kbps').strip().split(',')
+                br = l[2].translate(string.maketrans("","",), '{}[]kbps').strip().split(',')
                 br = [eval(b) for b in br]
-                T = l[3].translate(None, '{}[]').strip().split(',')
+                T = l[3].translate(string.maketrans("","",), '{}[]').strip().split(',')
                 T = [(node_map[eval(t.split('=')[0].split('_')[1])], eval(t.split('=')[1])) for t in T]
                 G += [[eval(l[1]), br, T]]
         
