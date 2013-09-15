@@ -215,36 +215,35 @@ class Decision(threading.Thread):
             for i,key in enumerate(HOSTNAME_LOOKUP):
                 nodeMap[key] = i+1
                 nodeRMap[i+1] = key
+            nodeRMap[0] = 'dummy'
 
-            sorted_E = []
-            unsorted_RE = []
+            sorted_E = {}
 
-            temp = []
             for node in NODES[2]: #SOURCES
                 link = (0, nodeMap[node], MAX_LINK)
-                unsorted_RE += [link]
-                temp += [link]
-            sorted_E.append(temp)
+                try:
+                    sorted_E[0] += [link]
+                except:
+                    sorted_E[0] = [link]
 
             for key, value in DSTATSD.iteritems():
-                temp = []
                 for k, v in value.iteritems():
                     link = (nodeMap[key], nodeMap[k], v)
-                    unsorted_RE += [link]
-                    temp += [link]
-                sorted_E.append(temp)
+                    try:
+                        sorted_E[nodeMap[key]] += [link]
+                    except:
+                        sorted_E[nodeMap[key]] = [link]
 
             G = [[2.0, [200, 400, 800], [(1, 1.0)]], 
                  [1.0, [100, 300, 900], [(1, 1.0)]]]
 
             print G
             print sorted_E
-            print unsorted_RE
 
             req = {}
             if sorted_E:
                 try:
-                    req = DecisionEngine(G, sorted_E, unsorted_RE)
+                    req = DecisionEngine(G, sorted_E)
                 except Exception, e:
                     print e
 
@@ -256,7 +255,7 @@ class Decision(threading.Thread):
             print req
         
             for node,i in nodeMap.iteritems():
-                if req[i]:
+                if i in req and req[i]:
                     print node
                     rpc(node, 'update_table', (req[i],))
 

@@ -79,7 +79,7 @@ class MyService(rpyc.Service):
         f.write(s)
         f.close()
         check_output('sudo mv %s %s' % (HTTPD_TEMP, HTTPD_CONF))
-        self.start_httpd()
+        start_httpd()
 
 
 class Mapper(threading.Thread):
