@@ -12,6 +12,7 @@ logging.basicConfig()
 RPC_PORT = 43278;
 CLIENT_PORT = 3000
 CHECK_PERIOD = 3
+DECISION_PERIOD = 3
 STATS_TIMEOUT = 3
 
 HEARTBEATS = TimedThreadedDict() # hostname --> [color, lat, lon, [neighbor latlon]]
@@ -40,6 +41,8 @@ START_CMD = '"curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.s
 SSH_CMD = 'ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 cmu_xia@'
 
 NODES = [[],[],[]] # hostname
+
+MAX_LINK = 1000000
 
 PRINT_VERB = [] # print verbosity
 NODE_WATCHERS = {} # hostname -> [(NodeWatcher Thread, goOnEvent)]
@@ -182,26 +185,8 @@ class MasterService(rpyc.Service):
             NODE_WATCHERS[host] = nw
         NODE_WATCHERS_LOCK.release()
 
-    def exposed_get_commands(self, host = None):
-        host = self._host if host == None else host
-        if 'master' in PRINT_VERB: printtime('MASTER: %s checked in for commands' % host)
-
-        cmd = ["self.exposed_start_httpd()"]
-        if host in NODES[0]: #EDGES
-            pass
-        elif host in NODES[1]: #REFLECTORS
-            pass
-        elif host in NODES[2]: #SOUCES
-            pass
-
-        return cmd
-
         
 class Printer(threading.Thread):
-    def __init__(self, goOnEvent):
-        super(Printer, self).__init__()
-        self.goOnEvent = goOnEvent
-
     def buildMap(self, beats):
         url = 'http://maps.googleapis.com/maps/api/staticmap?center=Kansas&zoom=4&size=640x400&maptype=roadmap&sensor=false'
         for beat in beats:
@@ -213,21 +198,34 @@ class Printer(threading.Thread):
         return html
 
     def run(self):
-        while self.goOnEvent.isSet():
+        while FINISHED_EVENT.isSet():
             beats = HEARTBEATS.getClients()
             f = open('/var/www/html/map.html', 'w')
             f.write(self.buildMap(beats))
             f.close()
 
+            time.sleep(CHECK_PERIOD)
 
+
+class Decision(threading.Thread):
+    def run(self):
+        while FINISHED_EVENT.isSet():
             nodeMap = {}
             nodeRMap = {}
             for i,key in enumerate(HOSTNAME_LOOKUP):
-                nodeMap[key] = i
-                nodeRMap[i] = key
+                nodeMap[key] = i+1
+                nodeRMap[i+1] = key
 
             sorted_E = []
             unsorted_RE = []
+
+            temp = []
+            for node in NODES[2]: #SOURCES
+                link = (0, nodeMap[node], MAX_LINK)
+                unsorted_RE += [link]
+                temp += [link]
+            sorted_E.append(temp)
+
             for key, value in DSTATSD.iteritems():
                 temp = []
                 for k, v in value.iteritems():
@@ -236,8 +234,8 @@ class Printer(threading.Thread):
                     temp += [link]
                 sorted_E.append(temp)
 
-            G = [[2.0, [200, 400, 800], [(0, 1.0)]], 
-                 [1.0, [100, 300, 900], [(0, 1.0)]]]
+            G = [[2.0, [200, 400, 800], [(1, 1.0)]], 
+                 [1.0, [100, 300, 900], [(1, 1.0)]]]
 
             print G
             print sorted_E
@@ -258,11 +256,11 @@ class Printer(threading.Thread):
             print req
         
             for node,i in nodeMap.iteritems():
-                if i in req:
+                if req[i]:
                     print node
                     rpc(node, 'update_table', (req[i],))
 
-            time.sleep(CHECK_PERIOD)
+            time.sleep(DECISION_PERIOD)
 
 
 class Runner(threading.Thread):
@@ -314,11 +312,14 @@ if __name__ == '__main__':
               'press Ctrl-C to stop\n') % RPC_PORT)
 
     FINISHED_EVENT.set()
-    printer = Printer(goOnEvent = FINISHED_EVENT)
+    printer = Printer()
     printer.start()
 
     runner = Runner()
     runner.start()
+
+    decision = Decision()
+    decision.start()
 
     try:
         t = ThreadPoolServer(MasterService, port = RPC_PORT)
@@ -336,6 +337,8 @@ if __name__ == '__main__':
 
     printtime('Exiting, please wait...')
     printer.join()
+    runner.join()
+    decision.join()
 
     printtime('Finished.')
     

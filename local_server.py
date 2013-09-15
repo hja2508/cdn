@@ -35,6 +35,11 @@ def wait_for_neighbor(neighbor):
         except:
             time.sleep(1)
 
+def start_httpd():
+    printtime('Starting httpd')
+    check_output(HTTP_START)
+
+
 class MyService(rpyc.Service):
     def on_connect(self):
         self._conn._config['allow_pickle'] = True
@@ -42,9 +47,6 @@ class MyService(rpyc.Service):
     def on_disconnect(self):
         pass
 
-    def exposed_start_httpd(self):
-        printtime('Starting httpd')
-        check_output(HTTP_START)
     
     def exposed_check_httpd(self):
         check_output('pgrep httpd', False)
@@ -77,7 +79,7 @@ class MyService(rpyc.Service):
         f.write(s)
         f.close()
         check_output('sudo mv %s %s' % (HTTPD_TEMP, HTTPD_CONF))
-        self.exposed_start_httpd()
+        self.start_httpd()
 
 
 class Mapper(threading.Thread):
@@ -108,16 +110,6 @@ class Discovery(threading.Thread):
             time.sleep(DISCOVERY_PERIOD)
 
 
-class Runner(threading.Thread):
-    def run(self):
-        while FINISH_EVENT.isSet():
-            try:
-                rpc('localhost', 'run_commands', ())
-                break
-            except Exception, e:
-                printtime('%s' % e)
-                time.sleep(1)
-
 if __name__ == '__main__':
     printtime(('RPC server listening on port %d\n'
         'press Ctrl-C to stop\n') % RPC_PORT)
@@ -129,8 +121,7 @@ if __name__ == '__main__':
     discovery = Discovery()
     discovery.start()
 
-    runner = Runner()
-    runner.start()
+    start_httpd()
 
     try:
         t = ThreadPoolServer(MyService, port = RPC_PORT)

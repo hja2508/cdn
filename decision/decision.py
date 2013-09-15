@@ -19,7 +19,8 @@ RE = []
 REi = []
 G = []
 BL = []
-MAX_PATH_LENGTH_FACTOR = .1
+NUM_NODES = 0
+#MAX_PATH_LENGTH_FACTOR = .1
 
 deepest = 0
 
@@ -55,14 +56,12 @@ def FindPath(eb, source, dest, result, depth):
                 # remove all edges starting at n from BV
                 e = bitarray(eb)
                 e[Ei[source]:Ei[source+1]] = (Ei[source+1]-Ei[source]) * bitarray([False])
-
                 # remove all edges ending at n from BV
                 B = RE[REi[source]:REi[source+1]] # edges to remove
                 for b in B:
                     e[b] = False
 
                 c = E[i][1] # child of current source node we want to consider
-
                 if c == dest: # we're done!
                     # construct a BV using only the edge from current source to current child
                     bv = len(eb) * bitarray('0')
@@ -70,8 +69,8 @@ def FindPath(eb, source, dest, result, depth):
                     P_All[i-Ei[source]] = [bv] # the only path using the edge (source, dest) to dest is this one
                 else:
                     # see if current child can reach dest in some way
-                    if depth < len(REi) * MAX_PATH_LENGTH_FACTOR:
-                        FindPath(e, c, dest, P_All[i-Ei[source]], depth+1)
+                    #if depth < NUM_NODES * MAX_PATH_LENGTH_FACTOR:
+                    FindPath(e, c, dest, P_All[i-Ei[source]], depth+1)
 
         for i,P in enumerate(P_All):
             P = [p for p in P if p] # remove null paths
@@ -98,7 +97,7 @@ def STCP(i, accum): # Set of all Sets of paths
     if i < STCP_LEN:
         # we now need to check if this graph is actually a tree
         # we just look to see if we see the same node as a destination to more than one edge
-        r = len(REi) * bitarray('0')
+        r = NUM_NODES * bitarray('0')
         for j,e in enumerate(E): # this could be better -- O(|E|)
             if accum[j]: # if we're even using this edge in our ST
                 if r[e[1]]: # if we've already seen this destination ndoe
@@ -189,9 +188,8 @@ def nodesin(A):
 
 
 def file_parse(file_name):
-    global G
-    sorted_E = []
-    unsorted_RE = []
+    sorted_E = {}
+    g = []
 
     f = open(file_name, 'r').read().split('\n')
 
@@ -199,7 +197,6 @@ def file_parse(file_name):
     group_on = False
 
     max_node = 0
-    node_map = {}
 
     # File parsing code
     for l in f:
@@ -218,58 +215,50 @@ def file_parse(file_name):
 
             l = l.split('\t')
             if link_on:
-                try:
-                    src = node_map[eval(l[2].split('_')[1])]
-                except:
-                    node_map[eval(l[2].split('_')[1])] = max_node
-                    src = max_node
-                    max_node += 1
-                try:
-                    dest = node_map[eval(l[3].split('_')[1])]
-                except:
-                    node_map[eval(l[3].split('_')[1])] = max_node
-                    dest = max_node
-                    max_node += 1
+                src = eval(l[2].split('_')[1])
+                dest = eval(l[3].split('_')[1])
                 weight = eval(l[1].translate(string.maketrans("","",),'[]{}kbps'))
 #                 if weight < 5: # remove edges that are erroneous
 #                     continue
                 try:
                     sorted_E[src] += [(src,dest,weight)]
                 except:
-                    sorted_E += [[(src,dest,weight)]]
+                    sorted_E[src] = [(src,dest,weight)]
 
-                unsorted_RE += [(src,dest,weight)]
             if group_on:
                 br = l[2].translate(string.maketrans("","",), '{}[]kbps').strip().split(',')
                 br = [eval(b) for b in br]
                 T = l[3].translate(string.maketrans("","",), '{}[]').strip().split(',')
-                T = [(node_map[eval(t.split('=')[0].split('_')[1])], eval(t.split('=')[1])) for t in T]
-                G += [[eval(l[1]), br, T]]
-    return (sorted_E, unsorted_RE)
+                T = [(eval(t.split('=')[0].split('_')[1]), eval(t.split('=')[1])) for t in T]
+                g += [[eval(l[1]), br, T]]
+    return (g, sorted_E)
 
 
 
-def DecisionEngine(g, sorted_E, unsorted_RE):
-    global G, E, Ei, RE, REi, BL
+def DecisionEngine(g, sorted_E):
+    global G, E, Ei, RE, REi, BL, NUM_NODES
     G = g
     E = []
     Ei = []
     RE = []
     REi = []
     BL = []
-    
+
 
     # Build up flat edge list (E) and edge index (Ei)
-    E = [item for sublist in sorted_E for item in sublist]
     Ei = [len(sorted_E[0])]
-    for i in range(1,len(sorted_E)):
-        Ei += [Ei[i-1]+len(sorted_E[i])]
+    for i in range(1,max(sorted_E)+1):
+        try:
+            Ei += [Ei[i-1]+len(sorted_E[i])]
+        except:
+            Ei += [Ei[i-1]]
+    sorted_E = [sorted_E[k] for k in sorted(sorted_E)]
+    E = [item for sublist in sorted_E for item in sublist]
     Ei = [0] + Ei
     eb = len(E) * bitarray('1')
 
     # Build up the reverse edge list (RE) and it's index (REi)
-    RE = [e for e in unsorted_RE ]
-    RE = sorted(RE, key=lambda x:x[1])
+    RE = sorted(E, key=lambda x:x[1])
     n = 0
     for i,e in enumerate(RE):
         if e[1] == n:
@@ -278,7 +267,7 @@ def DecisionEngine(g, sorted_E, unsorted_RE):
             while n != e[1]:
                 REi += [i]
                 n += 1
-    REi = [0] + REi
+    REi = [0] + REi + [len(RE)]
     for i,e in enumerate(RE):
         RE[i] = E.index(e)
 
@@ -287,7 +276,8 @@ def DecisionEngine(g, sorted_E, unsorted_RE):
 
     total_br = []
 
-    print 'Number of nodes: ' + str(len(REi))
+    NUM_NODES = len(REi)-1
+    print 'Number of nodes: ' + str(NUM_NODES)
 
     # Main algorithm
     
@@ -314,10 +304,8 @@ def DecisionEngine(g, sorted_E, unsorted_RE):
 
     (d,f) = LPStep(ST)
 
-    print f
-    print ST
     req = {}
-    for i in xrange(len(REi)):
+    for i in xrange(NUM_NODES):
         req[i] = {}
     for g,ss in enumerate(ST):
         for j,s in enumerate(ss):
@@ -344,5 +332,5 @@ def DecisionEngine(g, sorted_E, unsorted_RE):
     return req
 
 if __name__ == '__main__':
-    (sE, usRE) = file_parse(sys.argv[1])
-    DecisionEngine(G, sE, usRE)
+    (g, sE) = file_parse(sys.argv[1])
+    DecisionEngine(g, sE)
