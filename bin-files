@@ -1,3 +1,5 @@
 ./local_server.py
 ./plcommon.py
 ./rpyc
+./httpd.conf.top
+./httpd.conf.cache

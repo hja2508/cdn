@@ -36,7 +36,7 @@ NODE_TOPO_FILE = CDN_DIR + 'node_topo'
 # note that killing local server is not in this one
 STOP_CMD = '"sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"'
 KILL_LS = '"sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"'
-START_CMD = '"curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/scripts/local_server.py"'
+START_CMD = '"curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"'
 SSH_CMD = 'ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 cmu_xia@'
 
 NODES = [[],[],[]] # hostname
@@ -144,6 +144,9 @@ class MasterService(rpyc.Service):
             return NODES[0] #EDGES
         return []
 
+    def exposed_should_cache(self):
+        return True
+
     def exposed_heartbeat(self):
         lat, lon = LATLOND[socket.gethostbyname(self._host)]
         nlatlon = []
@@ -218,8 +221,10 @@ class Printer(threading.Thread):
 
 
             nodeMap = {}
+            nodeRMap = {}
             for i,key in enumerate(HOSTNAME_LOOKUP):
                 nodeMap[key] = i
+                nodeRMap[i] = key
 
             sorted_E = []
             unsorted_RE = []
@@ -238,7 +243,7 @@ class Printer(threading.Thread):
             print sorted_E
             print unsorted_RE
 
-            req = []
+            req = {}
             if sorted_E:
                 try:
                     req = DecisionEngine(G, sorted_E, unsorted_RE)
@@ -246,7 +251,16 @@ class Printer(threading.Thread):
                     print e
 
             print '<<<<<<REQ!!'
+            for k,v in req.iteritems():
+                for k2,v2 in v.iteritems():
+                    v[k2] = [(nodeRMap[i[0]], i[1]) for i in v2]
+            
             print req
+        
+            for node,i in nodeMap.iteritems():
+                if i in req:
+                    print node
+                    rpc(node, 'update_table', (req[i],))
 
             time.sleep(CHECK_PERIOD)
 

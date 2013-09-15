@@ -1,0 +1,12 @@
+<IfModule mod_cache.c>
+CacheDefaultExpire 30
+CacheIgnoreHeaders Set-Cookie
+CacheIgnoreNoLastMod On
+CacheIgnoreCacheControl On
+
+<IfModule mod_disk_cache.c>
+   CacheEnable disk /
+   CacheRoot "/var/cache/mod_proxy"
+</IfModule>
+</IfModule>
+                                                                

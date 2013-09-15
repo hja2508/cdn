@@ -5,14 +5,24 @@ from plcommon import check_output, rpc, printtime
 from rpyc.utils.server import ThreadPoolServer
 
 RPC_PORT = 43278
-MASTER_SERVER = 'ec2-54-200-36-219.us-west-2.compute.amazonaws.com' #'GS11698.SP.CS.CMU.EDU'
+MASTER_SERVER = 'GS11698.SP.CS.CMU.EDU'
+#'ec2-54-200-36-219.us-west-2.compute.amazonaws.com' 
+
 BEAT_PERIOD = 3
 DISCOVERY_PERIOD = 3
 HTTP_PORT = 8881
 
+CDN_DIR = '/home/cmu_xia/cdn/'
+HTTPD_CONF_TOP = CDN_DIR + 'httpd.conf.top'
+HTTPD_CONF_CACHE = CDN_DIR + 'httpd.conf.cache'
+HTTPD_TEMP = CDN_DIR + 'httpd.conf.temp'
+HTTPD_CONF = '/etc/httpd/conf/httpd.conf'
+
 HTTP_START = 'sudo /usr/sbin/httpd -k graceful'
 
 my_name = check_output("hostname")[0].strip()
+
+#ForwardingTable = {}
 
 FINISH_EVENT = threading.Event()    
     
@@ -47,6 +57,28 @@ class MyService(rpyc.Service):
         for command in commands:
             printtime(command)
             exec(command)
+
+    def exposed_update_table(self, new_table):
+        #ForwardingTable = new_table
+        #if not new_table:
+        #    return
+        s = open(HTTPD_CONF_TOP).read()
+        if rpc(MASTER_SERVER, 'should_cache', ()):
+            s += open(HTTPD_CONF_CACHE).read()
+        for k in new_table:
+            v = new_table[k]
+            s += '<Proxy balancer://%d>\n' % (k)
+            for t in v:
+                s += 'BalancerMember http://%s:%d/ loadfactor=1\n' % (t[0], HTTP_PORT)
+            s += 'ProxySet lbmethod=bytraffic\n'
+            s += '</Proxy>\n'
+            s += 'ProxyPass /%d/ balancer://%d\n' % (k, k)
+        f = open(HTTPD_TEMP, "w")
+        f.write(s)
+        f.close()
+        check_output('sudo mv %s %s' % (HTTPD_TEMP, HTTPD_CONF))
+        self.exposed_start_httpd()
+
 
 class Mapper(threading.Thread):
     def run(self):
