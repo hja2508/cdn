@@ -1,0 +1,12 @@
+Node:
+n_0
+n_1
+n_2
+n_3
+Link:
+l_1	3000kbps	n_0	n_1
+l_2	1000kbps	n_0	n_2
+l_3	500kbps	n_1	n_3
+l_3	500kbps	n_2	n_3
+Groups:
+g_1	2.0	{200kbps, 400kbps, 800kbps}	{n_3=1.0}
