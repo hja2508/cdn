@@ -7,7 +7,7 @@
 # $ brew install glpk
 # that last one is if you're on a mac system with homebrew installed
 
-import itertools, sys, copy, operator, string, datetime
+import itertools, sys, copy, operator, string, datetime, random
 from bitarray import bitarray
 from pulp import *
 from threading import Thread
@@ -244,7 +244,7 @@ def SoftStaticStrawman():
     avg_br = 0
 
     print 'Starting Soft Static Approach'
-    print 'Groups (' + str(len(G)) + '): ' + str(G)
+    #print 'Groups (' + str(len(G)) + '): ' + str(G)
     #print 'Bitrate Levels: ' + str(BL)
     #while True:
 
@@ -430,7 +430,25 @@ def DecisionEngine(g, sorted_E, strawman):
     else:
         return MainAlgo()
 
-if __name__ == '__main__':
+def main():
+    global STCP_IN, STCP_LEN, STCP_SET, FindPathResults
     (g, sE) = file_parse(sys.argv[1])
-    for i in xrange(len(g)):
-        DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
+#     for i in xrange(len(g)):
+#         DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
+    for i in xrange(1,101):
+        sampledSE = random.sample(sE.items(), int((i/100.0)*len(sE)))
+        SSE = {}
+        for k, v in sampledSE:
+            SSE[k] = v
+        SSE[0] = sE[0]
+
+        FindPathResults = {}
+        STCP_IN = []
+        STCP_LEN = 0
+        STCP_SET = set()
+
+        DecisionEngine(g, SSE, int(float(sys.argv[2])))
+
+
+if __name__ == '__main__':
+    main()
