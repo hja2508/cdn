@@ -7,7 +7,7 @@
 # $ brew install glpk
 # that last one is if you're on a mac system with homebrew installed
 
-import itertools, sys, copy, operator, string
+import itertools, sys, copy, operator, string, datetime, random
 from bitarray import bitarray
 from pulp import *
 from threading import Thread
@@ -23,6 +23,8 @@ NUM_NODES = 0
 #MAX_PATH_LENGTH_FACTOR = .1
 
 deepest = 0
+
+FRAC = 0.01
 
 FindPathResults = {} # dictionary for dynmaic programming
 
@@ -234,10 +236,159 @@ def file_parse(file_name):
     return (g, sorted_E)
 
 
+def SoftStaticStrawman():
+    # "Soft Static Approach" --> All groups pick best tree according to current traffic
+    global G
+    effective_weights = copy.deepcopy(E)
+    total_soft_static = 0
+    eb = len(E) * bitarray('1')
 
-def DecisionEngine(g, sorted_E):
+    avg_br = 0
+
+    print 'Starting Soft Static Approach'
+    #print 'Groups (' + str(len(G)) + '): ' + str(G)
+    #print 'Bitrate Levels: ' + str(BL)
+    #while True:
+
+    ST = getST(eb)
+
+    # Find best ST per group
+    soft_static_edges = copy.deepcopy(effective_weights)
+    best_ST = []
+    for g in ST: # each group
+        max_tree = (0,0)
+        for i,s in enumerate(g): # each ST in group
+            bottleneck = (0,0,float('inf'))
+            for j,l in enumerate(s): # each edge in ST
+                if l: # if edge in ST
+                    bottleneck = min(bottleneck, soft_static_edges[j], key=lambda x:x[2])
+            if bottleneck[2] > max_tree[1]:
+                max_tree = (i, bottleneck)
+        best_ST += [max_tree]
+
+        # decrement link weights based on bottleneck
+        if best_ST[-1][1]:
+            for j,l in enumerate(g[best_ST[-1][0]]):
+                if l: 
+                    tup = soft_static_edges[j] 
+                    dec = best_ST[-1][1][2]
+                    soft_static_edges[j] = (tup[0],tup[1],tup[2]-dec)
+
+    #print best_ST
+    null_bv = len(E) * bitarray('0')
+    for i,s in enumerate(best_ST):
+        if best_ST[i][1]:
+            best_ST[i] = ST[i][best_ST[i][0]]
+        else:
+            best_ST[i] = null_bv
+
+    # Calculate bitrate for using best tree
+    edge_count = defaultdict(int)
+    for s in best_ST:
+        for i,e in enumerate(s):
+            if e:
+                edge_count[i] += 1
+
+    for i,e in enumerate(E):
+        if edge_count[i]:
+            effective_weights[i] = (e[0],e[1],e[2] / edge_count[i])
+
+    soft_static_br = []
+    for g,s in enumerate(best_ST): # each group's best ST
+        bottleneck = float('inf')
+        for i,e in enumerate(s): # each edge in ST
+            if e: # if edge in ST
+                bottleneck = min(bottleneck, effective_weights[i][2])
+        if bottleneck == float('inf'):
+            bottleneck = 0
+        bottleneck = min(bottleneck, G[g][1][-1])
+        for i,e in enumerate(s):
+            if e:
+                effective_weights[i] = (E[i][0],E[i][1],E[i][2] - bottleneck)
+        soft_static_br += [len(G[g][2])*bottleneck]
+        avg_br += bottleneck/len(G)
+        G[g][1] = [b - bottleneck for b in G[g][1]]
+
+    G = [g for g in G if g[1][-1] > 0]
+
+
+    #print soft_static_br
+    #print 'Total data pushed to edge this round: ' + str(sum(soft_static_br))
+    total_soft_static += sum(soft_static_br)
+#     if not sum(soft_static_br):
+#         break
+    print 'Average data rate of stream: %d' % avg_br
+    print 'Total data pushed to edge for soft static algo: ' + str(total_soft_static)
+
+def getST(eb):
+    ST = []
+    for i,g in enumerate(G):
+        P = []
+        #print 'Working on next group (%s)' % i
+        for t in g[2]:
+            p = []
+            FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
+            P += [p]
+            #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
+        ST += [MakeAllSteinerTrees(P)]
+        #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
+
+
+    # Group, ST, [nodes, edges]
+    for i,s in enumerate(ST):
+        #print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
+        pass
+
+    return ST
+
+def MainAlgo():
+    # Main algorithm
+    total_br = []
+    eb = len(E) * bitarray('1')
+    
+    print 'Starting Algorithm'
+    print 'Groups (' + str(len(G)) + '): ' + str(G)
+    print 'Bitrate Levels: ' + str(BL)
+    print datetime.datetime.now()
+
+    ST = getST(eb)
+
+    (d,f) = LPStep(ST)
+
+    req = {}
+    for i in xrange(NUM_NODES):
+        req[i] = {}
+    for g,ss in enumerate(ST):
+        for j,s in enumerate(ss):
+            for k in xrange(len(E)):
+                if s[k] and value(f[g][j]):
+                    try:
+                        req[E[k][1]][g] += [(E[k][0], value(f[g][j]))]
+                    except:
+                        req[E[k][1]][g] = [(E[k][0], value(f[g][j]))]
+    #print req
+
+    s = 0
+    for i,group in enumerate(f):
+        for x in group:
+            s += len(G[i][2])*value(x)
+    total_br += [s]
+
+    total_d = []
+    avg_d = []
+    for g,v in enumerate(G):
+        total_d.append(sum([value(x) for x in d[g]]))
+        avg_d.append(total_d[-1]/len(G[i][2]))
+    print total_d
+    print 'Average data rate of stream: ' + str(sum(avg_d)/len(avg_d)) if len(avg_d) > 0 else 0
+
+    print 'Total data pushed to edge overall: ' + str(sum(total_br))
+    return req
+
+
+def DecisionEngine(g, sorted_E, strawman):
     global G, E, Ei, RE, REi, BL, NUM_NODES
-    G = g
+    G = copy.deepcopy(g)
     E = []
     Ei = []
     RE = []
@@ -255,7 +406,6 @@ def DecisionEngine(g, sorted_E):
     sorted_E = [sorted_E[k] for k in sorted(sorted_E)]
     E = [item for sublist in sorted_E for item in sublist]
     Ei = [0] + Ei
-    eb = len(E) * bitarray('1')
 
     # Build up the reverse edge list (RE) and it's index (REi)
     RE = sorted(E, key=lambda x:x[1])
@@ -274,63 +424,57 @@ def DecisionEngine(g, sorted_E):
     for g in G:
         BL += [CalcBitrateLevel(g)]
 
-    total_br = []
-
     NUM_NODES = len(REi)-1
     print 'Number of nodes: ' + str(NUM_NODES)
 
-    # Main algorithm
-    
-    print 'Starting Algorithm'
-    print 'Groups (' + str(len(G)) + '): ' + str(G)
-    print 'Bitrate Levels: ' + str(BL)
+    if(strawman):
+        return SoftStaticStrawman()
+    else:
+        return MainAlgo()
 
-    ST = []
-    for i,g in enumerate(G):
-        P = []
-        print 'Working on next group (%s)' % i
-        for t in g[2]:
-            p = []
-            FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
-            P += [p]
-            #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
-        ST += [MakeAllSteinerTrees(P)]
-        #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
+def main():
+    global STCP_IN, STCP_LEN, STCP_SET, FindPathResults
+    (g, sE) = file_parse(sys.argv[1])
+    # stream testing
+#     for i in xrange(len(g)):
+#         DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
 
+    # link testing
+#     for i in xrange(1,101):
+#         sampledSE = random.sample(sE.items(), int((i/100.0)*len(sE)))
+#         SSE = {}
+#         for k, v in sampledSE:
+#             SSE[k] = v
+#         SSE[0] = sE[0]
 
-    # Group, ST, [nodes, edges]
-    for i,s in enumerate(ST):
-        print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
+#         FindPathResults = {}
+#         STCP_IN = []
+#         STCP_LEN = 0
+#         STCP_SET = set()
 
-    (d,f) = LPStep(ST)
+#         DecisionEngine(g, SSE, int(float(sys.argv[2])))
 
-    req = {}
-    for i in xrange(NUM_NODES):
-        req[i] = {}
-    for g,ss in enumerate(ST):
-        for j,s in enumerate(ss):
-            for k in xrange(len(E)):
-                if s[k] and value(f[g][j]):
-                    try:
-                        req[E[k][1]][g] += [(E[k][0], value(f[g][j]))]
-                    except:
-                        req[E[k][1]][g] = [(E[k][0], value(f[g][j]))]
-    print req
+    # variance testing
+    random.seed()
+    for i in xrange(0,10,1):
+        g2 = []
+        for j in xrange(len(g)):
+            if random.random() >= i*FRAC:
+                g2.append(g[j])
+        SSE = copy.deepcopy(sE)
+        for v in SSE.items():
+            for j,v2 in enumerate(v[1]):
+                if random.random() < i*FRAC:
+                    k = random.gauss(1, .02)
+                    v[1][j] = (v2[0], v2[1], int(v2[2]*k))
+            pass
+        FindPathResults = {}
+        STCP_IN = []
+        STCP_LEN = 0
+        STCP_SET = set()
 
-    s = 0
-    for i,group in enumerate(f):
-        for x in group:
-            s += len(G[i][2])*value(x)
-    total_br += [s]
-
-    total_d = []
-    for g,v in enumerate(G):
-        total_d.append(sum([value(x) for x in d[g]]))
-    print total_d
-
-    print 'Total data pushed to edge overall: ' + str(sum(total_br))
-    return req
+        r = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
+        print r
 
 if __name__ == '__main__':
-    (g, sE) = file_parse(sys.argv[1])
-    DecisionEngine(g, sE)
+    main()

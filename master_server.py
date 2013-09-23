@@ -255,7 +255,7 @@ class Decision(threading.Thread):
             req = {}
             if sorted_E:
                 try:
-                    req = DecisionEngine(G, sorted_E)
+                    req = DecisionEngine(G, sorted_E, False)
                 except Exception, e:
                     print e
 
