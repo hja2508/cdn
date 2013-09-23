@@ -35,8 +35,9 @@ def wait_for_neighbor(neighbor):
         except:
             time.sleep(1)
 
-def start_httpd():
+def start_httpd(conf_file = HTTPD_CONF_TOP):
     printtime('Starting httpd')
+    check_output('sudo cp %s %s' % (conf_file, HTTPD_CONF))
     check_output(HTTP_START)
 
 
@@ -78,8 +79,7 @@ class MyService(rpyc.Service):
         f = open(HTTPD_TEMP, "w")
         f.write(s)
         f.close()
-        check_output('sudo mv %s %s' % (HTTPD_TEMP, HTTPD_CONF))
-        start_httpd()
+        start_httpd(HTTPD_TEMP)
 
 
 class Mapper(threading.Thread):

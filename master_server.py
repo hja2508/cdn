@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import rpyc, time, threading, sys, socket, thread, os, signal
+import rpyc, time, threading, sys, socket, thread, os, signal, random
 from threading import Thread
 from rpyc.utils.server import ThreadPoolServer
 from plcommon import TimedThreadedDict, rpc, printtime, stime, check_output
@@ -43,6 +43,8 @@ SSH_CMD = 'ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 cmu_xia@'
 NODES = [[],[],[]] # hostname
 
 MAX_LINK = 1000000
+TOTAL_STREAMS = 10
+STREAM_CHANCE = .30
 
 PRINT_VERB = [] # print verbosity
 NODE_WATCHERS = {} # hostname -> [(NodeWatcher Thread, goOnEvent)]
@@ -234,8 +236,18 @@ class Decision(threading.Thread):
                     except:
                         sorted_E[nodeMap[key]] = [link]
 
-            G = [[2.0, [200, 400, 800], [(1, 1.0)]], 
-                 [1.0, [100, 300, 900], [(1, 1.0)]]]
+            G = []
+            for i in xrange(TOTAL_STREAMS):
+                terms = []
+                for node in NODES[0]: #edges
+                    if random.random() < STREAM_CHANCE:
+                        termweight = round(10*random.random(), 0)
+                        terms += [(nodeMap[node], termweight)]
+                weight = round(10*random.random(), 0)
+                kbps = [round(100*x, -2) for x in random.sample(xrange(25), 3)]
+                kbps = sorted(kbps)
+                if terms:
+                    G += [[weight, kbps, terms]]
 
             print G
             print sorted_E
@@ -276,6 +288,8 @@ class Runner(threading.Thread):
 
 
 if __name__ == '__main__':
+    random.seed()
+
     latlonfile = open(LATLON_FILE, 'r').read().split('\n')
     for ll in latlonfile:
         ll = ll.split(' ')
