@@ -24,6 +24,8 @@ NUM_NODES = 0
 
 deepest = 0
 
+FRAC = 0.01
+
 FindPathResults = {} # dictionary for dynmaic programming
 
 # Find ALL paths from _source_ (int) to _dest_ (int) given a bit vector _eb_ that
@@ -378,7 +380,7 @@ def MainAlgo():
         total_d.append(sum([value(x) for x in d[g]]))
         avg_d.append(total_d[-1]/len(G[i][2]))
     print total_d
-    print 'Average data rate of stream: ' + str(sum(avg_d)/len(avg_d))
+    print 'Average data rate of stream: ' + str(sum(avg_d)/len(avg_d)) if len(avg_d) > 0 else 0
 
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
     return req
@@ -433,22 +435,46 @@ def DecisionEngine(g, sorted_E, strawman):
 def main():
     global STCP_IN, STCP_LEN, STCP_SET, FindPathResults
     (g, sE) = file_parse(sys.argv[1])
+    # stream testing
 #     for i in xrange(len(g)):
 #         DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
-    for i in xrange(1,101):
-        sampledSE = random.sample(sE.items(), int((i/100.0)*len(sE)))
-        SSE = {}
-        for k, v in sampledSE:
-            SSE[k] = v
-        SSE[0] = sE[0]
 
+    # link testing
+#     for i in xrange(1,101):
+#         sampledSE = random.sample(sE.items(), int((i/100.0)*len(sE)))
+#         SSE = {}
+#         for k, v in sampledSE:
+#             SSE[k] = v
+#         SSE[0] = sE[0]
+
+#         FindPathResults = {}
+#         STCP_IN = []
+#         STCP_LEN = 0
+#         STCP_SET = set()
+
+#         DecisionEngine(g, SSE, int(float(sys.argv[2])))
+
+    # variance testing
+    random.seed()
+    for i in xrange(0,50,5):
+        g2 = []
+        for j in xrange(len(g)):
+            if random.random() >= i*FRAC:
+                g2.append(g[j])
+        SSE = copy.deepcopy(sE)
+        for v in SSE.items():
+            for j,v2 in enumerate(v[1]):
+                if random.random() < i*FRAC:
+                    k = 1.1 if random.random() > .5 else .9
+                    v[1][j] = (v2[0], v2[1], int(v2[2]*k))
+            pass
         FindPathResults = {}
         STCP_IN = []
         STCP_LEN = 0
         STCP_SET = set()
 
-        DecisionEngine(g, SSE, int(float(sys.argv[2])))
-
+        r = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
+        print r
 
 if __name__ == '__main__':
     main()

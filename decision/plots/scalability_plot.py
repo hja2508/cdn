@@ -21,7 +21,7 @@ x = xrange(1,len(y2)+1)
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-ax.plot(x,y2, label='Locally Optimal')
+ax.plot(x,y2, label='Globally Optimal')
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels)
 ax.set_xlabel('Number of Workers')
