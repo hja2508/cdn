@@ -456,7 +456,7 @@ def main():
 
     # variance testing
     random.seed()
-    for i in xrange(0,50,5):
+    for i in xrange(0,10,1):
         g2 = []
         for j in xrange(len(g)):
             if random.random() >= i*FRAC:
@@ -465,7 +465,7 @@ def main():
         for v in SSE.items():
             for j,v2 in enumerate(v[1]):
                 if random.random() < i*FRAC:
-                    k = 1.1 if random.random() > .5 else .9
+                    k = random.gauss(1, .02)
                     v[1][j] = (v2[0], v2[1], int(v2[2]*k))
             pass
         FindPathResults = {}

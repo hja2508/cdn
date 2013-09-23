@@ -3,7 +3,7 @@
 from  pylab import *
 import matplotlib.pyplot as plt
 
-c = open('central_stab').read().split('\n')[:-1]
+c = open('central_stab2').read().split('\n')[:-1]
 c = [eval(l) for l in c]
 
 for i in xrange(len(c)): # each trial
@@ -38,7 +38,7 @@ for i in xrange(len(c)): # each trial
     y.append(100*float(trial_diff)/total)
 
 x = xrange(0,len(y))
-x = [l*5 for l in x]
+x = [l for l in x]
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
