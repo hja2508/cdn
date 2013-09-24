@@ -151,13 +151,13 @@ def LPStep(ST):
     prob = LpProblem("myProblem", LpMaximize)
 
     # have all ST's that use a given link be less than the total link BW
-    for e in E: # (source, dest, bitrate)
+    for i,e in enumerate(E): # (source, dest, bitrate)
         c = e[2]
         fs = []
-        for g in ST:
-            for s in g:
-                if s[E.index(e)]:
-                    fs += [f[ST.index(g)][g.index(s)]]
+        for j,g in enumerate(ST):
+            for k, s in enumerate(g):
+                if s[i]:
+                    fs += [f[j][k]]
         prob += lpSum(fs) <= c
 
     for g,v in enumerate(G): # groups
@@ -341,6 +341,21 @@ def getST(eb):
 
     return ST
 
+# def convertST(s):
+#     edges = []
+#     for i in xrange(len(E)):
+#         if s[i]:
+#             edges.append(E[i])
+#     return edges
+
+# def convertSTs(ST):
+#     edges = []
+#     for g, v in enumerate(ST):
+#         edges.append([])
+#         for s in v:
+#             edges[g].append(convertST(s))
+#     return edges
+
 def MainAlgo():
     # Main algorithm
     total_br = []
@@ -383,7 +398,7 @@ def MainAlgo():
     print 'Average data rate of stream: ' + str(sum(avg_d)/len(avg_d)) if len(avg_d) > 0 else 0
 
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
-    return req
+    return (req, ST, f, E)
 
 
 def DecisionEngine(g, sorted_E, strawman):
@@ -455,26 +470,28 @@ def main():
 #         DecisionEngine(g, SSE, int(float(sys.argv[2])))
 
     # variance testing
-    random.seed()
-    for i in xrange(0,10,1):
-        g2 = []
-        for j in xrange(len(g)):
-            if random.random() >= i*FRAC:
-                g2.append(g[j])
-        SSE = copy.deepcopy(sE)
-        for v in SSE.items():
-            for j,v2 in enumerate(v[1]):
-                if random.random() < i*FRAC:
-                    k = random.gauss(1, .02)
-                    v[1][j] = (v2[0], v2[1], int(v2[2]*k))
-            pass
-        FindPathResults = {}
-        STCP_IN = []
-        STCP_LEN = 0
-        STCP_SET = set()
+#     random.seed()
+#     for i in xrange(0,10,1):
+#         g2 = []
+#         for j in xrange(len(g)):
+#             if random.random() >= i*FRAC:
+#                 g2.append(g[j])
+#         SSE = copy.deepcopy(sE)
+#         for v in SSE.items():
+#             for j,v2 in enumerate(v[1]):
+#                 if random.random() < i*FRAC:
+#                     k = random.gauss(1, .02)
+#                     v[1][j] = (v2[0], v2[1], int(v2[2]*k))
+#             pass
+#         FindPathResults = {}
+#         STCP_IN = []
+#         STCP_LEN = 0
+#         STCP_SET = set()
 
-        r = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
-        print r
+#         r = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
+#         print r
+    req = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    print req
 
 if __name__ == '__main__':
     main()
