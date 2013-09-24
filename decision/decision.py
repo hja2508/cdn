@@ -7,7 +7,7 @@
 # $ brew install glpk
 # that last one is if you're on a mac system with homebrew installed
 
-import itertools, sys, copy, operator, string, datetime, random
+import itertools, sys, copy, operator, string, datetime, random, time
 from bitarray import bitarray
 from pulp import *
 from threading import Thread
@@ -368,7 +368,9 @@ def MainAlgo():
 
     ST = getST(eb)
 
+    starttime = time.time()
     (d,f) = LPStep(ST)
+    lpt = time.time() - starttime
 
     req = {}
     for i in xrange(NUM_NODES):
@@ -395,10 +397,11 @@ def MainAlgo():
         total_d.append(sum([value(x) for x in d[g]]))
         avg_d.append(total_d[-1]/len(G[i][2]))
     print total_d
-    print 'Average data rate of stream: ' + str(sum(avg_d)/len(avg_d)) if len(avg_d) > 0 else 0
+    avg_d = sum(avg_d)/len(avg_d) if len(avg_d) > 0 else 0
+    print 'Average data rate of stream: ' + str(avg_d)
 
     print 'Total data pushed to edge overall: ' + str(sum(total_br))
-    return (req, ST, f, E)
+    return (req, ST, f, E, avg_d, lpt)
 
 
 def DecisionEngine(g, sorted_E, strawman):
@@ -469,7 +472,7 @@ def main():
 
 #         DecisionEngine(g, SSE, int(float(sys.argv[2])))
 
-    # variance testing
+#     # variance testing
 #     random.seed()
 #     for i in xrange(0,10,1):
 #         g2 = []
@@ -490,8 +493,28 @@ def main():
 
 #         r = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
 #         print r
-    req = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    print req
+
+    # scalability testing
+    r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    for num_workers in xrange(1, 11):
+#         FindPathResults = {}
+#         STCP_IN = []
+#         STCP_LEN = 0
+#         STCP_SET = set()
+        rt = 0
+        avg = 0
+        SSE = {}
+        for node, list in sE.items():
+            SSE[node] = [(l[0],l[1],l[2]/num_workers) for l in list]
+        for i in xrange(num_workers):
+            frac = int(len(g)/num_workers)
+            g2 = g[i*frac:(i+1)*frac]
+            avg_d = 0
+            r, st, f, e, avg_d, lpt = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
+            rt = max(rt, lpt)
+            avg += avg_d*(1.0/num_workers)
+        print "RT for %d workers: %f" % (num_workers, rt)
+        print "RT avg for %d workers: %f" % (num_workers, avg)
 
 if __name__ == '__main__':
     main()
