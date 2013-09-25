@@ -151,13 +151,13 @@ def LPStep(ST):
     prob = LpProblem("myProblem", LpMaximize)
 
     # have all ST's that use a given link be less than the total link BW
-    for e in E: # (source, dest, bitrate)
+    for i,e in enumerate(E): # (source, dest, bitrate)
         c = e[2]
         fs = []
-        for g in ST:
-            for s in g:
-                if s[E.index(e)]:
-                    fs += [f[ST.index(g)][g.index(s)]]
+        for j,g in enumerate(ST):
+            for k, s in enumerate(g):
+                if s[i]:
+                    fs += [f[j][k]]
         prob += lpSum(fs) <= c
 
     for g,v in enumerate(G): # groups
@@ -341,6 +341,21 @@ def getST(eb):
 
     return ST
 
+# def convertST(s):
+#     edges = []
+#     for i in xrange(len(E)):
+#         if s[i]:
+#             edges.append(E[i])
+#     return edges
+
+# def convertSTs(ST):
+#     edges = []
+#     for g, v in enumerate(ST):
+#         edges.append([])
+#         for s in v:
+#             edges[g].append(convertST(s))
+#     return edges
+
 def MainAlgo():
     # Main algorithm
     total_br = []
@@ -500,7 +515,6 @@ def main():
             avg += avg_d*(1.0/num_workers)
         print "RT for %d workers: %f" % (num_workers, rt)
         print "RT avg for %d workers: %f" % (num_workers, avg)
-
 
 if __name__ == '__main__':
     main()

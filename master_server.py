@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
-import rpyc, time, threading, sys, socket, thread, os, signal, random
+import rpyc, time, threading, sys, socket, thread, os, signal, random, string, copy
 from threading import Thread
 from rpyc.utils.server import ThreadPoolServer
 from plcommon import TimedThreadedDict, rpc, printtime, stime, check_output
 from decision.decision import DecisionEngine
 from subprocess import Popen, PIPE
+from pulp import *
 import logging
 logging.basicConfig()
 
@@ -49,6 +50,18 @@ STREAM_CHANCE = .30
 PRINT_VERB = [] # print verbosity
 NODE_WATCHERS = {} # hostname -> [(NodeWatcher Thread, goOnEvent)]
 NODE_WATCHERS_LOCK = thread.allocate_lock()
+
+SOURCES = 0
+REFLECTORS = 1
+EDGES = 2
+
+REQ = {}
+ST = []
+F = []
+E = []
+DECISION_RUNNING = True
+DE_FLOPPER = 3
+DE_FLOP_COUNT = 0
 
 class NodeWatcher(threading.Thread):
     def preexec(self): # Don't forward signals.
@@ -142,11 +155,19 @@ class MasterService(rpyc.Service):
     def on_disconnect(self):
         pass
 
+    def exposed_shut_off_DE(self):
+        global DECISION_RUNNING
+        DECISION_RUNNING = False
+
+    def exposed_turn_on_DE(self):
+        global DECISION_RUNNING
+        DECISION_RUNNING = True
+
     def exposed_get_nodes_to_check(self):
-        if self._host in NODES[2]: #SOURCES
-            return NODES[1] #REFLECTORS
-        if self._host in NODES[1]: #REFLECTORS
-            return NODES[0] #EDGES
+        if self._host in NODES[SOURCES]: #SOURCES
+            return NODES[REFLECTORS] #REFLECTORS
+        if self._host in NODES[REFLECTORS]: #REFLECTORS
+            return NODES[EDGES] #EDGES
         return []
 
     def exposed_should_cache(self):
@@ -155,11 +176,11 @@ class MasterService(rpyc.Service):
     def exposed_heartbeat(self):
         lat, lon = LATLOND[socket.gethostbyname(self._host)]
         nlatlon = []
-        if self._host in NODES[0]: #EDGES
+        if self._host in NODES[EDGES]: #EDGES
             color = 'red'
-        elif self._host in NODES[1]: #REFLECTORS
+        elif self._host in NODES[REFLECTORS]: #REFLECTORS
             color = 'blue'
-        elif self._host in NODES[2]: #SOURCES
+        elif self._host in NODES[SOURCES]: #SOURCES
             color = 'green'
         HEARTBEATS[self._host] = [color, lat, lon]
 
@@ -211,6 +232,7 @@ class Printer(threading.Thread):
 
 class Decision(threading.Thread):
     def run(self):
+        global REQ, ST, F, E, DE_FLOPPER, DE_FLOP_COUNT
         while FINISHED_EVENT.isSet():
             nodeMap = {}
             nodeRMap = {}
@@ -221,7 +243,23 @@ class Decision(threading.Thread):
 
             sorted_E = {}
 
-            for node in NODES[2]: #SOURCES
+
+
+
+#             if len(DSTATSD) == 0:
+#                 DSTATSD['planetlab1.cs.ucla.edu'] = {}
+#                 DSTATSD['planetlab1.cs.ucla.edu']['planetslug4.cse.ucsc.edu'] = 1500
+#                 DSTATSD['planetlab1.cs.ucla.edu']['planetlab01.cs.washington.edu'] = 1500
+                
+#                 DSTATSD['planetslug4.cse.ucsc.edu'] = {}
+#                 DSTATSD['planetslug4.cse.ucsc.edu']['planetlab2.cs.colorado.edu'] = 1000
+
+#                 DSTATSD['planetlab01.cs.washington.edu'] = {}
+#                 DSTATSD['planetlab01.cs.washington.edu']['planetlab2.cs.colorado.edu'] = 1000
+
+
+
+            for node in NODES[SOURCES]: #SOURCES
                 link = (0, nodeMap[node], MAX_LINK)
                 try:
                     sorted_E[0] += [link]
@@ -237,39 +275,135 @@ class Decision(threading.Thread):
                         sorted_E[nodeMap[key]] = [link]
 
             G = []
-            for i in xrange(TOTAL_STREAMS):
-                terms = []
-                for node in NODES[0]: #edges
-                    if random.random() < STREAM_CHANCE:
-                        termweight = round(10*random.random(), 0)
-                        terms += [(nodeMap[node], termweight)]
-                weight = round(10*random.random(), 0)
-                kbps = [round(100*x, -2) for x in random.sample(xrange(25), 3)]
-                kbps = sorted(kbps)
-                if terms:
-                    G += [[weight, kbps, terms]]
+            gs = open('streams').read().split('\n')[:-1]
+            for g in gs:
+                l = g.split('\t')
+                br = l[2].translate(string.maketrans("","",), '{}[]kbps').strip().split(',')
+                br = [eval(b) for b in br]
+                T = l[3].translate(string.maketrans("","",), '{}[]').strip().split(',')
+                T = [(eval(t.split('=')[0].split('_')[1]), eval(t.split('=')[1])) for t in T]
+                G.append([eval(l[1]), br, T])
+
+#             for i in xrange(TOTAL_STREAMS):
+#                 terms = []
+#                 for node in NODES[EDGES]: #edges
+#                     if random.random() < STREAM_CHANCE:
+#                         termweight = round(10*random.random(), 0)
+#                         terms += [(nodeMap[node], termweight)]
+#                 weight = round(10*random.random(), 0)
+#                 kbps = [round(100*x, -2) for x in random.sample(xrange(25), 3)]
+#                 kbps = sorted(kbps)
+#                 if terms:
+#                     G += [[weight, kbps, terms]]
+
+            
 
             print G
             print sorted_E
 
-            req = {}
             if sorted_E:
                 try:
-                    req = DecisionEngine(G, sorted_E, False)
+                    if DECISION_RUNNING:
+                        REQ, ST, F, E = DecisionEngine(G, sorted_E, False)
+                        print "RAN DECISION ENGINE"
                 except Exception, e:
                     print e
 
+            print REQ
+            print ST
+            print F
+            print E
+            
+            aggr_br = {}
+            stream_count = {}
+            for node, dict in REQ.items():
+                aggr_br[node] = {}
+                stream_count[node] = {}
+                for g, d in dict.items():
+                    for link in d:
+                        try:
+                            aggr_br[node][link[0]] += link[1]
+                            stream_count[node][link[0]] += 1
+                        except:
+                            aggr_br[node][link[0]] = link[1]
+                            stream_count[node][link[0]] = 1
+
+            reverse_edge = {}
+            for node, es in sorted_E.items():
+                for e in es:
+                    try:
+                        reverse_edge[e[1]].append(e)
+                    except:
+                        reverse_edge[e[1]] = [e]
+
+
+                        
+            for i,e in enumerate(E):
+                if e[0] == 0 or e[1] == 0: continue
+                new_lc = DSTATSD[nodeRMap[e[0]]][nodeRMap[e[1]]]
+                E[i] = (e[0], e[1], new_lc)
+
+            oavg = 0
+            for g,v in enumerate(ST):
+                for p,s in enumerate(v): # a single ST
+                    if pulp.value(F[g][p]) == 0: continue
+                    avg = 0
+                    obn = MAX_LINK
+                    for t in G[g][2]:
+                        bn = MAX_LINK
+                        for i in xrange(len(s)):
+                            if s[i]:
+                                e = E[i]
+                                if e in reverse_edge[t[0]]:
+                                    for k, r in enumerate(REQ[t[0]][g]):
+                                        if r[0] == e[0]:
+                                            rbr = pulp.value(F[g][p]) #r[1]
+                                            lc = e[2]
+                                            sc = stream_count[t[0]][e[0]]
+                                            abr = aggr_br[t[0]][e[0]]
+                                            if abr > lc:
+                                                rbr = rbr - ((abr - lc)/sc)
+                                                REQ[t[0]][g][k] = (r[0], rbr)
+                                            bn = min(bn, rbr)
+                                bn = min(bn, e[2])
+                                for k, r in enumerate(REQ[t[0]][g]):
+                                    if r[0] == e[0]:
+                                        REQ[t[0]][g][k] = (r[0], bn)
+                        avg += bn*(1.0/len(G[g][2]))
+                        obn = min(obn, bn)
+                    for i,e in enumerate(E):
+                        if s[i]:
+                            E[i] = (e[0], e[1], e[2] - obn)
+                    oavg += avg*(1.0/len(G))
+            print 'OAVG = ' + str(oavg)
+
             print '<<<<<<REQ!!'
-            for k,v in req.iteritems():
+            print REQ
+            req2 = copy.deepcopy(REQ)
+            for k,v in req2.iteritems():
                 for k2,v2 in v.iteritems():
                     v[k2] = [(nodeRMap[i[0]], i[1]) for i in v2]
             
-            print req
+            print req2
         
             for node,i in nodeMap.iteritems():
-                if i in req and req[i]:
+                if i in req2 and req2[i]:
                     print node
-                    rpc(node, 'update_table', (req[i],))
+                    try:
+                        rpc(node, 'update_table', (req2[i],))
+                    except:
+                        pass
+
+            DE_FLOPPER -= 1
+            if DE_FLOPPER == 0:
+                rpc('localhost', 'shut_off_DE', ())
+                print 'CONTROLCRASHER (on): ' + str(oavg)
+            elif DE_FLOPPER == -3:
+                print 'CONTROLCRASHER (off): ' + str(oavg)
+                DE_FLOP_COUNT += 1
+                print 'DE_FLOP COUNT: ' + str(DE_FLOP_COUNT)
+                DE_FLOPPER = 3
+                rpc('localhost', 'turn_on_DE', ())
 
             time.sleep(DECISION_PERIOD)
 
