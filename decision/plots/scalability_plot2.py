@@ -4,7 +4,7 @@ from  pylab import *
 import matplotlib.pyplot as plt
 import datetime
 
-c = open('scalability_rt').read().split('\n')[:-1]
+c = open('scalability_justlpt_rt').read().split('\n')[:-1]
 
 time = []
 avg = []

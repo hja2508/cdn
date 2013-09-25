@@ -1,0 +1,20 @@
+RT for 1 workers: 385.834931
+RT avg for 1 workers: 603.000000
+RT for 2 workers: 233.183597
+RT avg for 2 workers: 408.500000
+RT for 3 workers: 164.328685
+RT avg for 3 workers: 295.286213
+RT for 4 workers: 150.896446
+RT avg for 4 workers: 238.500000
+RT for 5 workers: 134.361118
+RT avg for 5 workers: 187.000000
+RT for 6 workers: 93.179781
+RT avg for 6 workers: 153.819428
+RT for 7 workers: 72.148084
+RT avg for 7 workers: 138.046657
+RT for 8 workers: 60.627896
+RT avg for 8 workers: 118.229167
+RT for 9 workers: 69.233031
+RT avg for 9 workers: 108.754186
+RT for 10 workers: 69.413164
+RT avg for 10 workers: 98.100000
