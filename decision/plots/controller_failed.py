@@ -3,8 +3,18 @@
 from  pylab import *
 import matplotlib.pyplot as plt
 import datetime
+from bisect import bisect_left
 
-c = open('controller_failed_abbr').read().split('\n')[:-1]
+class discrete_cdf:
+    def __init__(self, data):
+        self._data = data # must be sorted
+        self._data_len = float(len(data))
+
+    def __call__(self, point):
+        return (len(self._data[:bisect_left(self._data, point)]) / 
+                self._data_len)
+
+c = open('controller_failed_long_abbr').read().split('\n')[:-1]
 
 control = []
 failed = []
@@ -19,25 +29,28 @@ control = [l for l in control if l != 0]
 failed = [l for l in failed if l != 0]
 
 control = sorted(control)
+control = [int(l) for l in control]
 failed = sorted(failed)
+failed = [int(l) for l in failed]
 
-controlcdf = [control[0]]
-for i in xrange(1,len(control)):
-    controlcdf.append(controlcdf[i-1] + control[i])
+cdf = discrete_cdf(control)
+xvalues = range(0, max(control))
+controlcdf = [cdf(point) for point in xvalues]
 
-failedcdf = [failed[0]]
-for i in xrange(1,len(failed)):
-    failedcdf.append(failedcdf[i-1] + failed[i])
+cdf2 = discrete_cdf(failed)
+xvalues2 = range(0, max(failed))
+failedcdf = [cdf2(point) for point in xvalues2]
 
-y1 = xrange(1,len(controlcdf)+1)
-y1 = [100*float(y)/len(controlcdf) for y in y1]
-y2 = xrange(1,len(failedcdf)+1)
-y2 = [100*float(y)/len(failedcdf) for y in y2]
+# controlpdf = control / sum(control)
+# failedpdf = failed / sum(failed)
+
+# controlcdf = np.cumsum(controlpdf)
+# failedcdf = np.cumsum(failedpdf)
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-ax.plot(controlcdf, y1, label='No Failure')
-ax.plot(failedcdf, y2, label='Controller Failure')
+ax.plot(xvalues, controlcdf, label='No Failure')
+ax.plot(xvalues2, failedcdf, label='Controller Failure')
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels)
 ax.set_xlabel('Average Stream Performance')
