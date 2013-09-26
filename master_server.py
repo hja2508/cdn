@@ -6,6 +6,7 @@ from rpyc.utils.server import ThreadPoolServer
 from plcommon import TimedThreadedDict, rpc, printtime, stime, check_output
 from decision.decision import DecisionEngine
 from subprocess import Popen, PIPE
+from collections import defaultdict
 from pulp import *
 import logging
 logging.basicConfig()
@@ -14,6 +15,7 @@ RPC_PORT = 43278;
 CLIENT_PORT = 3000
 CHECK_PERIOD = 3
 DECISION_PERIOD = 3
+STAT_PERIOD = 1
 STATS_TIMEOUT = 3
 
 HEARTBEATS = TimedThreadedDict() # hostname --> [color, lat, lon, [neighbor latlon]]
@@ -59,9 +61,16 @@ REQ = {}
 ST = []
 F = []
 E = []
+SORTED_E = {}
+NODERMAP = {}
+G = []
 DECISION_RUNNING = True
 DE_FLOPPER = 3
 DE_FLOP_COUNT = 0
+DATA_KILLER = 5
+DATA_KILLER_COUNT = 0
+KILLED_EDGE = []
+KILLED_EDGE_NAME = []
 
 class NodeWatcher(threading.Thread):
     def preexec(self): # Don't forward signals.
@@ -229,50 +238,284 @@ class Printer(threading.Thread):
 
             time.sleep(CHECK_PERIOD)
 
+class Stats(threading.Thread):
+    def run(self):
+        #global REQ, ST, F, E, SORTED_E
+        global DATA_KILLER, DATA_KILLER_COUNT, KILLED_EDGE, KILLED_EDGE_NAME, E
+        while FINISHED_EVENT.isSet():
+            print "<<<<<<<<<<<<<<<<HERE"
+
+            my_parents = {}
+            for node,r in REQ.items():
+                for g,v in r.items():
+                    if not g in my_parents:
+                        my_parents[g] = defaultdict(list)
+                    for parent, br in v:
+                        for e in E:
+                            if e[0] == parent and e[1] == node:
+                                if e[2] > 0:
+                                    my_parents[g][node] = list(set(my_parents[g][node] + [parent]))
+
+#            print my_parents
+
+            # update based on REQ updates                
+            nc = len(NODES[SOURCES])+len(NODES[REFLECTORS])+len(NODES[EDGES])+1
+            print"<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>"
+            for g in xrange(len(G)):
+                REQ[0][g] = []
+                for n in xrange(1, nc):
+                    if not n in REQ or not g in REQ[n]:
+                        continue
+                    parent_br = defaultdict(int)
+                    for parent, br in REQ[n][g]:
+                        parent_br[parent] += br
+                    b = 0
+                    for e in E:
+                        if e[0] == parent and e[1] == n:
+                            b = min(e[2], br) # what parent link can do
+                    cur_br = 0
+                    for p, br in REQ[parent][g]:
+                        cur_br += br
+                    b -= cur_br
+                    print cur_br, b
+                    if b > 0:
+                        max_link = (0,0,0)
+                        for e in E:
+                            if e[1] == parent:
+                                current_use = 0
+                                for p, br in REQ[parent][g]:
+                                    if p == e[0]:
+                                        current_use += br
+                                residule = e[2] - current_use
+                                max_link = e if residule > max_link[2] else max_link
+                        REQ[parent][g].append((max_link[0], b))
+                
+
+
+            # update REQ based on link failures
+            for node,r in REQ.items():
+                max_link = (0,0,0)
+                for e in E:
+                    if e[1] == node:
+                        current_use = 0
+                        for p, br in REQ[e[0]][g]:
+                            if p == e[0]:
+                                current_use += br
+                        residule = e[2] - current_use
+                        max_link = e if residule > max_link[2] else max_link
+                for e in E:
+                    if e[1] == node and e[2] == 0: #node lost link
+                        print '<<<HERE'
+                        for g, plist in r.items():
+                            for parent in plist:
+                                if parent[0] == e[0]:
+                                    print '<<<HEY!!'
+                                    # add request br to best local link
+                                    plist.append((max_link[0], parent[1]))
+                                    plist.remove(parent)
+            print REQ
+
+            
+            aggr_br = {}
+            stream_count = {}
+            stream_aggr_br = {}
+            for node, dict in REQ.items():
+                aggr_br[node] = {}
+                stream_count[node] = {}
+                for g, d in dict.items():
+                    if not g in stream_aggr_br:
+                        stream_aggr_br[g] = {}
+                    if not node in stream_aggr_br[g]:
+                        stream_aggr_br[g][node] = {}
+                    for link in d:
+                        try:
+                            aggr_br[node][link[0]] += link[1]
+                            stream_count[node][link[0]] += 1
+                            stream_aggr_br[g][node][link[0]] += link[1]
+                        except:
+                            aggr_br[node][link[0]] = link[1]
+                            stream_count[node][link[0]] = 1
+                            stream_aggr_br[g][node][link[0]] = link[1]
+
+            reverse_edge = {}
+            for node, es in SORTED_E.items():
+                for e in es:
+                    try:
+                        reverse_edge[e[1]].append(e)
+                    except:
+                        reverse_edge[e[1]] = [e]
+
+                        
+            for i,e in enumerate(E):
+                if e[0] == 0 or e[1] == 0: continue
+                ke = KILLED_EDGE
+                if ke and e[0] == ke[0] and e[1] == ke[1]: continue
+                new_lc = DSTATSD[NODERMAP[e[0]]][NODERMAP[e[1]]]
+                E[i] = (e[0], e[1], new_lc)
+
+
+#            print aggr_br
+#            print stream_aggr_br
+
+            stream_total_bw = {}
+            for g,v in stream_aggr_br.items():
+                stream_total_bw[g] = {}
+                for n,l in v.items():
+                    br_sum = 0
+                    for p, br in l.items():
+                        br_sum += br
+                    stream_total_bw[g][n] = br_sum
+
+
+
+            print stream_total_bw
+            print my_parents
+
+            oavg = 0
+            for g,v in stream_aggr_br.items():
+                recvd = defaultdict(int)
+                avg = 0
+                count = 0
+                upstream_br = {}
+                upstream_br[0] = MAX_LINK
+                #print v
+                for i in xrange(1,nc):
+                    upstream_br[i] = 0
+                    for parent in my_parents[g][i]:
+                        upstream_br[i] += upstream_br[parent] #stream_total_bw[g][parent]
+                    if not i in stream_total_bw[g]:
+                        continue
+                    upstream_br[i] = min(upstream_br[i], stream_total_bw[g][i])
+                    if NODERMAP[i] in NODES[EDGES]:
+                        print upstream_br
+                        avg += upstream_br[i]
+                        count += 1
+                avg /= count
+                oavg += float(avg)/len(G)
+                print avg
+            print 'OAVG: ' + str(oavg)
+
+            print E
+
+            DATA_KILLER -= 1
+            if DATA_KILLER == 0:
+                print 'DATAKILLER (killing link)'
+                e = (0,0,0)
+                while e[0] == 0:
+                    e = random.sample(E, 1)[0]
+                print "KILLED EDGE: " + str(e)
+                KILLED_EDGE_NAME = [NODERMAP[e[0]], NODERMAP[e[1]], e[2]]
+                KILLED_EDGE = [e[0], e[1], e[2]]
+                for i,l in enumerate(E):
+                    if l[0] == e[0] and l[1] == e[1]:
+                        E[i] = (e[0], e[1], 0)
+                
+            elif DATA_KILLER == -10:
+                print 'DATAKILLER (fixing link)'
+                e = KILLED_EDGE
+                for i,l in enumerate(E):
+                    if l[0] == e[0] and l[1] == e[1]:
+                        E[i] = (e[0], e[1], e[2])
+                KILLED_EDGE = []
+                KILLED_EDGE_NAME = []
+                DATA_KILLER_COUNT += 1
+                print 'DATAKILLER COUNT: ' + str(DATA_KILLER_COUNT)
+                DATA_KILLER = 5
+                
+
+            #sys.exit(-1)
+
+
+#             oavg = 0
+#             for g,v in enumerate(ST):
+#                 for p,s in enumerate(v): # a single ST
+#                     if pulp.value(F[g][p]) == 0: continue
+#                     avg = 0
+#                     obn = MAX_LINK
+#                     for t in G[g][2]:
+#                         bn = MAX_LINK
+#                         for i in xrange(len(s)):
+#                             if s[i]:
+#                                 e = E[i]
+#                                 if e in reverse_edge[t[0]]:
+#                                     for k, r in enumerate(REQ[t[0]][g]):
+#                                         if r[0] == e[0]:
+#                                             rbr = r[1] #pulp.value(F[g][p]) #r[1]
+#                                             lc = e[2]
+#                                             sc = stream_count[t[0]][e[0]]
+#                                             abr = aggr_br[t[0]][e[0]]
+#                                             if abr > lc:
+#                                                 rbr = rbr - ((abr - lc)/sc)
+#                                                 REQ[t[0]][g][k] = (r[0], rbr)
+#                                             bn = min(bn, rbr)
+#                                 bn = min(bn, e[2])
+#                                 for k, r in enumerate(REQ[t[0]][g]):
+#                                     if r[0] == e[0]:
+#                                         REQ[t[0]][g][k] = (r[0], bn)
+#                         avg += bn*(1.0/len(G[g][2]))
+#                         obn = min(obn, bn)
+#                     for i,e in enumerate(E):
+#                         if s[i]:
+#                             E[i] = (e[0], e[1], e[2] - obn)
+#                     oavg += avg*(1.0/len(G))
+#             print 'OAVG = ' + str(oavg)
+            time.sleep(STAT_PERIOD)
+
 
 class Decision(threading.Thread):
     def run(self):
-        global REQ, ST, F, E, DE_FLOPPER, DE_FLOP_COUNT
+        global REQ, ST, F, E, DE_FLOPPER, DE_FLOP_COUNT, SORTED_E, NODERMAP, G
         while FINISHED_EVENT.isSet():
             nodeMap = {}
-            nodeRMap = {}
+            NODERMAP = {}
             for i,key in enumerate(HOSTNAME_LOOKUP):
                 nodeMap[key] = i+1
-                nodeRMap[i+1] = key
-            nodeRMap[0] = 'dummy'
+                NODERMAP[i+1] = key
+            NODERMAP[0] = 'dummy'
 
-            sorted_E = {}
+            SORTED_E = {}
 
+            if len(DSTATSD) == 0:
+                LA = 'planetlab1.cs.ucla.edu'
+                SF = 'planetslug4.cse.ucsc.edu'
+                SE = 'planetlab01.cs.washington.edu'
+                DE = 'planetlab2.cs.colorado.edu'
 
-
-
-#             if len(DSTATSD) == 0:
-#                 DSTATSD['planetlab1.cs.ucla.edu'] = {}
-#                 DSTATSD['planetlab1.cs.ucla.edu']['planetslug4.cse.ucsc.edu'] = 1500
-#                 DSTATSD['planetlab1.cs.ucla.edu']['planetlab01.cs.washington.edu'] = 1500
+                DSTATSD[DE] = {}
+                DSTATSD[DE][SF] = 1500
+                DSTATSD[DE][SE] = 1500
                 
-#                 DSTATSD['planetslug4.cse.ucsc.edu'] = {}
-#                 DSTATSD['planetslug4.cse.ucsc.edu']['planetlab2.cs.colorado.edu'] = 1000
+                DSTATSD[SF] = {}
+                DSTATSD[SF][LA] = 1000
 
-#                 DSTATSD['planetlab01.cs.washington.edu'] = {}
-#                 DSTATSD['planetlab01.cs.washington.edu']['planetlab2.cs.colorado.edu'] = 1000
+                DSTATSD[SE] = {}
+                DSTATSD[SE][LA] = 1000
 
 
 
             for node in NODES[SOURCES]: #SOURCES
                 link = (0, nodeMap[node], MAX_LINK)
                 try:
-                    sorted_E[0] += [link]
+                    SORTED_E[0] += [link]
                 except:
-                    sorted_E[0] = [link]
+                    SORTED_E[0] = [link]
 
-            for key, value in DSTATSD.iteritems():
+            for key, value in DSTATSD.iteritems():                
                 for k, v in value.iteritems():
                     link = (nodeMap[key], nodeMap[k], v)
+                    ken = KILLED_EDGE_NAME
+                    print ken
+                    if ken and key == ken[0] and k == ken[1]: 
+#                         print 'KEN HERE'
+#                         SORTED_E[nodeMap[key]] += [(link[0], link[1], 0)]
+                        continue
                     try:
-                        sorted_E[nodeMap[key]] += [link]
+                        SORTED_E[nodeMap[key]] += [link]
                     except:
-                        sorted_E[nodeMap[key]] = [link]
+                        SORTED_E[nodeMap[key]] = [link]
+
+            print "<<<< HERE WE ARE>>"
+            print SORTED_E
 
             G = []
             gs = open('streams').read().split('\n')[:-1]
@@ -284,27 +527,13 @@ class Decision(threading.Thread):
                 T = [(eval(t.split('=')[0].split('_')[1]), eval(t.split('=')[1])) for t in T]
                 G.append([eval(l[1]), br, T])
 
-#             for i in xrange(TOTAL_STREAMS):
-#                 terms = []
-#                 for node in NODES[EDGES]: #edges
-#                     if random.random() < STREAM_CHANCE:
-#                         termweight = round(10*random.random(), 0)
-#                         terms += [(nodeMap[node], termweight)]
-#                 weight = round(10*random.random(), 0)
-#                 kbps = [round(100*x, -2) for x in random.sample(xrange(25), 3)]
-#                 kbps = sorted(kbps)
-#                 if terms:
-#                     G += [[weight, kbps, terms]]
-
-            
-
             print G
-            print sorted_E
+            print SORTED_E
 
-            if sorted_E:
+            if SORTED_E:
                 try:
                     if DECISION_RUNNING:
-                        REQ, ST, F, E = DecisionEngine(G, sorted_E, False)
+                        REQ, ST, F, E, avg_d, lpt = DecisionEngine(G, SORTED_E, False)
                         print "RAN DECISION ENGINE"
                 except Exception, e:
                     print e
@@ -314,75 +543,13 @@ class Decision(threading.Thread):
             print F
             print E
             
-            aggr_br = {}
-            stream_count = {}
-            for node, dict in REQ.items():
-                aggr_br[node] = {}
-                stream_count[node] = {}
-                for g, d in dict.items():
-                    for link in d:
-                        try:
-                            aggr_br[node][link[0]] += link[1]
-                            stream_count[node][link[0]] += 1
-                        except:
-                            aggr_br[node][link[0]] = link[1]
-                            stream_count[node][link[0]] = 1
-
-            reverse_edge = {}
-            for node, es in sorted_E.items():
-                for e in es:
-                    try:
-                        reverse_edge[e[1]].append(e)
-                    except:
-                        reverse_edge[e[1]] = [e]
-
-
-                        
-            for i,e in enumerate(E):
-                if e[0] == 0 or e[1] == 0: continue
-                new_lc = DSTATSD[nodeRMap[e[0]]][nodeRMap[e[1]]]
-                E[i] = (e[0], e[1], new_lc)
-
-            oavg = 0
-            for g,v in enumerate(ST):
-                for p,s in enumerate(v): # a single ST
-                    if pulp.value(F[g][p]) == 0: continue
-                    avg = 0
-                    obn = MAX_LINK
-                    for t in G[g][2]:
-                        bn = MAX_LINK
-                        for i in xrange(len(s)):
-                            if s[i]:
-                                e = E[i]
-                                if e in reverse_edge[t[0]]:
-                                    for k, r in enumerate(REQ[t[0]][g]):
-                                        if r[0] == e[0]:
-                                            rbr = pulp.value(F[g][p]) #r[1]
-                                            lc = e[2]
-                                            sc = stream_count[t[0]][e[0]]
-                                            abr = aggr_br[t[0]][e[0]]
-                                            if abr > lc:
-                                                rbr = rbr - ((abr - lc)/sc)
-                                                REQ[t[0]][g][k] = (r[0], rbr)
-                                            bn = min(bn, rbr)
-                                bn = min(bn, e[2])
-                                for k, r in enumerate(REQ[t[0]][g]):
-                                    if r[0] == e[0]:
-                                        REQ[t[0]][g][k] = (r[0], bn)
-                        avg += bn*(1.0/len(G[g][2]))
-                        obn = min(obn, bn)
-                    for i,e in enumerate(E):
-                        if s[i]:
-                            E[i] = (e[0], e[1], e[2] - obn)
-                    oavg += avg*(1.0/len(G))
-            print 'OAVG = ' + str(oavg)
 
             print '<<<<<<REQ!!'
             print REQ
             req2 = copy.deepcopy(REQ)
             for k,v in req2.iteritems():
                 for k2,v2 in v.iteritems():
-                    v[k2] = [(nodeRMap[i[0]], i[1]) for i in v2]
+                    v[k2] = [(NODERMAP[i[0]], i[1]) for i in v2]
             
             print req2
         
@@ -394,18 +561,19 @@ class Decision(threading.Thread):
                     except:
                         pass
 
-            DE_FLOPPER -= 1
-            if DE_FLOPPER == 0:
-                rpc('localhost', 'shut_off_DE', ())
-                print 'CONTROLCRASHER (on): ' + str(oavg)
-            elif DE_FLOPPER == -3:
-                print 'CONTROLCRASHER (off): ' + str(oavg)
-                DE_FLOP_COUNT += 1
-                print 'DE_FLOP COUNT: ' + str(DE_FLOP_COUNT)
-                DE_FLOPPER = 3
-                rpc('localhost', 'turn_on_DE', ())
+#             DE_FLOPPER -= 1
+#             if DE_FLOPPER == 0:
+#                 rpc('localhost', 'shut_off_DE', ())
+#                 print 'CONTROLCRASHER (on): ' + str(oavg)
+#             elif DE_FLOPPER == -3:
+#                 print 'CONTROLCRASHER (off): ' + str(oavg)
+#                 DE_FLOP_COUNT += 1
+#                 print 'DE_FLOP COUNT: ' + str(DE_FLOP_COUNT)
+#                 DE_FLOPPER = 3
+#                 rpc('localhost', 'turn_on_DE', ())
 
             time.sleep(DECISION_PERIOD)
+            #sys.exit(-1)
 
 
 class Runner(threading.Thread):
@@ -414,7 +582,7 @@ class Runner(threading.Thread):
             for node in t:
                 while True:
                     try:
-                        rpc('localhost', 'hard_restart', (node, ))
+                        #rpc('localhost', 'hard_restart', (node, ))
                         break;
                     except Exception, e:
                         printtime('%s' % e)
@@ -467,6 +635,9 @@ if __name__ == '__main__':
 
     decision = Decision()
     decision.start()
+    
+    stats = Stats()
+    stats.start()
 
     try:
         t = ThreadPoolServer(MasterService, port = RPC_PORT)
@@ -486,6 +657,7 @@ if __name__ == '__main__':
     printer.join()
     runner.join()
     decision.join()
+    stats.join()
 
     printtime('Finished.')
     
