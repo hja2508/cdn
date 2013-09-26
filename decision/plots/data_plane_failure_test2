@@ -1,0 +1,2242 @@
+2013-09-26 17:45:20: Threaded heartbeat server listening on port 43278
+press Ctrl-C to stop
+
+2013-09-26 17:45:20: (111, 'Connection refused')
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:45:20.385861
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+{}
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+{}
+{}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000)]
+defaultdict(<function <lambda> at 0x999fca4>, {})
+0 1400
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {})}
+[(0, 1, 1000000)]
+1
+2
+3
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+{0: {0: 0, 4: 0}}
+{0: defaultdict(<type 'list'>, {4: []})}
+{0: 1000000, 1: 0, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217520.39
+[(0, 1, 1000000)]
+2013-09-26 17:45:21: planetlab2.cs.colorado.edu: launching...
+2013-09-26 17:45:21: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:45:21: planetlab01.cs.washington.edu: launching...
+2013-09-26 17:45:21: planetlab01.cs.washington.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+0 1400
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {})}
+[(0, 1, 1000000)]
+1
+2
+3
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+{0: {0: 0, 4: 0}}
+{0: defaultdict(<type 'list'>, {4: []})}
+{0: 1000000, 1: 0, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217521.39
+[(0, 1, 1000000)]
+2013-09-26 17:45:21: planetslug4.cse.ucsc.edu: launching...
+2013-09-26 17:45:21: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:45:21: planetlab1.cs.ucla.edu: launching...
+2013-09-26 17:45:21: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+0 1400
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {})}
+[(0, 1, 1000000)]
+1
+2
+3
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+{0: {0: 0, 4: 0}}
+{0: defaultdict(<type 'list'>, {4: []})}
+{0: 1000000, 1: 0, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217522.39
+[(0, 1, 1000000)]
+2013-09-26 17:45:22: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:45:22: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:45:22: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:45:22: planetlab01.cs.washington.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:45:23: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:45:23: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:45:23: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:45:23: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:45:23.387202
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+0 1400
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {})}
+[(0, 1, 1000000)]
+1
+2
+3
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+{0: {0: 0, 4: 0}}
+{0: defaultdict(<type 'list'>, {4: []})}
+{0: 1000000, 1: 0, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217523.39
+[(0, 1, 1000000)]
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+0 1400
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {})}
+[(0, 1, 1000000)]
+1
+2
+3
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+{0: {0: 0, 4: 0}}
+{0: defaultdict(<type 'list'>, {4: []})}
+{0: 1000000, 1: 0, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217524.39
+[(0, 1, 1000000)]
+DATAKILLER (killing link)
+2013-09-26 17:45:24: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:45:24: planetlab2.cs.colorado.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 17:45:25: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:45:25: planetlab1.cs.ucla.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 17:45:25: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:45:25: planetlab01.cs.washington.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 17:45:25: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:45:25: planetslug4.cse.ucsc.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:45:26.497846
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+planetlab1.cs.ucla.edu
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:45:29.629833
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+planetlab1.cs.ucla.edu
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:45:32.777188
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+planetlab1.cs.ucla.edu
+2013-09-26 17:45:40: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1715}
+2013-09-26 17:45:42: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1124}
+2013-09-26 17:45:42: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1715, 'planetslug4.cse.ucsc.edu': 7013}
+[]
+[]
+[]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 1715), (1, 3, 7013)], 3: [(3, 4, 1124)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 1715), (1, 3, 7013)], 3: [(3, 4, 1124)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:45:45.542835
+[1124.0]
+Average data rate of stream: 1124.0
+Total data pushed to edge overall: 1124.0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+[[bitarray('1011')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 2, 1715), (1, 3, 7013), (3, 4, 1124)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+planetlab1.cs.ucla.edu
+KILLED EDGE: (1, 2, 1715)
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {}), 4: defaultdict(<type 'list'>, {0: []})})
+(3, 4, 1124)
+3 1400
+<rpyc.utils.server.ThreadPoolServer object at 0x9a3150c>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: []}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: []}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+1
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {3: [], 4: [3]})}
+{0: 1000000, 1: 0, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217546.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+1
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {3: [1], 4: [3]})}
+{0: 1000000, 1: 0, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217547.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217548.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217549.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+2013-09-26 17:45:49: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 3220, 'planetslug4.cse.ucsc.edu': 7013}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217550.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 7013), (3, 4, 1124)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 1
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1715), (1, 3, 7013), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1715), (1, 3, 7013), (3, 4, 1124)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217551.58
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 7013), (3, 4, 1124)]
+2013-09-26 17:45:51: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 3220, 'planetslug4.cse.ucsc.edu': 6571}
+[]
+[]
+[]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3220), (1, 3, 6571)], 3: [(3, 4, 1124)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3220), (1, 3, 6571)], 3: [(3, 4, 1124)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:45:52.140205
+[1124.0]
+Average data rate of stream: 1124.0
+Total data pushed to edge overall: 1124.0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[bitarray('1011')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [('dummy', 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [('planetlab2.cs.colorado.edu', 1124)]}), 4: defaultdict(<type 'list'>, {0: [('planetslug4.cse.ucsc.edu', 1400)]})})
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217552.58
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+2
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217553.58
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217554.58
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1124}
+1124.0
+DATAKILLER OAVG: 1124.0 time: 1380217555.58
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1124)]
+DATAKILLER (killing link)
+KILLED EDGE: (1, 2, 3220)
+2013-09-26 17:45:56: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1078}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1124)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1124)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217556.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217557.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217558.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217559.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217560.58
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6571), (3, 4, 1078)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 2
+[]
+[]
+[]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3220), (1, 3, 6571)], 3: [(3, 4, 1078)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3220), (1, 3, 6571)], 3: [(3, 4, 1078)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:46:00.614245
+[1078.0]
+Average data rate of stream: 1078.0
+Total data pushed to edge overall: 1078.0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[bitarray('1011')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [('dummy', 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [('planetlab2.cs.colorado.edu', 1124)]}), 4: defaultdict(<type 'list'>, {0: [('planetslug4.cse.ucsc.edu', 1400)]})})
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217561.58
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217562.58
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+2013-09-26 17:46:02: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1446, 'planetslug4.cse.ucsc.edu': 6571}
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3220), (1, 3, 6571), (3, 4, 1078)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217563.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6571), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6571), (3, 4, 1078)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217564.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6571), (3, 4, 1078)]
+2013-09-26 17:46:04: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1446, 'planetslug4.cse.ucsc.edu': 6553}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6571), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6571), (3, 4, 1078)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1078}
+1078.0
+DATAKILLER OAVG: 1078.0 time: 1380217565.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1078)]
+DATAKILLER (killing link)
+KILLED EDGE: (1, 3, 6553)
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217566.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217567.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217568.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217569.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+2013-09-26 17:46:10: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1013}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1078)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217570.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 0), (3, 4, 1013)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 3
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1013}
+1013.0
+DATAKILLER OAVG: 1013.0 time: 1380217571.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+2
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1013}
+1013.0
+DATAKILLER OAVG: 1013.0 time: 1380217572.58
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+2013-09-26 17:46:12: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 2386, 'planetslug4.cse.ucsc.edu': 6553}
+2013-09-26 17:46:12: planetlab01.cs.washington.edu	 {'planetlab1.cs.ucla.edu': 321}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1446), (1, 3, 6553), (3, 4, 1013)]
+2
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1013}
+1013.0
+DATAKILLER OAVG: 1013.0 time: 1380217573.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6553), (3, 4, 1013)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6553), (3, 4, 1013)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6553), (3, 4, 1013)]
+2
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1013}
+1013.0
+DATAKILLER OAVG: 1013.0 time: 1380217574.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6553), (3, 4, 1013)]
+2013-09-26 17:46:14: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 2386, 'planetslug4.cse.ucsc.edu': 6767}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6553), (3, 4, 1013)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6553), (3, 4, 1013)]
+2
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1013}
+1013.0
+DATAKILLER OAVG: 1013.0 time: 1380217575.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (3, 4, 1013)]
+DATAKILLER (killing link)
+KILLED EDGE: (3, 4, 1013)
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 1013]
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 1013]
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 1013]
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 1013]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 2386), (1, 3, 6767)], 2: [(2, 4, 321)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 2386), (1, 3, 6767)], 2: [(2, 4, 321)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:46:16.141550
+[321.0]
+Average data rate of stream: 321.0
+Total data pushed to edge overall: 321.0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[bitarray('1011')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [('dummy', 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [('planetlab2.cs.colorado.edu', 1124)]}), 4: defaultdict(<type 'list'>, {0: [('planetslug4.cse.ucsc.edu', 1400)]})})
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217576.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217577.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217578.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217579.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217580.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 4
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217581.58
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2013-09-26 17:46:21: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 3211, 'planetslug4.cse.ucsc.edu': 6767}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 2386), (1, 3, 6767), (2, 4, 321)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217582.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6767), (2, 4, 321)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6767), (2, 4, 321)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217583.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6767), (2, 4, 321)]
+2013-09-26 17:46:23: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 3211, 'planetslug4.cse.ucsc.edu': 6749}
+2013-09-26 17:46:23: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1102}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6767), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6767), (2, 4, 321)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217584.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 321)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 321)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 321)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217585.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 321)]
+DATAKILLER (killing link)
+KILLED EDGE: (2, 4, 321)
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217586.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 0)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217587.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (2, 4, 0)]
+['planetlab01.cs.washington.edu', 'planetlab1.cs.ucla.edu', 321]
+['planetlab01.cs.washington.edu', 'planetlab1.cs.ucla.edu', 321]
+['planetlab01.cs.washington.edu', 'planetlab1.cs.ucla.edu', 321]
+['planetlab01.cs.washington.edu', 'planetlab1.cs.ucla.edu', 321]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3211), (1, 3, 6749)], 3: [(3, 4, 1102)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3211), (1, 3, 6749)], 3: [(3, 4, 1102)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:46:27.852178
+[1102.0]
+Average data rate of stream: 1102.0
+Total data pushed to edge overall: 1102.0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[bitarray('1011')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [('dummy', 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [('planetlab2.cs.colorado.edu', 1124)]}), 4: defaultdict(<type 'list'>, {0: [('planetslug4.cse.ucsc.edu', 1400)]})})
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217588.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217589.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217590.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 5
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217591.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217592.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217593.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217594.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 1102}
+1102.0
+DATAKILLER OAVG: 1102.0 time: 1380217595.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 1102)]
+DATAKILLER (killing link)
+KILLED EDGE: (3, 4, 1102)
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217596.58
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 0)]
+2013-09-26 17:46:37: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1045, 'planetslug4.cse.ucsc.edu': 6749}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 3211), (1, 3, 6749), (3, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217597.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6749), (3, 4, 0)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6749), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6749), (3, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217598.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6749), (3, 4, 0)]
+2013-09-26 17:46:39: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1045, 'planetslug4.cse.ucsc.edu': 6740}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6749), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6749), (3, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217599.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+2013-09-26 17:46:40: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 865}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217600.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 6
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 1102)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 1102)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 865}
+865.0
+DATAKILLER OAVG: 865.0 time: 1380217601.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 865}
+865.0
+DATAKILLER OAVG: 865.0 time: 1380217602.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 865}
+865.0
+DATAKILLER OAVG: 865.0 time: 1380217603.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 865}
+865.0
+DATAKILLER OAVG: 865.0 time: 1380217604.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+2013-09-26 17:46:44: planetlab01.cs.washington.edu	 {'planetlab1.cs.ucla.edu': 479}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 865}
+865.0
+DATAKILLER OAVG: 865.0 time: 1380217605.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 865)]
+DATAKILLER (killing link)
+KILLED EDGE: (3, 4, 865)
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217606.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217607.58
+[(0, 1, 1000000), (1, 2, 1045), (1, 3, 6740), (3, 4, 0)]
+2013-09-26 17:46:48: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1904, 'planetslug4.cse.ucsc.edu': 6740}
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 865]
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 865]
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 865]
+['planetslug4.cse.ucsc.edu', 'planetlab1.cs.ucla.edu', 865]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 1904), (1, 3, 6740)], 2: [(2, 4, 479)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 1904), (1, 3, 6740)], 2: [(2, 4, 479)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:46:48.399264
+[479.0]
+Average data rate of stream: 479.0
+Total data pushed to edge overall: 479.0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[bitarray('1011')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [('dummy', 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [('planetlab2.cs.colorado.edu', 1124)]}), 4: defaultdict(<type 'list'>, {0: [('planetslug4.cse.ucsc.edu', 1400)]})})
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217608.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217609.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+2013-09-26 17:46:50: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1904, 'planetslug4.cse.ucsc.edu': 6420}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6740), (2, 4, 479)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(1, 1124)
+1
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217610.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 7
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217611.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217612.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+2013-09-26 17:46:53: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1152}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217613.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217614.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 1124, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217615.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 6420), (2, 4, 479)]
+DATAKILLER (killing link)
+KILLED EDGE: (1, 3, 6420)
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 0), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 0), (2, 4, 479)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217616.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 0), (2, 4, 479)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 0), (2, 4, 479)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0]})}
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 0), (2, 4, 479)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: []})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217617.58
+[(0, 1, 1000000), (1, 2, 1904), (1, 3, 0), (2, 4, 479)]
+['planetlab2.cs.colorado.edu', 'planetslug4.cse.ucsc.edu', 6420]
+['planetlab2.cs.colorado.edu', 'planetslug4.cse.ucsc.edu', 6420]
+['planetlab2.cs.colorado.edu', 'planetslug4.cse.ucsc.edu', 6420]
+['planetlab2.cs.colorado.edu', 'planetslug4.cse.ucsc.edu', 6420]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 1904)], 2: [(2, 4, 479)], 3: [(3, 4, 1152)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 1904)], 2: [(2, 4, 479)], 3: [(3, 4, 1152)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 13:46:58.538234
+[479.0]
+Average data rate of stream: 479.0
+Total data pushed to edge overall: 479.0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[bitarray('1011')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+<<<<<<REQ!!
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [('dummy', 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [('planetlab2.cs.colorado.edu', 1124)]}), 4: defaultdict(<type 'list'>, {0: [('planetslug4.cse.ucsc.edu', 1400)]})})
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217618.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [3]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+<<<HEY!!
+(3, 1400)
+2
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+{0: {0: 0, 1: 1124, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [3]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217619.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 4: [2]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+2
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+{0: {0: 0, 1: 1124, 2: 479, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [], 4: [2]})}
+{0: 1000000, 1: 1124, 2: 0, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217620.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 8
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 4: [2]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+{0: {0: 0, 1: 1124, 2: 479, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [], 4: [2]})}
+{0: 1000000, 1: 1124, 2: 479, 3: 0, 4: 479}
+479.0
+DATAKILLER OAVG: 479.0 time: 1380217621.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 4: [2]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+{0: {0: 0, 1: 1124, 2: 479, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [], 4: [2]})}
+{0: 1000000, 1: 1124, 2: 479, 3: 0, 4: 479}
+479.0
+DATAKILLER OAVG: 479.0 time: 1380217622.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 4: [2]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+{0: {0: 0, 1: 1124, 2: 479, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [], 4: [2]})}
+{0: 1000000, 1: 1124, 2: 479, 3: 0, 4: 479}
+479.0
+DATAKILLER OAVG: 479.0 time: 1380217623.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 4: [2]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+{0: {0: 0, 1: 1124, 2: 479, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [], 4: [2]})}
+{0: 1000000, 1: 1124, 2: 479, 3: 0, 4: 479}
+479.0
+DATAKILLER OAVG: 479.0 time: 1380217624.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(2, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 4: [2]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+<<<HERE
+<<<HEY!!
+(2, 1400)
+3
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 2: 479, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [], 4: [2]})}
+{0: 1000000, 1: 1124, 2: 479, 3: 0, 4: 479}
+479.0
+DATAKILLER OAVG: 479.0 time: 1380217625.58
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 1152)]
+DATAKILLER (killing link)
+KILLED EDGE: (3, 4, 1152)
+2013-09-26 17:47:06: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 841, 'planetslug4.cse.ucsc.edu': 6420}
+<<<<<<<<<<<<<<<<HERE
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 0)]
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1]})}
+[(0, 1, 1000000), (1, 2, 1904), (2, 4, 479), (3, 4, 0)]
+<<<HERE
+<<<HEY!!
+(0, 1124)
+0
+<<<HERE
+defaultdict(<function <lambda> at 0x999fca4>, {0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {0: [(0, 1124)]}), 2: defaultdict(<type 'list'>, {0: [(1, 479)]}), 3: defaultdict(<type 'list'>, {0: [(1, 1124)]}), 4: defaultdict(<type 'list'>, {0: [(3, 1400)]})})
+{0: {0: 0, 1: 1124, 2: 479, 3: 1124, 4: 1400}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [], 4: []})}
+{0: 1000000, 1: 1124, 2: 479, 3: 0, 4: 0}
+0.0
+DATAKILLER OAVG: 0.0 time: 1380217626.58
+[(0, 1, 1000000), (1, 2, 841), (2, 4, 479), (3, 4, 0)]
+  C-c C-c
+WARNING:MASTER/43278:keyboard interrupt!
+2013-09-26 17:47:07: Master_Server killing all clients
+2013-09-26 17:47:07: planetlab2.cs.colorado.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 17:47:07: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:07: planetlab1.cs.ucla.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 17:47:07: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:07: planetlab01.cs.washington.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 17:47:07: planetlab01.cs.washington.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:07: planetslug4.cse.ucsc.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 17:47:07: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:08: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:08: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:09: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:09: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:09: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:09: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:09: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 17:47:09: planetlab01.cs.washington.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:10: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:10: planetlab2.cs.colorado.edu: finished running process
+2013-09-26 17:47:11: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:11: planetlab1.cs.ucla.edu: finished running process
+2013-09-26 17:47:11: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:11: planetslug4.cse.ucsc.edu: finished running process
+2013-09-26 17:47:12: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 17:47:12: planetlab01.cs.washington.edu: finished running process
+2013-09-26 17:47:12: Exiting, please wait...
+2013-09-26 17:47:13: Finished.
