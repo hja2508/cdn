@@ -1,0 +1,1246 @@
+2013-09-26 16:42:38: Threaded heartbeat server listening on port 43278
+press Ctrl-C to stop
+
+2013-09-26 16:42:38: (111, 'Connection refused')
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:38.237964
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}}
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+{0: {}, 1: {}}
+{0: {}, 1: {}}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {}), 1: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000)]
+2013-09-26 16:42:39: planetlab2.cs.colorado.edu: launching...
+2013-09-26 16:42:39: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:42:39: planetlab01.cs.washington.edu: launching...
+2013-09-26 16:42:39: planetlab01.cs.washington.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:42:39: planetslug4.cse.ucsc.edu: launching...
+2013-09-26 16:42:39: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:42:39: planetlab1.cs.ucla.edu: launching...
+2013-09-26 16:42:39: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000)]
+2013-09-26 16:42:40: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:42:40: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:42:40: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:42:40: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:42:40: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:42:40: planetlab01.cs.washington.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:42:40: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:42:40: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:41.239279
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}}
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+{0: {}, 1: {}}
+{0: {}, 1: {}}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {}), 1: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000)]
+DATAKILLER (killing link)
+2013-09-26 16:42:42: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:42:42: planetlab2.cs.colorado.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 16:42:43: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:42:43: planetlab1.cs.ucla.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 16:42:43: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:42:43: planetlab01.cs.washington.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 16:42:43: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:42:43: planetslug4.cse.ucsc.edu: launching subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:44.242361
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}}
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+{0: {}, 1: {}}
+{0: {}, 1: {}}
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:47.269559
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}}
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+{0: {}, 1: {}}
+{0: {}, 1: {}}
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:50.281372
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}}
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+{0: {}, 1: {}}
+{0: {}, 1: {}}
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)]}
+Number of nodes: 2
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:53.301302
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}}
+[[]]
+[[]]
+[(0, 1, 1000000)]
+<<<<<<REQ!!
+{0: {}, 1: {}}
+{0: {}, 1: {}}
+2013-09-26 16:42:54: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 3951}
+[]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3951)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 3951)]}
+Number of nodes: 3
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:56.315324
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}, 2: {}}
+[[]]
+[[]]
+[(0, 1, 1000000), (1, 2, 3951)]
+<<<<<<REQ!!
+{0: {}, 1: {}, 2: {}}
+{0: {}, 1: {}, 2: {}}
+KILLED EDGE: (1, 2, 1500)
+2013-09-26 16:42:56: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 3951, 'planetslug4.cse.ucsc.edu': 6703}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000), (1, 2, 0)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000), (1, 2, 0)]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 3, 6703)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 3, 6703)]}
+Number of nodes: 4
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:42:59.329473
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000), (1, 2, 0)]
+[0.0]
+Average data rate of stream: 0.0
+Total data pushed to edge overall: 0
+RAN DECISION ENGINE
+{0: {}, 1: {}, 2: {}, 3: {}}
+[[]]
+[[]]
+[(0, 1, 1000000), (1, 3, 6703)]
+<<<<<<REQ!!
+{0: {}, 1: {}, 2: {}, 3: {}}
+{0: {}, 1: {}, 2: {}, 3: {}}
+2013-09-26 16:43:00: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1143}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000), (1, 3, 6703)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000), (1, 3, 6703)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+1
+2
+3
+4
+{0: defaultdict(<type 'list'>, {0: []}), 1: defaultdict(<type 'list'>, {}), 2: defaultdict(<type 'list'>, {}), 3: defaultdict(<type 'list'>, {})}
+{0: {0: 0}}
+{0: defaultdict(<type 'list'>, {})}
+0
+DATAKILLER OAVG: 0.0
+[(0, 1, 1000000), (1, 3, 6703)]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 3, 6703)], 3: [(3, 4, 1143)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 3, 6703)], 3: [(3, 4, 1143)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:43:02.343285
+[1143.0]
+Average data rate of stream: 1143.0
+Total data pushed to edge overall: 1143.0
+RAN DECISION ENGINE
+{0: {}, 1: {0: [(0, 1143.0)]}, 2: {}, 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[bitarray('111')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 3, 6703), (3, 4, 1143)]
+<<<<<<REQ!!
+{0: {}, 1: {0: [(0, 1143.0)]}, 2: {}, 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {}, 1: {0: [('dummy', 1143.0)]}, 2: {}, 3: {0: [('planetlab2.cs.colorado.edu', 1143.0)]}, 4: {0: [('planetslug4.cse.ucsc.edu', 1143.0)]}}
+planetlab2.cs.colorado.edu
+2013-09-26 16:43:02: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 4389, 'planetslug4.cse.ucsc.edu': 6703}
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6703), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6703), (3, 4, 1143)]
+2013-09-26 16:43:04: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 4389, 'planetslug4.cse.ucsc.edu': 6837}
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 1
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+2013-09-26 16:43:09: planetlab01.cs.washington.edu	 {'planetlab1.cs.ucla.edu': 1123}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+DATAKILLER (killing link)
+KILLED EDGE: (1, 2, 1500)
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+2013-09-26 16:43:17: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1206, 'planetslug4.cse.ucsc.edu': 6837}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 1143.0}
+1143.0
+DATAKILLER OAVG: 1143.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 1143)]
+2013-09-26 16:43:18: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 939}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 939}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6837), (3, 4, 939)]
+2013-09-26 16:43:19: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1206, 'planetslug4.cse.ucsc.edu': 6729}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 939}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 1143.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 1143.0)]}, 4: {0: [(3, 1143.0)]}}
+{0: {0: 0, 1: 1143.0, 3: 1143.0, 4: 1143.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1143.0, 2: 0, 3: 1143.0, 4: 939}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (3, 4, 939)]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+['planetlab2.cs.colorado.edu', 'planetlab01.cs.washington.edu', 1500]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 3, 6729)], 2: [(2, 4, 1123)], 3: [(3, 4, 939)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 3, 6729)], 2: [(2, 4, 1123)], 3: [(3, 4, 939)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:43:21.007326
+[939.0]
+Average data rate of stream: 939.0
+Total data pushed to edge overall: 939.0
+RAN DECISION ENGINE
+{0: {}, 1: {0: [(0, 939.0)]}, 2: {}, 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[bitarray('1101')]]
+[[f0_0]]
+[(0, 1, 1000000), (1, 3, 6729), (2, 4, 1123), (3, 4, 939)]
+<<<<<<REQ!!
+{0: {}, 1: {0: [(0, 939.0)]}, 2: {}, 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {}, 1: {0: [('dummy', 939.0)]}, 2: {}, 3: {0: [('planetlab2.cs.colorado.edu', 939.0)]}, 4: {0: [('planetslug4.cse.ucsc.edu', 939.0)]}}
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (2, 4, 1123), (3, 4, 939)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 2
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (2, 4, 1123), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (2, 4, 1123), (3, 4, 939)]
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (2, 4, 1123), (3, 4, 939)]
+2013-09-26 16:43:24: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 5298, 'planetslug4.cse.ucsc.edu': 6729}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (2, 4, 1123), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6729), (2, 4, 1123), (3, 4, 939)]
+DATAKILLER (killing link)
+KILLED EDGE: (1, 2, 1500)
+2013-09-26 16:43:26: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 5298, 'planetslug4.cse.ucsc.edu': 6468}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 939)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 939)]
+2013-09-26 16:43:32: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 970}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 970)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 970)]
+2013-09-26 16:43:34: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 2511, 'planetslug4.cse.ucsc.edu': 6468}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 1123), (3, 4, 970)]
+2013-09-26 16:43:35: planetlab01.cs.washington.edu	 {'planetlab1.cs.ucla.edu': 571}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6468), (2, 4, 571), (3, 4, 970)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 3
+2013-09-26 16:43:36: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 2511, 'planetslug4.cse.ucsc.edu': 6784}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+2
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 939.0)]}, 2: defaultdict(<type 'list'>, {}), 3: {0: [(1, 939.0)]}, 4: {0: [(3, 939.0)]}}
+{0: {0: 0, 1: 939.0, 3: 939.0, 4: 939.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 3: [1], 4: [3]})}
+{0: 1000000, 1: 939.0, 2: 0, 3: 939.0, 4: 939.0}
+939.0
+DATAKILLER OAVG: 939.0
+[(0, 1, 1000000), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+[]
+[]
+[]
+[]
+<<<< HERE WE ARE>>
+{0: [(0, 1, 1000000)], 1: [(1, 2, 2511), (1, 3, 6784)], 2: [(2, 4, 571)], 3: [(3, 4, 970)]}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: [(0, 1, 1000000)], 1: [(1, 2, 2511), (1, 3, 6784)], 2: [(2, 4, 571)], 3: [(3, 4, 970)]}
+Number of nodes: 5
+Starting Algorithm
+Groups (1): [[1.0, [200, 600, 1400], [(4, 1.0)]]]
+Bitrate Levels: [[200, 600, 1400]]
+2013-09-26 12:43:38.624266
+[1400.0]
+Average data rate of stream: 1400.0
+Total data pushed to edge overall: 1400.0
+RAN DECISION ENGINE
+{0: {}, 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+[[bitarray('10101'), bitarray('11010')]]
+[[f0_0, f0_1]]
+[(0, 1, 1000000), (1, 2, 2511), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+<<<<<<REQ!!
+{0: {}, 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+{0: {}, 1: {0: [('dummy', 829.0), ('dummy', 571.0)]}, 2: {0: [('planetlab2.cs.colorado.edu', 571.0)]}, 3: {0: [('planetlab2.cs.colorado.edu', 829.0)]}, 4: {0: [('planetslug4.cse.ucsc.edu', 829.0), ('planetlab01.cs.washington.edu', 571.0)]}}
+planetlab2.cs.colorado.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+{0: {0: 0, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [2, 3]})}
+{0: 1000000, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}
+1400.0
+DATAKILLER OAVG: 1400.0
+[(0, 1, 1000000), (1, 2, 2511), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+planetlab01.cs.washington.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+{0: {0: 0, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [2, 3]})}
+{0: 1000000, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}
+1400.0
+DATAKILLER OAVG: 1400.0
+[(0, 1, 1000000), (1, 2, 2511), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+planetslug4.cse.ucsc.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+{0: {0: 0, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [2, 3]})}
+{0: 1000000, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}
+1400.0
+DATAKILLER OAVG: 1400.0
+[(0, 1, 1000000), (1, 2, 2511), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+DATAKILLER (killing link)
+KILLED EDGE: (1, 2, 1500)
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+{0: {0: 0, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [2, 3]})}
+{0: 1000000, 1: 1400.0, 2: 0, 3: 829.0, 4: 829.0}
+829.0
+DATAKILLER OAVG: 829.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+planetlab1.cs.ucla.edu
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (2, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+<<<HEY!!
+(2, 571.0)
+3
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 1400.0, 2: 571.0, 3: 829.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [2, 3]})}
+{0: 1000000, 1: 1400.0, 2: 0, 3: 829.0, 4: 829.0}
+829.0
+DATAKILLER OAVG: 829.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 1400.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 1400.0, 2: 0, 3: 1400.0, 4: 970}
+970.0
+DATAKILLER OAVG: 970.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 970}
+970.0
+DATAKILLER OAVG: 970.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 970)]
+2013-09-26 16:43:45: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1155}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 1155)]
+2013-09-26 16:43:48: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1278, 'planetslug4.cse.ucsc.edu': 6784}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6784), (2, 4, 571), (3, 4, 1155)]
+2013-09-26 16:43:50: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 1278, 'planetslug4.cse.ucsc.edu': 6593}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+<<<HERE
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+DATAKILLER (fixing link)
+DATAKILLER COUNT: 4
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 1278), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 1278), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 1278), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 1278), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [1], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 1278), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+DATAKILLER (killing link)
+KILLED EDGE: (1, 2, 1500)
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+2013-09-26 16:43:58: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 2986, 'planetslug4.cse.ucsc.edu': 6593}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1155}
+1155.0
+DATAKILLER OAVG: 1155.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6593), (2, 4, 571), (3, 4, 1155)]
+2013-09-26 16:43:59: planetslug4.cse.ucsc.edu	 {'planetlab1.cs.ucla.edu': 1053}
+2013-09-26 16:44:00: planetlab2.cs.colorado.edu	 {'planetlab01.cs.washington.edu': 2986, 'planetslug4.cse.ucsc.edu': 6705}
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1053}
+1053.0
+DATAKILLER OAVG: 1053.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6705), (2, 4, 571), (3, 4, 1053)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1053}
+1053.0
+DATAKILLER OAVG: 1053.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6705), (2, 4, 571), (3, 4, 1053)]
+<<<<<<<<<<<<<<<<HERE
+<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+[[1.0, [200, 400, 800], [(4, 1.0)]]]
+{0: defaultdict(<type 'list'>, {0: []}), 1: {0: [(0, 829.0), (0, 571.0), (0, 1799.0)]}, 2: {0: [(1, 571.0)]}, 3: {0: [(1, 829.0), (1, 970)]}, 4: {0: [(3, 829.0), (3, 571.0)]}}
+{0: {0: 0, 1: 3199.0, 2: 571.0, 3: 1799.0, 4: 1400.0}}
+{0: defaultdict(<type 'list'>, {1: [0], 2: [], 3: [1], 4: [3]})}
+{0: 1000000, 1: 3199.0, 2: 0, 3: 1799.0, 4: 1053}
+1053.0
+DATAKILLER OAVG: 1053.0
+[(0, 1, 1000000), (1, 2, 0), (1, 3, 6705), (2, 4, 571), (3, 4, 1053)]
+  C-c C-c
+WARNING:MASTER/43278:keyboard interrupt!
+2013-09-26 16:44:02: Master_Server killing all clients
+2013-09-26 16:44:02: planetslug4.cse.ucsc.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 16:44:02: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:02: planetlab01.cs.washington.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 16:44:02: planetlab01.cs.washington.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:03: planetlab2.cs.colorado.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 16:44:03: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:03: planetlab1.cs.ucla.edu: finished running subprocess: "curl https://raw.github.com/mukerjee/cdn/master/init.sh > ./init.sh && chmod 755 ./init.sh && ./init.sh && python -u ~/cdn/local_server.py"
+2013-09-26 16:44:03: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:04: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:04: planetslug4.cse.ucsc.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:04: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:04: planetlab01.cs.washington.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:04: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:04: planetlab2.cs.colorado.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:04: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall sh; sudo killall init.sh; sudo killall rsync; sudo /usr/sbin/httpd -k stop"
+2013-09-26 16:44:04: planetlab1.cs.ucla.edu: launching subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:06: planetlab2.cs.colorado.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:06: planetlab2.cs.colorado.edu: finished running process
+2013-09-26 16:44:06: planetslug4.cse.ucsc.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:06: planetslug4.cse.ucsc.edu: finished running process
+2013-09-26 16:44:06: planetlab01.cs.washington.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:06: planetlab01.cs.washington.edu: finished running process
+2013-09-26 16:44:07: planetlab1.cs.ucla.edu: finished running subprocess: "sudo killall -s INT local_server.py; sudo killall -s INT python; sleep 1; sudo killall local_server.py; sudo killall python"
+2013-09-26 16:44:07: planetlab1.cs.ucla.edu: finished running process
+2013-09-26 16:44:07: Exiting, please wait...
+2013-09-26 16:44:07: Finished.
