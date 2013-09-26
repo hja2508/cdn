@@ -67,10 +67,12 @@ G = []
 DECISION_RUNNING = True
 DE_FLOPPER = 3
 DE_FLOP_COUNT = 0
-DATA_KILLER = 5
+DATA_KILLER = 10
 DATA_KILLER_COUNT = 0
 KILLED_EDGE = []
 KILLED_EDGE_NAME = []
+DOWN = defaultdict(list)
+SWITCH_COUNTER = defaultdict(int)
 
 class NodeWatcher(threading.Thread):
     def preexec(self): # Don't forward signals.
@@ -240,10 +242,17 @@ class Printer(threading.Thread):
 
 class Stats(threading.Thread):
     def run(self):
-        global DATA_KILLER, DATA_KILLER_COUNT, KILLED_EDGE, KILLED_EDGE_NAME, E, REQ
+        global DATA_KILLER, DATA_KILLER_COUNT, KILLED_EDGE, KILLED_EDGE_NAME, E, REQ, DOWN, SWITCH_COUNTER
         while FINISHED_EVENT.isSet():
             print "<<<<<<<<<<<<<<<<HERE"
             nc = len(NODES[SOURCES])+len(NODES[REFLECTORS])+len(NODES[EDGES])+1
+
+#             if not REQ:
+#                 time.sleep(1)
+#                 continue
+
+            if not REQ:
+                REQ = defaultdict(lambda: defaultdict(list))
 
             if not DECISION_RUNNING:
                 print G
@@ -268,8 +277,10 @@ class Stats(threading.Thread):
                                 residule = e[2] - current_use
                                 max_link = e if residule > max_link[2] else max_link
                         print max_link[0], br
-                        REQ[node][g].append((max_link[0],br))
-                        print t
+                        if max_link[2] > 0:
+                            REQ[node][g].append((max_link[0],br))
+                            SWITCH_COUNTER[node] = 5
+                            print t
                 print REQ
 
             my_parents = {}
@@ -294,58 +305,68 @@ class Stats(threading.Thread):
 
             print REQ
             print G
+            print my_parents
+            print E
             for g in xrange(len(G)):
                 REQ[0][g] = []
                 for n in xrange(1, nc):
                     if not n in REQ or not g in REQ[n]:
+                        print n
                         continue
                     parent_br = defaultdict(int)
                     for parent, br in REQ[n][g]:
                         parent_br[parent] += br
-                    b = 0
-                    for e in E:
-                        if e[0] == parent and e[1] == n:
-                            b = min(e[2], br) # what parent link can do
-                    cur_br = 0
-                    for p, br in REQ[parent][g]:
-                        cur_br += br
-                    b -= cur_br
-                    print cur_br, b
-                    if b > 0:
-                        max_link = (0,0,0)
-                        for e in E:
-                            if e[1] == parent:
-                                current_use = 0
-                                for p, br in REQ[parent][g]:
-                                    if p == e[0]:
-                                        current_use += br
-                                residule = e[2] - current_use
-                                max_link = e if residule > max_link[2] else max_link
-                        REQ[parent][g].append((max_link[0], b))
-                
+                    changed_parent = 0
+                    for parent in my_parents[g][n]:
+                        aggr = sum([br for p,br in REQ[parent][g]])
+                        if aggr < parent_br[parent]: #I'm requesting more than the parent is giving
+                            for e in E:
+                                if e[0] == parent and e[1] == n:
+                                    b = min(e[2], parent_br[parent])
+                                    if b > aggr:
+                                        max_link = (0,0,0)
+                                        for e in E:
+                                            if e[1] == parent:
+                                                aggr_to_gp = sum([br for p,br in REQ[parent][g] if p == e[0]])
+                                                residule = e[2] - aggr_to_gp
+                                                if residule > max_link[2]:
+                                                    max_link = e
+                                                    b = min(b, residule)
+                                                    #b = residule
+                                        if max_link[2]:
+                                            REQ[parent][g].append((max_link[0], b))
+                                            SWITCH_COUNTER[parent] = 5
+                                            changed_parent = 1
+                        if changed_parent: break
 
 
             # update REQ based on link failures
             for node,r in REQ.items():
-                max_link = (0,0,0)
-                for e in E:
-                    if e[1] == node:
-                        current_use = 0
-                        for p, br in REQ[e[0]][g]:
-                            if p == e[0]:
-                                current_use += br
-                        residule = e[2] - current_use
-                        max_link = e if residule > max_link[2] else max_link
-                for e in E:
-                    if e[1] == node and e[2] == 0: #node lost link
-                        print '<<<HERE'
-                        for g, plist in r.items():
-                            for parent in plist:
-                                if parent[0] == e[0]:
-                                    print '<<<HEY!!'
-                                    # add request br to best local link
-                                    plist.append((max_link[0], parent[1]))
-                                    plist.remove(parent)
+                for g,z in enumerate(G):
+                    if g not in REQ[node]: continue
+                    max_link = (0,0,0)
+                    for e in E:
+                        if e[1] == node:
+                            current_use = 0
+                            for p, br in REQ[node][g]:
+                                if p == e[0]:
+                                    current_use += br
+                            residule = e[2] - current_use
+                            max_link = e if residule > max_link[2] else max_link
+                    if max_link[2] == 0: continue
+                    for e in E:
+                        if e[1] == node and e[0] in DOWN[node]: # node not providing any data e[2] == 0: #node lost link
+                            print '<<<HERE'
+                            for g, plist in r.items():
+                                for parent in plist:
+                                    if parent[0] == e[0]:
+                                        print '<<<HEY!!'
+                                        print parent
+                                        print max_link[0]
+                                        # add request br to best local link
+                                        plist.append((max_link[0], parent[1]))
+                                        plist.remove(parent)
+                                        SWITCH_COUNTER[node] = 5
             print REQ
 
             
@@ -403,6 +424,7 @@ class Stats(threading.Thread):
 
             print stream_total_bw
             print my_parents
+            if not my_parents: continue
 
             oavg = 0
             for g,v in stream_aggr_br.items():
@@ -415,7 +437,19 @@ class Stats(threading.Thread):
                 for i in xrange(1,nc):
                     upstream_br[i] = 0
                     for parent in my_parents[g][i]:
-                        upstream_br[i] += upstream_br[parent] #stream_total_bw[g][parent]
+                        linkc = 0
+                        for e in E:
+                            if e[0] == parent and e[1] == i:
+                                linkc = e[2]
+                        if DECISION_RUNNING and upstream_br[parent] == 0:
+                            DOWN[i] = list(set(DOWN[i] + [parent]))
+                        elif not DECISION_RUNNING:
+                            if SWITCH_COUNTER[i] == 0:
+                                DOWN[i] = list(set(DOWN[i] + [parent]))
+                            else:
+                                SWITCH_COUNTER[i] -= 1
+                        upstream_br[i] += \
+                            min(upstream_br[parent], linkc) #stream_total_bw[g][parent]
                     if not i in stream_total_bw[g]:
                         continue
                     upstream_br[i] = min(upstream_br[i], stream_total_bw[g][i])
@@ -426,7 +460,7 @@ class Stats(threading.Thread):
                 avg = (float(avg) / count) if count else 0
                 oavg += float(avg)/len(G)
                 print avg
-            print 'OAVG: ' + str(oavg)
+            print 'DATAKILLER OAVG: ' + str(oavg) + " time: " + str(time.time())
 
             print E
 
@@ -436,6 +470,7 @@ class Stats(threading.Thread):
                 e = (0,0,0)
                 while e[0] == 0:
                     e = random.sample(E, 1)[0]
+                #e = (1,2,1500)
                 print "KILLED EDGE: " + str(e)
                 KILLED_EDGE_NAME = [NODERMAP[e[0]], NODERMAP[e[1]], e[2]]
                 KILLED_EDGE = [e[0], e[1], e[2]]
@@ -451,9 +486,10 @@ class Stats(threading.Thread):
                         E[i] = (e[0], e[1], e[2])
                 KILLED_EDGE = []
                 KILLED_EDGE_NAME = []
+                DOWN = defaultdict(list)
                 DATA_KILLER_COUNT += 1
                 print 'DATAKILLER COUNT: ' + str(DATA_KILLER_COUNT)
-                DATA_KILLER = 5
+                DATA_KILLER = 10
                 
 
             #sys.exit(-1)
@@ -466,35 +502,43 @@ class Decision(threading.Thread):
     def run(self):
         global REQ, ST, F, E, DE_FLOPPER, DE_FLOP_COUNT, SORTED_E, NODERMAP, G
         while FINISHED_EVENT.isSet():
+#             if not REQ:
+#                 time.sleep(1)
+#                 continue
             nodeMap = {}
             NODERMAP = {}
-            for i,key in enumerate(HOSTNAME_LOOKUP):
-                nodeMap[key] = i+1
-                NODERMAP[i+1] = key
+            i = 1
+            for type in xrange(3):
+                for j,key in enumerate(HOSTNAME_LOOKUP):
+                    if key in NODES[type]:
+                        nodeMap[key] = i
+                        NODERMAP[i] = key
+                        i += 1
             NODERMAP[0] = 'dummy'
 
             SORTED_E = {}
 
-            if len(DSTATSD) == 0:
-                LA = 'planetlab1.cs.ucla.edu'
-                SF = 'planetslug4.cse.ucsc.edu'
-                SE = 'planetlab01.cs.washington.edu'
-                DE = 'planetlab2.cs.colorado.edu'
-                HO = 'ricepl-1.cs.rice.edu'
+#             if len(DSTATSD) == 0:
+#                 LA = 'planetlab1.cs.ucla.edu'
+#                 SF = 'planetslug4.cse.ucsc.edu'
+#                 SE = 'planetlab01.cs.washington.edu'
+#                 DE = 'planetlab2.cs.colorado.edu'
+#                 HO = 'ricepl-1.cs.rice.edu'
 
-                DSTATSD[DE] = {}
-                DSTATSD[DE][SF] = 1500
-                DSTATSD[DE][SE] = 1500
+#                 DSTATSD[DE] = {}
+#                 DSTATSD[DE][SF] = 1500
+#                 DSTATSD[DE][SE] = 1500
 
-                DSTATSD[HO] = {}
-                DSTATSD[HO][SF] = 1500
-                DSTATSD[HO][SE] = 1500
+# #                 DSTATSD[HO] = {}
+# #                 DSTATSD[HO][SF] = 1500
+# #                 DSTATSD[HO][SE] = 1500
                 
-                DSTATSD[SF] = {}
-                DSTATSD[SF][LA] = 1000
+#                 DSTATSD[SF] = {}
+#                 DSTATSD[SF][LA] = 1000
+#                 DSTATSD[SF][HO] = 2000
 
-                DSTATSD[SE] = {}
-                DSTATSD[SE][LA] = 1000
+#                 DSTATSD[SE] = {}
+#                 DSTATSD[SE][LA] = 1000
 
 
 
@@ -581,9 +625,16 @@ class Decision(threading.Thread):
 
             time.sleep(DECISION_PERIOD)
 
-            if not DECISION_RUNNING:
-                sys.exit(-1)
+#             if not DECISION_RUNNING:
+#                 sys.exit(-1)
 
+
+class Cleaner(threading.Thread):
+    def run(self):
+        while FINISHED_EVENT.isSet():
+            DOWN = defaultdict(list)
+            time.sleep(10)
+        
 
 class Runner(threading.Thread):
     def run(self):
@@ -591,7 +642,7 @@ class Runner(threading.Thread):
             for node in t:
                 while True:
                     try:
-                        #rpc('localhost', 'hard_restart', (node, ))
+                        rpc('localhost', 'hard_restart', (node, ))
                         break;
                     except Exception, e:
                         printtime('%s' % e)
