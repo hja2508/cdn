@@ -240,10 +240,37 @@ class Printer(threading.Thread):
 
 class Stats(threading.Thread):
     def run(self):
-        #global REQ, ST, F, E, SORTED_E
-        global DATA_KILLER, DATA_KILLER_COUNT, KILLED_EDGE, KILLED_EDGE_NAME, E
+        global DATA_KILLER, DATA_KILLER_COUNT, KILLED_EDGE, KILLED_EDGE_NAME, E, REQ
         while FINISHED_EVENT.isSet():
             print "<<<<<<<<<<<<<<<<HERE"
+            nc = len(NODES[SOURCES])+len(NODES[REFLECTORS])+len(NODES[EDGES])+1
+
+            if not DECISION_RUNNING:
+                print G
+                print E
+                print REQ
+                if not REQ:
+                    for i in xrange(nc):
+                        REQ[i] = defaultdict(list)
+                if not 0 in REQ: REQ[0] = {}
+                for g, v in enumerate(G):
+                    for node, weight in v[2]:
+                        if REQ[node][g]: continue
+                        br = sum(v[1])
+                        max_link = (0,0,0)
+                        for e in E:
+                            if e[1] == node:
+                                current_use = 0
+                                print e
+                                for p, br in REQ[e[0]][g]:
+                                    if p == e[0]:
+                                        current_use += br
+                                residule = e[2] - current_use
+                                max_link = e if residule > max_link[2] else max_link
+                        print max_link[0], br
+                        REQ[node][g].append((max_link[0],br))
+                        print t
+                print REQ
 
             my_parents = {}
             for node,r in REQ.items():
@@ -258,9 +285,15 @@ class Stats(threading.Thread):
 
 #            print my_parents
 
+            for n, v in REQ.items():
+                if not v:
+                    REQ[n] = defaultdict(list)
+
             # update based on REQ updates                
-            nc = len(NODES[SOURCES])+len(NODES[REFLECTORS])+len(NODES[EDGES])+1
             print"<<<<<<<<<<<<<<<<<OMG>>>>>>>>>>>"
+
+            print REQ
+            print G
             for g in xrange(len(G)):
                 REQ[0][g] = []
                 for n in xrange(1, nc):
@@ -390,7 +423,7 @@ class Stats(threading.Thread):
                         print upstream_br
                         avg += upstream_br[i]
                         count += 1
-                avg /= count
+                avg = (float(avg) / count) if count else 0
                 oavg += float(avg)/len(G)
                 print avg
             print 'OAVG: ' + str(oavg)
@@ -426,39 +459,6 @@ class Stats(threading.Thread):
             #sys.exit(-1)
 
 
-#             oavg = 0
-#             for g,v in enumerate(ST):
-#                 for p,s in enumerate(v): # a single ST
-#                     if pulp.value(F[g][p]) == 0: continue
-#                     avg = 0
-#                     obn = MAX_LINK
-#                     for t in G[g][2]:
-#                         bn = MAX_LINK
-#                         for i in xrange(len(s)):
-#                             if s[i]:
-#                                 e = E[i]
-#                                 if e in reverse_edge[t[0]]:
-#                                     for k, r in enumerate(REQ[t[0]][g]):
-#                                         if r[0] == e[0]:
-#                                             rbr = r[1] #pulp.value(F[g][p]) #r[1]
-#                                             lc = e[2]
-#                                             sc = stream_count[t[0]][e[0]]
-#                                             abr = aggr_br[t[0]][e[0]]
-#                                             if abr > lc:
-#                                                 rbr = rbr - ((abr - lc)/sc)
-#                                                 REQ[t[0]][g][k] = (r[0], rbr)
-#                                             bn = min(bn, rbr)
-#                                 bn = min(bn, e[2])
-#                                 for k, r in enumerate(REQ[t[0]][g]):
-#                                     if r[0] == e[0]:
-#                                         REQ[t[0]][g][k] = (r[0], bn)
-#                         avg += bn*(1.0/len(G[g][2]))
-#                         obn = min(obn, bn)
-#                     for i,e in enumerate(E):
-#                         if s[i]:
-#                             E[i] = (e[0], e[1], e[2] - obn)
-#                     oavg += avg*(1.0/len(G))
-#             print 'OAVG = ' + str(oavg)
             time.sleep(STAT_PERIOD)
 
 
@@ -480,10 +480,15 @@ class Decision(threading.Thread):
                 SF = 'planetslug4.cse.ucsc.edu'
                 SE = 'planetlab01.cs.washington.edu'
                 DE = 'planetlab2.cs.colorado.edu'
+                HO = 'ricepl-1.cs.rice.edu'
 
                 DSTATSD[DE] = {}
                 DSTATSD[DE][SF] = 1500
                 DSTATSD[DE][SE] = 1500
+
+                DSTATSD[HO] = {}
+                DSTATSD[HO][SF] = 1500
+                DSTATSD[HO][SE] = 1500
                 
                 DSTATSD[SF] = {}
                 DSTATSD[SF][LA] = 1000
@@ -535,6 +540,8 @@ class Decision(threading.Thread):
                     if DECISION_RUNNING:
                         REQ, ST, F, E, avg_d, lpt = DecisionEngine(G, SORTED_E, False)
                         print "RAN DECISION ENGINE"
+                    else:
+                        not_REQ, ST, F, E, avg_d, lpt = DecisionEngine(G, SORTED_E, False)
                 except Exception, e:
                     print e
 
@@ -573,7 +580,9 @@ class Decision(threading.Thread):
 #                 rpc('localhost', 'turn_on_DE', ())
 
             time.sleep(DECISION_PERIOD)
-            #sys.exit(-1)
+
+            if not DECISION_RUNNING:
+                sys.exit(-1)
 
 
 class Runner(threading.Thread):
