@@ -57,14 +57,14 @@ SOURCES = 0
 REFLECTORS = 1
 EDGES = 2
 
-REQ = {}
+REQ = defaultdict(lambda: defaultdict(list))
 ST = []
 F = []
 E = []
 SORTED_E = {}
 NODERMAP = {}
 G = []
-DECISION_RUNNING = True
+DECISION_RUNNING = False #True
 DE_FLOPPER = 3
 DE_FLOP_COUNT = 0
 DATA_KILLER = 10
@@ -199,7 +199,7 @@ class MasterService(rpyc.Service):
         if not self._host in DSTATSD:
             DSTATSD[self._host] = {}
         DSTATSD[self._host][stats[0]] = stats[1]
-        if 'stats' in PRINT_VERB: printtime('%s\t %s' % (self._host, DSTATSD[self._host]))
+        if 'stats' in PRINT_VERB: printtime('STATSD: %s\t %s' % (self._host, DSTATSD[self._host]))
 
     def exposed_error(self, msg, host):
         printtime('<<<< %s  (error (not doing anything about it)!): %s >>>>' % (host, msg))
@@ -311,13 +311,15 @@ class Stats(threading.Thread):
                 REQ[0][g] = []
                 for n in xrange(1, nc):
                     if not n in REQ or not g in REQ[n]:
-                        print n
+#                         print n
                         continue
                     parent_br = defaultdict(int)
                     for parent, br in REQ[n][g]:
                         parent_br[parent] += br
                     changed_parent = 0
                     for parent in my_parents[g][n]:
+#                         if parent not in REQ or g not in REQ[parent]:
+#                             continue
                         aggr = sum([br for p,br in REQ[parent][g]])
                         if aggr < parent_br[parent]: #I'm requesting more than the parent is giving
                             for e in E:
@@ -428,6 +430,7 @@ class Stats(threading.Thread):
 
             oavg = 0
             for g,v in stream_aggr_br.items():
+                if not g in my_parents: continue
                 recvd = defaultdict(int)
                 avg = 0
                 count = 0
@@ -436,6 +439,7 @@ class Stats(threading.Thread):
                 #print v
                 for i in xrange(1,nc):
                     upstream_br[i] = 0
+                    if not i in my_parents[g]: continue
                     for parent in my_parents[g][i]:
                         linkc = 0
                         for e in E:

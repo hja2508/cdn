@@ -26,14 +26,12 @@ my_name = check_output("hostname")[0].strip()
 
 FINISH_EVENT = threading.Event()    
     
-def wait_for_neighbor(neighbor):
-    while True:
-        try:
-            printtime('waiting on: %s' % neighbor)
-            out = rpc(neighbor, 'check_httpd', ())
-            return out
-        except:
-            time.sleep(1)
+def check_neighbor(neighbor):
+    try:
+        printtime('checking on: %s' % neighbor)
+        return rpc(neighbor, 'check_httpd', ())
+    except:
+        return ""
 
 def start_httpd(conf_file = HTTPD_CONF_TOP):
     printtime('Starting httpd')
@@ -98,7 +96,7 @@ class Discovery(threading.Thread):
                 printtime('<<<<DISCOVERY>>>>')
                 nodes_to_check = rpc(MASTER_SERVER, 'get_nodes_to_check', ())
                 for node in nodes_to_check:
-                    wait_for_neighbor(node)
+                    if check_neighbor(node) == "": continue
                     cmd = 'ab http://%s:%d/test | grep "Transfer rate"' % (node, HTTP_PORT)
                     out = check_output(cmd)[0]
                     printtime(out)
