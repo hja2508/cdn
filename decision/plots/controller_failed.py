@@ -66,6 +66,9 @@ failedcdf.append(1)
 
 font = { 'size' : 20}
 plt.rc('font', **font)
+params = {'legend.fontsize': 16,
+          'legend.linewidth': 2}
+plt.rcParams.update(params)
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)

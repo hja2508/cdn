@@ -17,27 +17,27 @@ for i in xrange(len(c)):
 
 x = xrange(1,len(time)+1)
 
-font = { 'size' : 20}
+font = { 'size' : 28}
 plt.rc('font', **font)
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-fig.subplots_adjust(top=.95, bottom=.13, left=.15)
-ax.plot(x,time, label='Global Coordination(VDN)', linewidth=5)
+fig.subplots_adjust(top=.95, bottom=.16, left=.18)
+ax.plot(x,time, label='VDN', linewidth=5)
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels)
 ax.set_xlabel('Number of Controllers')
-ax.set_ylabel('Decision Latency (seconds)')
+ax.set_ylabel('Latency (seconds)')
 savefig('scalability2.pdf')
 #plt.show()
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-fig.subplots_adjust(top=.95, bottom=.13, left=.15)
-ax.plot(x,avg, label='Global Coordination (VDN)', linewidth=5)
+fig.subplots_adjust(top=.95, bottom=.16, left=.18)
+ax.plot(x,avg, label='VDN', linewidth=5)
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels)
 ax.set_xlabel('Number of Controllers')
-ax.set_ylabel('Average Video Channel Bitrate (Kbps)')
+ax.set_ylabel('Average Bitrate (Kbps)')
 savefig('scalability_performance.pdf')
 #plt.show()

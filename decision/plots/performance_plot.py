@@ -36,12 +36,15 @@ x = xrange(1,len(cw)+1)
 x = [l*5 for l in x]
 
 
-font = { 'size' : 20}
+font = { 'size' : 28}
 plt.rc('font', **font)
+params = {'legend.fontsize': 20,
+          'legend.linewidth': 2}
+plt.rcParams.update(params)
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-fig.subplots_adjust(top=.95, bottom=.13, left=.15)
+fig.subplots_adjust(top=.95, bottom=.16, left=.20)
 (_, caps, _) = ax.errorbar(x,cw, yerr=ce, linestyle='-', label='Global Coordination (VDN)', elinewidth=3, linewidth=7)
 fatcaps(caps)
 (_, caps, _) = ax.errorbar(x,sw, yerr=se, linestyle='--', label='No Coordination (Local)', elinewidth=3, linewidth=7)
@@ -49,7 +52,7 @@ fatcaps(caps)
 handles, labels = ax.get_legend_handles_labels()
 ylim([0,1500])
 ax.legend(handles, labels)
-ax.set_xlabel('Number of Unique Video Channels')
-ax.set_ylabel('Average Video Channel Bitrate (Kbps)')
+ax.set_xlabel('Number of Video Channels')
+ax.set_ylabel('Average Bitrate (Kbps)')
 savefig('performance_streams.pdf')
 #plt.show()

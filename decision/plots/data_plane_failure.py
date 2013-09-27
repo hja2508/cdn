@@ -120,13 +120,19 @@ skilledcdf.append(1)
 cxvalues.append(cxvalues[-1]+1)
 ckilledcdf.append(1)
 
-font = { 'size' : 20}
+font = { 'size' : 20 }
 plt.rc('font', **font)
+#plt.rc('legend.fontsize', **20)
+
+params = {'legend.fontsize': 16,
+          'legend.linewidth': 2}
+plt.rcParams.update(params)
+#plt.legend(loc=2,prop={'size':6})
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
 fig.subplots_adjust(top=.95, bottom=.13, left=.15)
-ax.plot(cx,ct, label='Partially Centralized', linewidth=5)
+ax.plot(cx,ct, label='Partially Centralized (VDN)', linewidth=5)
 ax.plot(sx,st, label='Purely Local', linewidth=5, linestyle='--')
 ax.errorbar([5],[1250], xerr=[4.8], color='black', linewidth=3)
 ax.errorbar([12],[1250], xerr=[1.8], color='black', linewidth=3)
@@ -154,11 +160,11 @@ savefig('data_plane_failure.pdf')
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
 fig.subplots_adjust(top=.95, bottom=.13, left=.15)
-ax.plot(cxvalues,ckilledcdf, label='Partially Centralized', linewidth=5)
+ax.plot(cxvalues,ckilledcdf, label='Partially Centralized (VDN)', linewidth=5)
 ax.plot(sxvalues,skilledcdf, label='Purely Local', linewidth=5, linestyle='--')
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels, loc="lower right")
 ax.set_ylabel('% of trials (CDF)')
-ax.set_xlabel('Performance Degradation during Convergence Phase')
+ax.set_xlabel('Performance during Convergence Phase')
 savefig('data_plane_convergence_cdf.pdf')
 #plt.show()

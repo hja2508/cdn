@@ -35,20 +35,24 @@ FRACT = 0.01
 x = xrange(1,len(sw)+1)
 x = [int(j*FRACT*LINKS)*5 for j in x]
 
-font = { 'size' : 20}
+font = { 'size' : 28}
 plt.rc('font', **font)
+params = {'legend.fontsize': 20,
+          'legend.linewidth': 2}
+plt.rcParams.update(params)
+
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-fig.subplots_adjust(top=.95, bottom=.13, left=.15)
-(_, caps, _) = ax.errorbar(x,cw, yerr=ce, linestyle='-', label='Global Coordination (VDN)', elinewidth=3, linewidth=5)
+fig.subplots_adjust(top=.95, bottom=.16, left=.20)
+(_, caps, _) = ax.errorbar(x,cw, yerr=ce, linestyle='-', label='Global Coord. (VDN)', elinewidth=3, linewidth=5)
 fatcaps(caps)
-(_, caps, _) = ax.errorbar(x,sw, yerr=se, linestyle='--', label='No Coordination (Local)', elinewidth=3, linewidth=5)
+(_, caps, _) = ax.errorbar(x,sw, yerr=se, linestyle='--', label='No Coord. (Local)', elinewidth=3, linewidth=5)
 fatcaps(caps)
 handles, labels = ax.get_legend_handles_labels()
 ylim([-10,700])
 ax.legend(handles, labels, loc='upper left')
 ax.set_xlabel('Number of Links')
-ax.set_ylabel('Average Video Channel Bitrate (Kbps)')
+ax.set_ylabel('Average Bitrate (Kbps)')
 savefig('performance_links.pdf')
 #plt.show()
