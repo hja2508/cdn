@@ -496,25 +496,25 @@ def main():
 
     # scalability testing
     r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    for num_workers in xrange(1, 11):
-#         FindPathResults = {}
-#         STCP_IN = []
-#         STCP_LEN = 0
-#         STCP_SET = set()
-        rt = 0
-        avg = 0
-        SSE = {}
-        for node, list in sE.items():
-            SSE[node] = [(l[0],l[1],l[2]/num_workers) for l in list]
-        for i in xrange(num_workers):
-            frac = int(len(g)/num_workers)
-            g2 = g[i*frac:(i+1)*frac]
-            avg_d = 0
-            r, st, f, e, avg_d, lpt = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
-            rt = max(rt, lpt)
-            avg += avg_d*(1.0/num_workers)
-        print "RT for %d workers: %f" % (num_workers, rt)
-        print "RT avg for %d workers: %f" % (num_workers, avg)
+#     for num_workers in xrange(1, 11):
+# #         FindPathResults = {}
+# #         STCP_IN = []
+# #         STCP_LEN = 0
+# #         STCP_SET = set()
+#         rt = 0
+#         avg = 0
+#         SSE = {}
+#         for node, list in sE.items():
+#             SSE[node] = [(l[0],l[1],l[2]/num_workers) for l in list]
+#         for i in xrange(num_workers):
+#             frac = int(len(g)/num_workers)
+#             g2 = g[i*frac:(i+1)*frac]
+#             avg_d = 0
+#             r, st, f, e, avg_d, lpt = DecisionEngine(g2, SSE, int(float(sys.argv[2])))
+#             rt = max(rt, lpt)
+#             avg += avg_d*(1.0/num_workers)
+#         print "RT for %d workers: %f" % (num_workers, rt)
+#         print "RT avg for %d workers: %f" % (num_workers, avg)
 
 if __name__ == '__main__':
     main()
