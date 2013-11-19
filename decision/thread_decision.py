@@ -10,8 +10,11 @@
 import itertools, sys, copy, operator, string, datetime, random, time
 from bitarray import bitarray
 from pulp import *
-from threading import Thread
+#from threading import Thread
+import threading
+#from threading import *
 from collections import defaultdict
+#from cplex import *
 
 E = []
 Ei = []
@@ -27,13 +30,14 @@ deepest = 0
 FRAC = 0.01
 
 FindPathResults = {} # dictionary for dynmaic programming
+STdict = {} # dictionary for STs
 
 # Find ALL paths from _source_ (int) to _dest_ (int) given a bit vector _eb_ that
 # determines which edges in E to consider
-def FindPath(eb, source, dest, result, depth):
-    global deepest
-    if depth > deepest:
-        deepest = depth
+def FindPath(eb, source, dest, result, depth, debug):
+    #global deepest
+    #if depth > deepest:
+    #    deepest = depth
 
     h = str(source)+str(dest)+eb.to01() # index for dynamic programming array
 
@@ -42,7 +46,7 @@ def FindPath(eb, source, dest, result, depth):
         P = FindPathResults[h] 
         result += P
         return
-    except KeyError:
+    except KeyError: 
         pass
 
     # list of all paths from _source_ to _dest_ using edges from BV _eb_
@@ -72,7 +76,7 @@ def FindPath(eb, source, dest, result, depth):
                 else:
                     # see if current child can reach dest in some way
                     #if depth < NUM_NODES * MAX_PATH_LENGTH_FACTOR:
-                    FindPath(e, c, dest, P_All[i-Ei[source]], depth+1)
+                    FindPath(e, c, dest, P_All[i-Ei[source]], depth+1, debug)
 
         for i,P in enumerate(P_All):
             P = [p for p in P if p] # remove null paths
@@ -85,17 +89,25 @@ def FindPath(eb, source, dest, result, depth):
     P_All = [p for p in P_All if p] # remove null paths
     P_All = [item for sublist in P_All for item in sublist] # flatten list down for children
 
+    #print '***STORE', h, P_All, threading.current_thread()
+    #print '***STORE', str(source), str(dest), threading.current_thread()
+    if (debug) :
+    	#print '***STORE', str(source), str(dest)
+    	pass
     FindPathResults[h] = P_All # store results for dynamic programming
     result += P_All
 
-STCP_IN = []
-STCP_LEN = 0
-STCP_SET = set()
+# original STCP global variable declarations
+#STCP_IN = []
+#STCP_LEN = 0
+#STCP_SET = set()
 
 # Find all ways to combine paths to individual nodes to form all possible steiner trees
-def STCP(i, accum): # Set of all Sets of paths    
+#def STCP(i, accum): # Set of all Sets of paths    
+def STCP(i, accum, STCP_IN, STCP_LEN, STCP_SET): # Set of all Sets of paths    
     # each 'paths' is a list of individual paths to the set of nodes in the group
     # as each path is just a BV of edges, we can bitwise-or them together to get the overall graph
+    #thid = id(threading.current_thread())
     if i < STCP_LEN:
         # we now need to check if this graph is actually a tree
         # we just look to see if we see the same node as a destination to more than one edge
@@ -109,14 +121,14 @@ def STCP(i, accum): # Set of all Sets of paths
         # This graph is a tree
         # for one selection of P[0]
         # all the BV's using that selection
-        [STCP(i+1, accum | s) for s in STCP_IN[i]]
+        [STCP(i+1, accum | s, STCP_IN, STCP_LEN, STCP_SET) for s in STCP_IN[i]]
     else:
         # remove duplicate BV's
         STCP_SET.add(accum.to01())
 
 # Given all the paths to nodes in a given group, compute all the steiner trees (ST's)
+#def MakeAllSteinerTrees(i, P):
 def MakeAllSteinerTrees(P):
-    global STCP_IN, STCP_LEN, STCP_SET
     ST = []    
 
     # Create all possible Steiner Trees
@@ -124,10 +136,11 @@ def MakeAllSteinerTrees(P):
     STCP_IN = P
     STCP_LEN = len(P)
     STCP_SET = set()
-    STCP(0, a)
+    STCP(0, a, STCP_IN, STCP_LEN, STCP_SET)
     ST = [bitarray(x) for x in STCP_SET]
 
     return ST
+    #STdict.update({i:ST})
 
 # Calc the bit rate level (i.e. the sum of all the bitrates less than this bit rate)
 def CalcBitrateLevel(g):
@@ -177,7 +190,6 @@ def LPStep(ST):
 
     # w_0*n_0*[v_0,1 * d_0_1] + ....
     prob += lpDot(wn, [lpDot(v[g], d[g]) for g,k in enumerate(G)])
-
 
     status = prob.solve(GLPK(msg = 0))
 
@@ -321,26 +333,84 @@ def SoftStaticStrawman():
     print 'Average data rate of stream: %d' % avg_br
     print 'Total data pushed to edge for soft static algo: ' + str(total_soft_static)
 
-def getST(eb):
-    ST = []
-    for i,g in enumerate(G):
-        P = []
-        #print 'Working on next group (%s)' % i
-        for t in g[2]:
-            p = []
-            FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
-            P += [p]
-            #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
-        ST += [MakeAllSteinerTrees(P)]
-        #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
+def thFindPath(g, eb, i) :
+	global STdict
+#	fname = 'test' + str(i)
+	#f = open('test' + str(i), 'w')
+	P = []
+	#if (i == 5) :
+	#	debug = 1
+	#else :
+	#	debug = 0
+	debug = 0;
+	for t in g[2] :
+		p = []
+		FindPath(eb, 0, t[0], p, 0, debug)
+		P += [p]
+	#f.write(MakeAllSteinerTrees(P))
+	
+	# dict.update() is an atomic operation
+	STdict.update({i:MakeAllSteinerTrees(P)})
 
+	#trees = MakeAllSteinerTrees(P)
+	#print 'trees @ thFindPath:', trees, threading.current_thread()
+	#f.write(str(trees))
+	#f.close()
+
+def getST(eb):
+	threads = []
+	#ST = []
+	
+	for i,g in enumerate(G):	
+# ORIGINAL
+		#P = []
+        ##print 'Working on next group (%s)' % i
+#
+		#for t in g[2]:
+		#	p = []
+		#	FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
+		#	P += [p]
+            ##print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
+#
+		#ST += [MakeAllSteinerTrees(P)]
+        
+# THREADING (FindPath + MakeAllSteinerTrees)
+		th = threading.Thread(target=thFindPath, args=(g, eb, i))
+		#th = threading.Thread(target=MakeAllSteinerTrees, args=(i, P))
+		th.start()
+		threads.append(th)
+	[ t.join() for t in threads ]
+
+# THREADING (MakeAllSteinerTrees)
+		#P = []
+		#for t in g[2]:
+		#	p = []
+		#	FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
+		#	P += [p]
+
+		#th = threading.Thread(target=MakeAllSteinerTrees, args=(i, P))
+		#th.start()
+		#threads.append(th)
+	#[ t.join() for t in threads ]
+
+	#print '*****************'
+	#print 'ST :', ST
+	#print 'STtest :', STtest
+	#print 'STdict :', STdict.values()
+	#print '*****************'
 
     # Group, ST, [nodes, edges]
-    #for i,s in enumerate(ST):
-    #    print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
-    #    pass
+	#for i,s in enumerate(ST):
+		#print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
+		#pass
+	i = 0
+	for st in STdict.values() :
+		print 'how many ST\'s for group ' + str(i) + ':' + str(len(st))
+		i += 1
 
-    return ST
+	#return ST
+	return STdict.values()
+
 
 # def convertST(s):
 #     edges = []
@@ -364,7 +434,7 @@ def MainAlgo():
     
     print 'Starting Algorithm'
     #print 'Groups (' + str(len(G)) + '): ' + str(G)
-    print 'Bitrate Levels: ' + str(BL)
+    #print 'Bitrate Levels: ' + str(BL)
     print datetime.datetime.now()
 
     ST = getST(eb)
@@ -386,41 +456,22 @@ def MainAlgo():
                         req[E[k][1]][g] = [(E[k][0], value(f[g][j]))]
     #print req
 
-    # may be same as sum(total_d) ?
-    #s = 0
-    #for i,group in enumerate(f):
-    #    for x in group:
-    #        s += len(G[i][2])*value(x)
-    #total_br += [s]
-    #print 'total_br', total_br
+    s = 0
+    for i,group in enumerate(f):
+        for x in group:
+            s += len(G[i][2])*value(x)
+    total_br += [s]
 
     total_d = []
     avg_d = []
-    rounded_d = []
-
-	# d rounding
-    for g,v in enumerate(G):
-    	new_d = 0
-    	idx = 0
-    	while new_d + v[1][idx] < value(d[g][0]):
-    		new_d += v[1][idx]
-    		idx += 1
-    	rounded_d += [[new_d] * len(d[g])]
-    #print rounded_d
-    
     for g,v in enumerate(G):
         total_d.append(sum([value(x) for x in d[g]]))
-        #print 'd:', [value(x) for x in d[g]]
-        #print 'f:', [value(x) for x in f[g]]
-        #total_d.append(sum(rounded_d[g]))
-        avg_d.append(total_d[-1]/len(G[g][2]))
-     
-    print 'total_d', total_d
-    print 'avg_d', avg_d
+        avg_d.append(total_d[-1]/len(G[i][2]))
+    print total_d
     avg_d = sum(avg_d)/len(avg_d) if len(avg_d) > 0 else 0
     print 'Average data rate of stream: ' + str(avg_d)
 
-    print 'Total data pushed to edge overall: ' + str(sum(total_d))
+    print 'Total data pushed to edge overall: ' + str(sum(total_br))
     return (req, ST, f, E, avg_d, lpt)
 
 
@@ -471,7 +522,7 @@ def DecisionEngine(g, sorted_E, strawman):
         return MainAlgo()
 
 def main():
-    global STCP_IN, STCP_LEN, STCP_SET, FindPathResults
+#    global STCP_IN, STCP_LEN, STCP_SET, FindPathResults
     (g, sE) = file_parse(sys.argv[1])
     # stream testing
 #     for i in xrange(len(g)):
@@ -518,9 +569,8 @@ def main():
     starttime = time.time()
     r = DecisionEngine(g, sE, int(float(sys.argv[2])))
     finishtime = time.time() - starttime
-    print 'LPtime :', r[5]
+    print 'LPtime :', sys.argv[1], r[5]
     print 'TOTALtime :', finishtime
-    #print r[5]
 #     for num_workers in xrange(1, 11):
 # #         FindPathResults = {}
 # #         STCP_IN = []
@@ -543,4 +593,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

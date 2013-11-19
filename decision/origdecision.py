@@ -178,7 +178,6 @@ def LPStep(ST):
     # w_0*n_0*[v_0,1 * d_0_1] + ....
     prob += lpDot(wn, [lpDot(v[g], d[g]) for g,k in enumerate(G)])
 
-
     status = prob.solve(GLPK(msg = 0))
 
     return (d, f)
@@ -336,9 +335,9 @@ def getST(eb):
 
 
     # Group, ST, [nodes, edges]
-    #for i,s in enumerate(ST):
-    #    print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
-    #    pass
+    for i,s in enumerate(ST):
+        #print 'how many ST\'s for group ' + str(i) + ':' + str(len(s))
+        pass
 
     return ST
 
@@ -363,7 +362,7 @@ def MainAlgo():
     eb = len(E) * bitarray('1')
     
     print 'Starting Algorithm'
-    #print 'Groups (' + str(len(G)) + '): ' + str(G)
+    print 'Groups (' + str(len(G)) + '): ' + str(G)
     print 'Bitrate Levels: ' + str(BL)
     print datetime.datetime.now()
 
@@ -386,41 +385,22 @@ def MainAlgo():
                         req[E[k][1]][g] = [(E[k][0], value(f[g][j]))]
     #print req
 
-    # may be same as sum(total_d) ?
-    #s = 0
-    #for i,group in enumerate(f):
-    #    for x in group:
-    #        s += len(G[i][2])*value(x)
-    #total_br += [s]
-    #print 'total_br', total_br
+    s = 0
+    for i,group in enumerate(f):
+        for x in group:
+            s += len(G[i][2])*value(x)
+    total_br += [s]
 
     total_d = []
     avg_d = []
-    rounded_d = []
-
-	# d rounding
-    for g,v in enumerate(G):
-    	new_d = 0
-    	idx = 0
-    	while new_d + v[1][idx] < value(d[g][0]):
-    		new_d += v[1][idx]
-    		idx += 1
-    	rounded_d += [[new_d] * len(d[g])]
-    #print rounded_d
-    
     for g,v in enumerate(G):
         total_d.append(sum([value(x) for x in d[g]]))
-        #print 'd:', [value(x) for x in d[g]]
-        #print 'f:', [value(x) for x in f[g]]
-        #total_d.append(sum(rounded_d[g]))
-        avg_d.append(total_d[-1]/len(G[g][2]))
-     
-    print 'total_d', total_d
-    print 'avg_d', avg_d
+        avg_d.append(total_d[-1]/len(G[i][2]))
+    print total_d
     avg_d = sum(avg_d)/len(avg_d) if len(avg_d) > 0 else 0
     print 'Average data rate of stream: ' + str(avg_d)
 
-    print 'Total data pushed to edge overall: ' + str(sum(total_d))
+    print 'Total data pushed to edge overall: ' + str(sum(total_br))
     return (req, ST, f, E, avg_d, lpt)
 
 
@@ -515,12 +495,7 @@ def main():
 #         print r
 
     # scalability testing
-    starttime = time.time()
     r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    finishtime = time.time() - starttime
-    print 'LPtime :', r[5]
-    print 'TOTALtime :', finishtime
-    #print r[5]
 #     for num_workers in xrange(1, 11):
 # #         FindPathResults = {}
 # #         STCP_IN = []
@@ -543,4 +518,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
