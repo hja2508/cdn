@@ -27,10 +27,16 @@ deepest = 0
 FRAC = 0.01
 
 FindPathResults = {} # dictionary for dynmaic programming
+f2 = open('avg_bitrate_result_temp', 'w')
+f1 = open('lptime_result_temp', 'w')
+#f3 = open('num_links2', 'w')
 
 # Find ALL paths from _source_ (int) to _dest_ (int) given a bit vector _eb_ that
 # determines which edges in E to consider
 def FindPath(eb, source, dest, result, depth):
+	# limit the serching levels
+    #if depth > 3:
+    #    return
     global deepest
     if depth > deepest:
         deepest = depth
@@ -86,6 +92,7 @@ def FindPath(eb, source, dest, result, depth):
     P_All = [item for sublist in P_All for item in sublist] # flatten list down for children
 
     FindPathResults[h] = P_All # store results for dynamic programming
+    #print '**inside h', h, 'P', P_All
     result += P_All
 
 STCP_IN = []
@@ -323,6 +330,7 @@ def SoftStaticStrawman():
 
 def getST(eb):
     ST = []
+    starttime = time.time()
     for i,g in enumerate(G):
         P = []
         #print 'Working on next group (%s)' % i
@@ -331,8 +339,26 @@ def getST(eb):
             FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
             P += [p]
             #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
+        #print P
+        #f.write(P)
         ST += [MakeAllSteinerTrees(P)]
         #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
+    #print 'PRECOMPUTING-1', time.time()-starttime
+    #starttime = time.time()
+    #for i,g in enumerate(G):
+        #P = []
+        ##print 'Working on next group (%s)' % i
+        #for t in g[2]:
+            #p = []
+            #FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
+            #P += [p]
+            ##print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
+        ##print P
+        ##f.write(P)
+        #ST += [MakeAllSteinerTrees(P)]
+        ##print 'how many ST\'s for current group: ' + str(len(ST[-1]))
+    ##f.close()
+    #print 'PRECOMPUTING-2', time.time()-starttime
 
 
     # Group, ST, [nodes, edges]
@@ -397,30 +423,41 @@ def MainAlgo():
     total_d = []
     avg_d = []
     rounded_d = []
+    #norounded_d = []
+    #value_d = []
 
 	# d rounding
     for g,v in enumerate(G):
-    	new_d = 0
     	idx = 0
-    	while new_d + v[1][idx] < value(d[g][0]):
-    		new_d += v[1][idx]
+    	while idx < len(BL[g]) and BL[g][idx] <= value(d[g][0]):
     		idx += 1
-    	rounded_d += [[new_d] * len(d[g])]
+
+    	if idx != 0:
+    		rounded_d += [[BL[g][idx-1]] * len(d[g])]
+    	else:
+	    	rounded_d += [[0] * len(d[g])]
     #print rounded_d
     
     for g,v in enumerate(G):
-        total_d.append(sum([value(x) for x in d[g]]))
-        #print 'd:', [value(x) for x in d[g]]
-        #print 'f:', [value(x) for x in f[g]]
-        #total_d.append(sum(rounded_d[g]))
+		#no rounding
+        #total_d.append(sum([value(x) for x in d[g]]))
+        #value_d.append([value(x) for x in d[g]])
+        #norounded_d.append(sum([value(x) for x in d[g]]))
+        total_d.append(sum(rounded_d[g]))
         avg_d.append(total_d[-1]/len(G[g][2]))
      
+    #print 'norounded_d', norounded_d
+    #print 'value_d', value_d
+    #print 'original_d', d
+    #print 'rounded_d', rounded_d
     print 'total_d', total_d
     print 'avg_d', avg_d
     avg_d = sum(avg_d)/len(avg_d) if len(avg_d) > 0 else 0
+    f1.write(str(lpt)+'\n')
+    f2.write(str(avg_d)+'\n')
     print 'Average data rate of stream: ' + str(avg_d)
 
-    print 'Total data pushed to edge overall: ' + str(sum(total_d))
+    #print 'Total data pushed to edge overall: ' + str(sum(total_d))
     return (req, ST, f, E, avg_d, lpt)
 
 
@@ -478,19 +515,35 @@ def main():
 #         DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
 
     # link testing
-#     for i in xrange(1,101):
-#         sampledSE = random.sample(sE.items(), int((i/100.0)*len(sE)))
-#         SSE = {}
-#         for k, v in sampledSE:
-#             SSE[k] = v
-#         SSE[0] = sE[0]
-
-#         FindPathResults = {}
-#         STCP_IN = []
-#         STCP_LEN = 0
-#         STCP_SET = set()
-
-#         DecisionEngine(g, SSE, int(float(sys.argv[2])))
+    starttime = time.time()
+    #print sE.items()
+    #flat_edge = sum(sE.values(), [])
+    #for i in xrange(1,101):
+    ##for i in range(1, 101, 20):
+    	 ##print '**lensE', len(sE)
+    	 ##print '*****length', int((i/100.0)*len(sE))
+         #sampledSE = random.sample(flat_edge, int((i/100.0)*len(flat_edge)))
+#
+         #SSE = defaultdict(list)
+         #for (src, dest, bw) in sampledSE:
+             #SSE[src] += [(src,dest,bw)]
+         #SSE[0] = sE[0]
+#
+         #FindPathResults = {}
+         #STCP_IN = []
+         #STCP_LEN = 0
+         #STCP_SET = set()
+#
+         ## number of links
+         ##print '**number of links', l
+         ##f3.write(str(l)+'\n')
+#
+         #r = DecisionEngine(g, SSE, int(float(sys.argv[2])))
+         ##print 'LPtime :', r[5]
+#    r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    #finishtime = time.time() - starttime
+    #print 'TOTALtime :', finishtime
+#    f3.close()
 
 #     # variance testing
 #     random.seed()
@@ -520,7 +573,11 @@ def main():
     finishtime = time.time() - starttime
     print 'LPtime :', r[5]
     print 'TOTALtime :', finishtime
-    #print r[5]
+    f2.close()
+    f1.close()
+
+
+	#print r[5]
 #     for num_workers in xrange(1, 11):
 # #         FindPathResults = {}
 # #         STCP_IN = []
