@@ -1,0 +1,24 @@
+(dp0
+S'a'
+p1
+cbitarray
+bitarray
+p2
+(S'\x05 '
+p3
+S'big'
+p4
+tp5
+Rp6
+(dp7
+bsS'b'
+p8
+g2
+(S'\x05@'
+p9
+S'big'
+p10
+tp11
+Rp12
+(dp13
+bs.

@@ -12,6 +12,7 @@ from bitarray import bitarray
 from pulp import *
 from threading import Thread
 from collections import defaultdict
+import pickle
 
 E = []
 Ei = []
@@ -26,10 +27,23 @@ deepest = 0
 
 FRAC = 0.01
 
-FindPathResults = {} # dictionary for dynmaic programming
-f2 = open('avg_bitrate_result_temp', 'w')
-f1 = open('lptime_result_temp', 'w')
-#f3 = open('num_links2', 'w')
+exname = sys.argv[1].split('/')[1]
+path_result = 'paths/' + 'path_result_' + exname
+
+try :
+	st = time.time()
+	with open(path_result, 'rb') as handle:
+		FindPathResults = pickle.loads(handle.read())
+	print 'reading dict', time.time() - st
+except IOError:
+	FindPathResults = {} # dictionary for dynmaic programming
+#print '****************'
+#print FindPathResults
+#print '****************'
+f_lp = open('lptime_result', 'w')
+#f2 = open('avg_bitrate_result_temp', 'w')
+f1 = open('rounded_avg', 'w')
+f2 = open('no_rounded_avg', 'w')
 
 # Find ALL paths from _source_ (int) to _dest_ (int) given a bit vector _eb_ that
 # determines which edges in E to consider
@@ -166,18 +180,21 @@ def LPStep(ST):
                 if s[i]:
                     fs += [f[j][k]]
         prob += lpSum(fs) <= c
+    #print prob
 
     for g,v in enumerate(G): # groups
         for t,v2 in enumerate(v[2]): # terminals
             prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
+     #       print prob
             prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
+     #       print prob
             # do we need this last constraint?
 
     w = [g[0] for g in G] # group weights
     n = [len(g[2]) for g in G] # number of terminals
     wn = [x*y for x,y in zip(w,n)]
 
-    # v[g][t]
+    # v[g][t] - terminal weights
     v = []
     for g in G:
         v += [[t[1] for t in g[2]]]
@@ -187,6 +204,7 @@ def LPStep(ST):
 
 
     status = prob.solve(GLPK(msg = 0))
+    #print prob
 
     return (d, f)
 
@@ -326,6 +344,7 @@ def SoftStaticStrawman():
 #     if not sum(soft_static_br):
 #         break
     print 'Average data rate of stream: %d' % avg_br
+    f2.write('Average data rate of stream: ' + str(avg_br) + '\n')
     print 'Total data pushed to edge for soft static algo: ' + str(total_soft_static)
 
 def getST(eb):
@@ -339,27 +358,13 @@ def getST(eb):
             FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
             P += [p]
             #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
-        #print P
-        #f.write(P)
         ST += [MakeAllSteinerTrees(P)]
         #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
-    #print 'PRECOMPUTING-1', time.time()-starttime
-    #starttime = time.time()
-    #for i,g in enumerate(G):
-        #P = []
-        ##print 'Working on next group (%s)' % i
-        #for t in g[2]:
-            #p = []
-            #FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
-            #P += [p]
-            ##print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
-        ##print P
-        ##f.write(P)
-        #ST += [MakeAllSteinerTrees(P)]
-        ##print 'how many ST\'s for current group: ' + str(len(ST[-1]))
-    ##f.close()
-    #print 'PRECOMPUTING-2', time.time()-starttime
-
+        
+    # save FindPathResults into file
+    #with open(path_result, 'wb') as handle:
+    #    pickle.dump(FindPathResults, handle)
+    # save STs into file 
 
     # Group, ST, [nodes, edges]
     #for i,s in enumerate(ST):
@@ -368,21 +373,6 @@ def getST(eb):
 
     return ST
 
-# def convertST(s):
-#     edges = []
-#     for i in xrange(len(E)):
-#         if s[i]:
-#             edges.append(E[i])
-#     return edges
-
-# def convertSTs(ST):
-#     edges = []
-#     for g, v in enumerate(ST):
-#         edges.append([])
-#         for s in v:
-#             edges[g].append(convertST(s))
-#     return edges
-
 def MainAlgo():
     # Main algorithm
     total_br = []
@@ -390,7 +380,7 @@ def MainAlgo():
     
     print 'Starting Algorithm'
     #print 'Groups (' + str(len(G)) + '): ' + str(G)
-    print 'Bitrate Levels: ' + str(BL)
+    #print 'Bitrate Levels: ' + str(BL)
     print datetime.datetime.now()
 
     ST = getST(eb)
@@ -423,7 +413,8 @@ def MainAlgo():
     total_d = []
     avg_d = []
     rounded_d = []
-    #norounded_d = []
+    no_total_d = []
+    no_avg_d = []
     #value_d = []
 
 	# d rounding
@@ -440,22 +431,27 @@ def MainAlgo():
     
     for g,v in enumerate(G):
 		#no rounding
-        #total_d.append(sum([value(x) for x in d[g]]))
+        no_total_d.append(sum([value(x) for x in d[g]]))
         #value_d.append([value(x) for x in d[g]])
-        #norounded_d.append(sum([value(x) for x in d[g]]))
+        #total_d.append(sum([value(x) for x in d[g]]))
         total_d.append(sum(rounded_d[g]))
         avg_d.append(total_d[-1]/len(G[g][2]))
+        no_avg_d.append(no_total_d[-1]/len(G[g][2]))
      
     #print 'norounded_d', norounded_d
     #print 'value_d', value_d
     #print 'original_d', d
     #print 'rounded_d', rounded_d
-    print 'total_d', total_d
-    print 'avg_d', avg_d
+    #print 'total_d', total_d
+    #print 'avg_d', avg_d
     avg_d = sum(avg_d)/len(avg_d) if len(avg_d) > 0 else 0
-    f1.write(str(lpt)+'\n')
-    f2.write(str(avg_d)+'\n')
+    no_avg_d = sum(no_avg_d)/len(no_avg_d) if len(no_avg_d) > 0 else 0
+    f_lp.write(str(lpt)+'\n')
+    #f2.write(str(avg_d)+'\n')
     print 'Average data rate of stream: ' + str(avg_d)
+    f1.write('Average data rate of stream: ' + str(avg_d) + '\n')
+    #print 'Average data rate of stream: ' + str(no_avg_d)
+    f2.write('Average data rate of stream: ' + str(no_avg_d) + '\n')
 
     #print 'Total data pushed to edge overall: ' + str(sum(total_d))
     return (req, ST, f, E, avg_d, lpt)
@@ -511,36 +507,32 @@ def main():
     global STCP_IN, STCP_LEN, STCP_SET, FindPathResults
     (g, sE) = file_parse(sys.argv[1])
     # stream testing
-#     for i in xrange(len(g)):
-#         DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
+    #for i in xrange(len(g)):
+    #for i in xrange(0,len(g),len(g)/100):
+    #    DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
 
     # link testing
+
     starttime = time.time()
-    #print sE.items()
-    #flat_edge = sum(sE.values(), [])
-    #for i in xrange(1,101):
-    ##for i in range(1, 101, 20):
-    	 ##print '**lensE', len(sE)
-    	 ##print '*****length', int((i/100.0)*len(sE))
-         #sampledSE = random.sample(flat_edge, int((i/100.0)*len(flat_edge)))
+    flat_edge = sum(sE.values(), [])
+    for i in xrange(1,101):
+    #for i in range(1, 101, 20):
+         sampledSE = random.sample(flat_edge, int((i/100.0)*len(flat_edge)))
 #
-         #SSE = defaultdict(list)
-         #for (src, dest, bw) in sampledSE:
-             #SSE[src] += [(src,dest,bw)]
-         #SSE[0] = sE[0]
-#
-         #FindPathResults = {}
-         #STCP_IN = []
-         #STCP_LEN = 0
-         #STCP_SET = set()
-#
-         ## number of links
-         ##print '**number of links', l
-         ##f3.write(str(l)+'\n')
-#
-         #r = DecisionEngine(g, SSE, int(float(sys.argv[2])))
-         ##print 'LPtime :', r[5]
-#    r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+         SSE = defaultdict(list)
+         for (src, dest, bw) in sampledSE:
+             SSE[src] += [(src,dest,bw)]
+         SSE[0] = sE[0]
+
+         FindPathResults = {}
+         STCP_IN = []
+         STCP_LEN = 0
+         STCP_SET = set()
+
+         r = DecisionEngine(g, SSE, int(float(sys.argv[2])))
+         print 'LPtime :', r[5]
+
+    #r = DecisionEngine(g, sE, int(float(sys.argv[2])))
     #finishtime = time.time() - starttime
     #print 'TOTALtime :', finishtime
 #    f3.close()
@@ -568,13 +560,14 @@ def main():
 #         print r
 
     # scalability testing
-    starttime = time.time()
-    r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    finishtime = time.time() - starttime
-    print 'LPtime :', r[5]
-    print 'TOTALtime :', finishtime
+    #starttime = time.time()
+    #r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    #finishtime = time.time() - starttime
+    #print 'LPtime :', r[5]
+    #print 'TOTALtime :', finishtime
     f2.close()
     f1.close()
+    f_lp.close()
 
 
 	#print r[5]

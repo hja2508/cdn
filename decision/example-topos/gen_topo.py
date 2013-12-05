@@ -4,7 +4,7 @@ import random
 
 random.seed()
 
-NODES = 1000
+NODES = 2000
 bf = int(.1 * NODES)
 SOURCE = xrange(1,2*bf)
 REFLECTOR = xrange(2*bf,5*bf)
