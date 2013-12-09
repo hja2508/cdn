@@ -27,7 +27,7 @@ deepest = 0
 
 FRAC = 0.01
 
-exname = sys.argv[1].split('/')[1]
+exname = sys.argv[1].split('/')[-1]
 path_result = 'paths/' + 'path_result_' + exname
 
 try :
@@ -37,13 +37,11 @@ try :
 	print 'reading dict', time.time() - st
 except IOError:
 	FindPathResults = {} # dictionary for dynmaic programming
-#print '****************'
-#print FindPathResults
-#print '****************'
-f_lp = open('lptime_result', 'w')
+
+#f_lp = open('lptime_result', 'w')
 #f2 = open('avg_bitrate_result_temp', 'w')
-f1 = open('rounded_avg', 'w')
-f2 = open('no_rounded_avg', 'w')
+#f1 = open('rounded_avg', 'w')
+#f2 = open('no_rounded_avg', 'w')
 
 # Find ALL paths from _source_ (int) to _dest_ (int) given a bit vector _eb_ that
 # determines which edges in E to consider
@@ -201,18 +199,75 @@ def LPStep(ST):
 
     # w_0*n_0*[v_0,1 * d_0_1] + ....
     prob += lpDot(wn, [lpDot(v[g], d[g]) for g,k in enumerate(G)])
-
+    #print prob
 
     status = prob.solve(GLPK(msg = 0))
     #print prob
 
     return (d, f)
 
+roundedbl = []
+#mintreecapa = []
+def LPStep2(ST, d, f):
+	d2 = []
+	for g,v in enumerate(G):
+		d2 += [[LpVariable("d2" + '-' + str(v[2].index(t)) + "-" + str(g), 0) for t in v[2]]]
+#
+	f2 = []
+	for i,v in enumerate(ST):
+		f2 += [[LpVariable("f2" + '-' + str(i) + "-" + str(v.index(t)), 0) for t in v]]
+
+	# set initial values to rounded bitrates
+    #"""
+    #for g,v in enumerate(G):
+    	#for x in 
+        #no_total_d.append(sum([value(x) for x in d[g]]))
+        ##value_d.append([value(x) for x in d[g]])
+        #print 'd', [value(x) for x in d[g]]
+        #print 'f', [value(x) for x in f[g]]
+        #"""
+
+	prob = LpProblem("myProblem2", LpMaximize)
+	ssum = 0
+	for i,e in enumerate(E):
+		c = e[2]
+		fs2 = []
+		fs = []
+		for j,g in enumerate(ST):
+			for st,s in enumerate(g):
+				if s[i]:
+					fs2 += [f2[j][st]]
+					fs += [value(f[j][st])]
+		#print '***sum***', sum(fs), c
+		ssum += (c - sum(fs))
+		prob += lpSum(fs2) + sum(fs) <= c
+	print ssum, ssum/len(E) 
+
+	for g,v in enumerate(G):
+		for t,v2 in enumerate(v[2]):
+			prob += d2[g][t] <= lpSum(f2[g])   # bitrate level must be less than all ST for group
+			if roundedbl[g] == BL[g][-1] :
+				prob += d2[g][t] <= 0 # already all the bitrates are occupied -> constraint needed?
+			else :
+				prob += d2[g][t] <= BL[g][-1] - BL[g][roundedbl[g]]     # don't exceed maximum bitrate level for group
+
+	w = [g[0] for g in G]
+	v = []
+	for g in G:
+		v += [[t[1] for t in g[2]]]
+
+	prob += lpDot(w, [lpDot(v[g], d2[g]) for g,k in enumerate(G)])
+	print prob
+	status = prob.solve(GLPK(msg = 0))
+
+	return (d2, f2)
+			
+
 def nodesin(A):
-    for a in A:
-        if a[2]:
-            return True
-    return False
+	for a in A:
+		if a[2]:
+			return True
+	return False
 
 
 def file_parse(file_name):
@@ -425,14 +480,23 @@ def MainAlgo():
 
     	if idx != 0:
     		rounded_d += [[BL[g][idx-1]] * len(d[g])]
+    		roundedbl.append(idx-1)
     	else:
 	    	rounded_d += [[0] * len(d[g])]
-    #print rounded_d
+    		roundedbl.append(0)
+    print rounded_d
     
+    #(d2, f2) = LPStep2(ST, d, f)
+    
+    print 'roundedbl', roundedbl
     for g,v in enumerate(G):
 		#no rounding
         no_total_d.append(sum([value(x) for x in d[g]]))
         #value_d.append([value(x) for x in d[g]])
+        #print 'd', [value(x) for x in d[g]]
+        #print 'f', [value(x) for x in f[g]]
+        #print 'd2', [value(x) for x in d2[g]]
+        #print 'f2', [value(x) for x in f2[g]]
         #total_d.append(sum([value(x) for x in d[g]]))
         total_d.append(sum(rounded_d[g]))
         avg_d.append(total_d[-1]/len(G[g][2]))
@@ -446,12 +510,12 @@ def MainAlgo():
     #print 'avg_d', avg_d
     avg_d = sum(avg_d)/len(avg_d) if len(avg_d) > 0 else 0
     no_avg_d = sum(no_avg_d)/len(no_avg_d) if len(no_avg_d) > 0 else 0
-    f_lp.write(str(lpt)+'\n')
+    #f_lp.write(str(lpt)+'\n')
     #f2.write(str(avg_d)+'\n')
     print 'Average data rate of stream: ' + str(avg_d)
-    f1.write('Average data rate of stream: ' + str(avg_d) + '\n')
+    #f1.write('Average data rate of stream: ' + str(avg_d) + '\n')
     #print 'Average data rate of stream: ' + str(no_avg_d)
-    f2.write('Average data rate of stream: ' + str(no_avg_d) + '\n')
+    #f2.write('Average data rate of stream: ' + str(no_avg_d) + '\n')
 
     #print 'Total data pushed to edge overall: ' + str(sum(total_d))
     return (req, ST, f, E, avg_d, lpt)
@@ -514,27 +578,28 @@ def main():
     # link testing
 
     starttime = time.time()
-    flat_edge = sum(sE.values(), [])
-    for i in xrange(1,101):
-    #for i in range(1, 101, 20):
-         sampledSE = random.sample(flat_edge, int((i/100.0)*len(flat_edge)))
+    #flat_edge = sum(sE.values(), [])
+    #for i in xrange(1,101):
+    ##for i in range(1, 101, 20):
+         #sampledSE = random.sample(flat_edge, int((i/100.0)*len(flat_edge)))
+##
+         #SSE = defaultdict(list)
+         #for (src, dest, bw) in sampledSE:
+             #SSE[src] += [(src,dest,bw)]
+         #SSE[0] = sE[0]
 #
-         SSE = defaultdict(list)
-         for (src, dest, bw) in sampledSE:
-             SSE[src] += [(src,dest,bw)]
-         SSE[0] = sE[0]
+         #FindPathResults = {}
+         #STCP_IN = []
+         #STCP_LEN = 0
+         #STCP_SET = set()
+#
+         #r = DecisionEngine(g, SSE, int(float(sys.argv[2])))
+         #print 'LPtime :', r[5]
 
-         FindPathResults = {}
-         STCP_IN = []
-         STCP_LEN = 0
-         STCP_SET = set()
-
-         r = DecisionEngine(g, SSE, int(float(sys.argv[2])))
-         print 'LPtime :', r[5]
-
-    #r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    #finishtime = time.time() - starttime
-    #print 'TOTALtime :', finishtime
+    r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    print 'LPtime :', r[5]
+    finishtime = time.time() - starttime
+    print 'TOTALtime :', finishtime
 #    f3.close()
 
 #     # variance testing
@@ -565,9 +630,9 @@ def main():
     #finishtime = time.time() - starttime
     #print 'LPtime :', r[5]
     #print 'TOTALtime :', finishtime
-    f2.close()
-    f1.close()
-    f_lp.close()
+    #f2.close()
+    #f1.close()
+    #f_lp.close()
 
 
 	#print r[5]
