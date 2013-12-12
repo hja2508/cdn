@@ -110,9 +110,14 @@ def FindPath(eb, source, dest, result, depth):
 STCP_IN = []
 STCP_LEN = 0
 STCP_SET = set()
+STCP_NUM = 0
 
 # Find all ways to combine paths to individual nodes to form all possible steiner trees
+#def STCP(i, accum): # Set of all Sets of paths    
 def STCP(i, accum): # Set of all Sets of paths    
+    global STCP_NUM
+    #print '***STCP', i, STCP_NUM
+    #STCP_NUM += 1
     # each 'paths' is a list of individual paths to the set of nodes in the group
     # as each path is just a BV of edges, we can bitwise-or them together to get the overall graph
     if i < STCP_LEN:
@@ -157,6 +162,7 @@ def CalcBitrateLevel(g):
 # Given a list of lists (i.e. all the steiner trees for all the groups) of ST's 
 # calc the global optimal based on our LP problem
 def LPStep(ST):
+    starttime = time.time()
     # d[g][t] for t \in g \in G
     d = []
     for g,v in enumerate(G):
@@ -184,7 +190,7 @@ def LPStep(ST):
         for t,v2 in enumerate(v[2]): # terminals
             prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
      #       print prob
-            prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
+            #prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
      #       print prob
             # do we need this last constraint?
 
@@ -200,8 +206,11 @@ def LPStep(ST):
     # w_0*n_0*[v_0,1 * d_0_1] + ....
     prob += lpDot(wn, [lpDot(v[g], d[g]) for g,k in enumerate(G)])
     #print prob
+    bsolvetime = time.time()
+    print 'BEFORE solving', bsolvetime-starttime
 
     status = prob.solve(GLPK(msg = 0))
+    print 'AFTER solving', time.time() - bsolvetime
     #print prob
 
     return (d, f)
@@ -241,7 +250,7 @@ def LPStep2(ST, d, f):
 		#print '***sum***', sum(fs), c
 		ssum += (c - sum(fs))
 		prob += lpSum(fs2) + sum(fs) <= c
-	print ssum, ssum/len(E) 
+	#print ssum, ssum/len(E) 
 
 	for g,v in enumerate(G):
 		for t,v2 in enumerate(v[2]):
@@ -257,7 +266,7 @@ def LPStep2(ST, d, f):
 		v += [[t[1] for t in g[2]]]
 
 	prob += lpDot(w, [lpDot(v[g], d2[g]) for g,k in enumerate(G)])
-	print prob
+	#print prob
 	status = prob.solve(GLPK(msg = 0))
 
 	return (d2, f2)
@@ -405,6 +414,7 @@ def SoftStaticStrawman():
 def getST(eb):
     ST = []
     starttime = time.time()
+    STlength = []
     for i,g in enumerate(G):
         P = []
         #print 'Working on next group (%s)' % i
@@ -413,8 +423,16 @@ def getST(eb):
             FindPath(eb,0,t[0],p,0) # find all paths from n_0 to n_t
             P += [p]
             #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
-        ST += [MakeAllSteinerTrees(P)]
+        #ST += [MakeAllSteinerTrees(P)]
+        trees = MakeAllSteinerTrees(P)
+        print 'Finishing making Stiner trees'
+        if len(trees) > 500 :
+        	ST += [random.sample(trees, 500)]
+        else :
+        	ST += [trees]
+        STlength += [len(ST[-1])]
         #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
+    print '***STlength', STlength
         
     # save FindPathResults into file
     #with open(path_result, 'wb') as handle:

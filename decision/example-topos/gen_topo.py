@@ -4,13 +4,13 @@ import random
 
 random.seed()
 
-NODES = 800
+NODES = 1000
 bf = int(.1 * NODES)
 SOURCE = xrange(1,2*bf)
 REFLECTOR = xrange(2*bf,5*bf)
 EDGE = xrange(5*bf,NODES)
 GROUPS = 20
-NODES_PER_GROUP = 5
+NODES_PER_GROUP = 6
 PROB_OF_LINK = .01
 
 s = 'Node:\n'
