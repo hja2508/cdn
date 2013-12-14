@@ -170,8 +170,8 @@ def LPStep(ST):
 
     # f[g][st] for g \in G, st \in ST \in G
     f = []
-    for i,v in enumerate(ST):
-        f += [[LpVariable("f" + str(i) + "-" + str(v.index(t)), 0) for t in v]]
+    #for i,v in enumerate(ST):
+    #    f += [[LpVariable("f" + str(i) + "-" + str(v.index(t)), 0) for t in v]]
 
     prob = LpProblem("myProblem", LpMaximize)
 
@@ -179,18 +179,18 @@ def LPStep(ST):
     for i,e in enumerate(E): # (source, dest, bitrate)
         c = e[2]
         fs = []
-        for j,g in enumerate(ST):
-            for k, s in enumerate(g):
-                if s[i]:
-                    fs += [f[j][k]]
+    #    for j,g in enumerate(ST):
+    #        for k, s in enumerate(g):
+    #            if s[i]:
+    #                fs += [f[j][k]]
         prob += lpSum(fs) <= c
     #print prob
 
     for g,v in enumerate(G): # groups
         for t,v2 in enumerate(v[2]): # terminals
-            prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
+            #prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
      #       print prob
-            #prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
+            prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
      #       print prob
             # do we need this last constraint?
 
@@ -456,10 +456,12 @@ def MainAlgo():
     #print 'Bitrate Levels: ' + str(BL)
     print datetime.datetime.now()
 
-    ST = getST(eb)
+    #ST = getST(eb)
+    ST = []
 
     starttime = time.time()
     (d,f) = LPStep(ST)
+    print '***FINISHED TESTING'
     lpt = time.time() - starttime
 
     req = {}
