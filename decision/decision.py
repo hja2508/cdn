@@ -111,13 +111,20 @@ STCP_IN = []
 STCP_LEN = 0
 STCP_SET = set()
 STCP_NUM = 0
+STCP_FLAG = 0
 
 # Find all ways to combine paths to individual nodes to form all possible steiner trees
 #def STCP(i, accum): # Set of all Sets of paths    
 def STCP(i, accum): # Set of all Sets of paths    
-    global STCP_NUM
+    global STCP_NUM, STCP_FLAG
+    if STCP_NUM == 100000 :
+      	STCP_NUM = 0
+      	STCP_FLAG = 1
+       	return
+    if STCP_FLAG == 1:
+    	return
     #print '***STCP', i, STCP_NUM
-    #STCP_NUM += 1
+    STCP_NUM += 1
     # each 'paths' is a list of individual paths to the set of nodes in the group
     # as each path is just a BV of edges, we can bitwise-or them together to get the overall graph
     if i < STCP_LEN:
@@ -137,6 +144,7 @@ def STCP(i, accum): # Set of all Sets of paths
     else:
         # remove duplicate BV's
         STCP_SET.add(accum.to01())
+        STCP_NUM += 1
 
 # Given all the paths to nodes in a given group, compute all the steiner trees (ST's)
 def MakeAllSteinerTrees(P):
@@ -412,6 +420,7 @@ def SoftStaticStrawman():
     print 'Total data pushed to edge for soft static algo: ' + str(total_soft_static)
 
 def getST(eb):
+    global STCP_NUM, STCP_FLAG
     ST = []
     starttime = time.time()
     STlength = []
@@ -424,8 +433,10 @@ def getST(eb):
             P += [p]
             #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
         #ST += [MakeAllSteinerTrees(P)]
+        STCP_NUM = 0
+        STCP_FLAG = 0
         trees = MakeAllSteinerTrees(P)
-        print 'Finishing making Stiner trees'
+        print 'Finishing making Stiner trees', len(trees), len(STCP_SET)
         if len(trees) > 500 :
         	ST += [random.sample(trees, 500)]
         else :
@@ -593,17 +604,17 @@ def main():
     #for i in xrange(0,len(g),len(g)/100):
     #    DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
 
-    # terminals per groups testing
-    leng = len(g[0][2])
-    for i in xrange(leng) :
-    	print '***Test with ' + str(leng-i) + ' edges****'
-    	starttime = time.time()
-    	r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    	for j in xrange(len(g)) :
-    		g[j][2].pop(-1)
-    	print 'LPtime :', r[5]
-    	finishtime = time.time() - starttime
-    	print 'TOTALtime :', finishtime
+    ## terminals per groups testing
+    #leng = len(g[0][2])
+    #for i in xrange(leng) :
+    	#print '***Test with ' + str(leng-i) + ' edges****'
+    	#starttime = time.time()
+    	#r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    	#for j in xrange(len(g)) :
+    		#g[j][2].pop(-1)
+    	#print 'LPtime :', r[5]
+    	#finishtime = time.time() - starttime
+    	#print 'TOTALtime :', finishtime
 
 
     		#G.append(g[i][0]
@@ -659,11 +670,11 @@ def main():
 #         print r
 
     # scalability testing
-    #starttime = time.time()
-    #r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    #finishtime = time.time() - starttime
-    #print 'LPtime :', r[5]
-    #print 'TOTALtime :', finishtime
+    starttime = time.time()
+    r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    finishtime = time.time() - starttime
+    print 'LPtime :', r[5]
+    print 'TOTALtime :', finishtime
     #f2.close()
     #f1.close()
     #f_lp.close()

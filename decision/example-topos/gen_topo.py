@@ -9,7 +9,7 @@ bf = int(.1 * NODES)
 SOURCE = xrange(1,2*bf)
 REFLECTOR = xrange(2*bf,5*bf)
 EDGE = xrange(5*bf,NODES)
-GROUPS = 20
+GROUPS = 10
 NODES_PER_GROUP = 20
 PROB_OF_LINK = .01
 
