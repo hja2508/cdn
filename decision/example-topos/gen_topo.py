@@ -10,8 +10,8 @@ SOURCE = xrange(1,2*bf)
 REFLECTOR = xrange(2*bf,5*bf)
 EDGE = xrange(5*bf,NODES)
 GROUPS = 10
-NODES_PER_GROUP = 20
-PROB_OF_LINK = .01
+NODES_PER_GROUP = 100#50
+PROB_OF_LINK = .03#.05#.02#.05#.01
 
 s = 'Node:\n'
 l = 0
@@ -20,7 +20,8 @@ def add_link(i,j,skip_prob=False):
     global s, l
     if skip_prob or random.random() < PROB_OF_LINK:
         s += 'l_%d\t%f\tn_%d\tn_%d\n' % \
-            (l, float(random.randrange(100, 2000, 100)), i, j)
+            (l, float(random.randrange(100, 100000, 100)), i, j)
+#            (l, float(random.randrange(100, 2000, 100)), i, j)
         l += 1
 
 
@@ -43,8 +44,10 @@ s += 'Groups:\n'
 g = 0
 for i in xrange(GROUPS):
     s += 'g_%d\t%f\t[200kbps, 400kbps, 800kbps]\t{' % (i, 1.0)
-    for j in xrange(NODES_PER_GROUP):
-        s += 'n_%d=%f, ' % (random.sample(EDGE,1)[0], 1.0)
+    nodes = random.sample(EDGE,NODES_PER_GROUP)
+    for j in nodes :#xrange(NODES_PER_GROUP):
+        s += 'n_%d=%f, ' % (j, 1.0)
+        #s += 'n_%d=%f, ' % (random.sample(EDGE,1)[0], 1.0)
     s = s[:-2] + '}\n'
 
 print s

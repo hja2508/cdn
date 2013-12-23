@@ -7,13 +7,12 @@
 # $ brew install glpk
 # that last one is if you're on a mac system with homebrew installed
 
-import itertools, sys, copy, operator, string, datetime, random, time, bisect
+import itertools, sys, copy, operator, string, datetime, random, time
 from bitarray import bitarray
 from pulp import *
 from threading import Thread
 from collections import defaultdict
 import pickle
-import gc
 
 E = []
 Ei = []
@@ -21,7 +20,6 @@ RE = []
 REi = []
 G = []
 BL = []
-K = 0
 NUM_NODES = 0
 #MAX_PATH_LENGTH_FACTOR = .1
 
@@ -113,23 +111,12 @@ STCP_IN = []
 STCP_LEN = 0
 STCP_SET = set()
 STCP_NUM = 0
-STCP_FLAG = 0
-STCP_LIMIT = 0
 
 # Find all ways to combine paths to individual nodes to form all possible steiner trees
 #def STCP(i, accum): # Set of all Sets of paths    
 def STCP(i, accum): # Set of all Sets of paths    
-    global STCP_NUM, STCP_FLAG, STCP_LIMIT
-    if STCP_LIMIT > 250000 :#100000 : #10000000 :#250000 :
-    	STCP_FLAG = 1
-    if STCP_NUM >= 100000 :
-      	STCP_FLAG = 1
-      	#STCP_NUM = 0
-       	#return
-    if STCP_FLAG == 1:
-    	return
-    #print '***STCP', i, STCP_NUM, STCP_LIMIT
-    STCP_LIMIT += 1
+    global STCP_NUM
+    #print '***STCP', i, STCP_NUM
     #STCP_NUM += 1
     # each 'paths' is a list of individual paths to the set of nodes in the group
     # as each path is just a BV of edges, we can bitwise-or them together to get the overall graph
@@ -150,7 +137,6 @@ def STCP(i, accum): # Set of all Sets of paths
     else:
         # remove duplicate BV's
         STCP_SET.add(accum.to01())
-        STCP_NUM += 1
 
 # Given all the paths to nodes in a given group, compute all the steiner trees (ST's)
 def MakeAllSteinerTrees(P):
@@ -162,7 +148,6 @@ def MakeAllSteinerTrees(P):
     STCP_IN = P
     STCP_LEN = len(P)
     STCP_SET = set()
-    gc.collect()
     STCP(0, a)
     ST = [bitarray(x) for x in STCP_SET]
 
@@ -185,8 +170,8 @@ def LPStep(ST):
 
     # f[g][st] for g \in G, st \in ST \in G
     f = []
-    for i,v in enumerate(ST):
-        f += [[LpVariable("f" + str(i) + "-" + str(v.index(t)), 0) for t in v]]
+    #for i,v in enumerate(ST):
+    #    f += [[LpVariable("f" + str(i) + "-" + str(v.index(t)), 0) for t in v]]
 
     prob = LpProblem("myProblem", LpMaximize)
 
@@ -194,18 +179,18 @@ def LPStep(ST):
     for i,e in enumerate(E): # (source, dest, bitrate)
         c = e[2]
         fs = []
-        for j,g in enumerate(ST):
-            for k, s in enumerate(g):
-                if s[i]:
-                    fs += [f[j][k]]
+    #    for j,g in enumerate(ST):
+    #        for k, s in enumerate(g):
+    #            if s[i]:
+    #                fs += [f[j][k]]
         prob += lpSum(fs) <= c
     #print prob
 
     for g,v in enumerate(G): # groups
         for t,v2 in enumerate(v[2]): # terminals
-            prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
+            #prob += d[g][t] <= lpSum(f[g])   # bitrate level must be less than all ST for group
      #       print prob
-            #prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
+            prob += d[g][t] <= BL[g][-1]     # don't exceed maximum bitrate level for group
      #       print prob
             # do we need this last constraint?
 
@@ -304,7 +289,6 @@ def file_parse(file_name):
     group_on = False
 
     max_node = 0
-    nl = 0
 
     # File parsing code
     for l in f:
@@ -323,7 +307,6 @@ def file_parse(file_name):
 
             l = l.split('\t')
             if link_on:
-            	nl += 1
                 src = eval(l[2].split('_')[1])
                 dest = eval(l[3].split('_')[1])
                 weight = eval(l[1].translate(string.maketrans("","",),'[]{}kbps'))
@@ -340,64 +323,95 @@ def file_parse(file_name):
                 T = l[3].translate(string.maketrans("","",), '{}[]').strip().split(',')
                 T = [(eval(t.split('=')[0].split('_')[1]), eval(t.split('=')[1])) for t in T]
                 g += [[eval(l[1]), br, T]]
-    print 'number of links: ', nl
     return (g, sorted_E)
 
-def BestKStrawman():
-    # "Best-K Approach" --> All groups pick best k tree according to current traffic
-    global G
-    print 'Starting Best-K Approach'
 
+def SoftStaticStrawman():
+    # "Soft Static Approach" --> All groups pick best tree according to current traffic
+    global G
+    effective_weights = copy.deepcopy(E)
+    total_soft_static = 0
     eb = len(E) * bitarray('1')
+
+    avg_br = 0
+
+    print 'Starting Soft Static Approach'
+    #print 'Groups (' + str(len(G)) + '): ' + str(G)
+    #print 'Bitrate Levels: ' + str(BL)
+    #while True:
+
     ST = getST(eb)
 
-    running_g_total = defaultdict(int)
-
     # Find best ST per group
-    soft_static_edges = copy.deepcopy(E)
+    soft_static_edges = copy.deepcopy(effective_weights)
     best_ST = []
-    for gi,g in enumerate(ST): # each group
-        trees = []
+    for g in ST: # each group
+        max_tree = (0,0)
         for i,s in enumerate(g): # each ST in group
             bottleneck = (0,0,float('inf'))
             for j,l in enumerate(s): # each edge in ST
                 if l: # if edge in ST
                     bottleneck = min(bottleneck, soft_static_edges[j], key=lambda x:x[2])
-            trees += [(i, bottleneck)]
-        trees.sort(key=lambda x:x[1][2], reverse=True)
-        best_ST += [trees[0:K]]
+            if bottleneck[2] > max_tree[1]:
+                max_tree = (i, bottleneck)
+        best_ST += [max_tree]
 
         # decrement link weights based on bottleneck
-        for i,t in enumerate(best_ST[-1]):
-            if t[1][2]:
-                max_br = G[gi][1][-1]
-                if running_g_total[gi]+t[1][2] > max_br:
-                    best_ST[-1][i] = (t[0], (t[1][0], t[1][1], max(max_br-running_g_total[gi], 0)))
-                dec = best_ST[-1][i][1][2]
-                for j,l in enumerate(g[t[0]]):
-                    if l: 
-                        tup = soft_static_edges[j] 
-                        soft_static_edges[j] = (tup[0],tup[1],tup[2]-dec)
-                running_g_total[gi] += t[1][2]
+        if best_ST[-1][1]:
+            for j,l in enumerate(g[best_ST[-1][0]]):
+                if l: 
+                    tup = soft_static_edges[j] 
+                    dec = best_ST[-1][1][2]
+                    soft_static_edges[j] = (tup[0],tup[1],tup[2]-dec)
+
+    #print best_ST
+    null_bv = len(E) * bitarray('0')
+    for i,s in enumerate(best_ST):
+        if best_ST[i][1]:
+            best_ST[i] = ST[i][best_ST[i][0]]
+        else:
+            best_ST[i] = null_bv
+
+    # Calculate bitrate for using best tree
+    edge_count = defaultdict(int)
+    for s in best_ST:
+        for i,e in enumerate(s):
+            if e:
+                edge_count[i] += 1
+
+    for i,e in enumerate(E):
+        if edge_count[i]:
+            effective_weights[i] = (e[0],e[1],e[2] / edge_count[i])
 
     soft_static_br = []
-    avg_br = defaultdict(int)
-    for i,g in enumerate(best_ST):
-        for k in g:
-            avg_br[i] += k[1][2]
-    for i,g in enumerate(best_ST): # round down to highest bitrate
-        j = bisect.bisect_right(G[i][1],avg_br[i])
-        avg_br[i] = G[i][1][j-1]
-        soft_static_br += [len(G[i][2])*avg_br[i]]
+    for g,s in enumerate(best_ST): # each group's best ST
+        bottleneck = float('inf')
+        for i,e in enumerate(s): # each edge in ST
+            if e: # if edge in ST
+                bottleneck = min(bottleneck, effective_weights[i][2])
+        if bottleneck == float('inf'):
+            bottleneck = 0
+        bottleneck = min(bottleneck, G[g][1][-1])
+        for i,e in enumerate(s):
+            if e:
+                effective_weights[i] = (E[i][0],E[i][1],E[i][2] - bottleneck)
+        soft_static_br += [len(G[g][2])*bottleneck]
+        avg_br += bottleneck/len(G)
+        G[g][1] = [b - bottleneck for b in G[g][1]]
 
-    avg_br = sum(avg_br.values())/len(avg_br.values())
+    G = [g for g in G if g[1][-1] > 0]
+
+
+    #print soft_static_br
+    #print 'Total data pushed to edge this round: ' + str(sum(soft_static_br))
+    total_soft_static += sum(soft_static_br)
+#     if not sum(soft_static_br):
+#         break
     print 'Average data rate of stream: %d' % avg_br
-
-    total_soft_static = sum(soft_static_br)
+    f2.write('Average data rate of stream: ' + str(avg_br) + '\n')
     print 'Total data pushed to edge for soft static algo: ' + str(total_soft_static)
 
 def getST(eb):
-    global STCP_NUM, STCP_FLAG, STCP_LIMIT
     ST = []
     starttime = time.time()
     STlength = []
@@ -410,19 +424,13 @@ def getST(eb):
             P += [p]
             #print 'how many paths to terminal ' + str(t[0]) + ":" + str(len(p))
         #ST += [MakeAllSteinerTrees(P)]
-        STCP_NUM = 0
-        STCP_FLAG = 0
-        STCP_LIMIT = 0
         trees = MakeAllSteinerTrees(P)
-        print 'Finishing making Stiner trees', len(trees), len(STCP_SET)
+        print 'Finishing making Stiner trees'
         if len(trees) > 500 :
         	ST += [random.sample(trees, 500)]
         else :
         	ST += [trees]
         STlength += [len(ST[-1])]
-        del trees
-        del P
-        gc.collect()
         #print 'how many ST\'s for current group: ' + str(len(ST[-1]))
     print '***STlength', STlength
         
@@ -448,11 +456,12 @@ def MainAlgo():
     #print 'Bitrate Levels: ' + str(BL)
     print datetime.datetime.now()
 
-    ST = getST(eb)
-    #print ST
+    #ST = getST(eb)
+    ST = []
 
     starttime = time.time()
     (d,f) = LPStep(ST)
+    print '***FINISHED TESTING'
     lpt = time.time() - starttime
 
     req = {}
@@ -494,8 +503,8 @@ def MainAlgo():
     		roundedbl.append(idx-1)
     	else:
 	    	rounded_d += [[0] * len(d[g])]
-    		roundedbl.append(-1)
-    #print rounded_d
+    		roundedbl.append(0)
+    print rounded_d
     
     #(d2, f2) = LPStep2(ST, d, f)
     
@@ -574,7 +583,7 @@ def DecisionEngine(g, sorted_E, strawman):
     print 'Number of nodes: ' + str(NUM_NODES)
 
     if(strawman):
-        return BestKStrawman()
+        return SoftStaticStrawman()
     else:
         return MainAlgo()
 
@@ -586,17 +595,17 @@ def main():
     #for i in xrange(0,len(g),len(g)/100):
     #    DecisionEngine(g[0:i+1], sE, int(float(sys.argv[2])))
 
-    ## terminals per groups testing
-    #leng = len(g[0][2])
-    #for i in xrange(leng) :
-    	#print '***Test with ' + str(leng-i) + ' edges****'
-    	#starttime = time.time()
-    	#r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    	#for j in xrange(len(g)) :
-    		#g[j][2].pop(-1)
-    	#print 'LPtime :', r[5]
-    	#finishtime = time.time() - starttime
-    	#print 'TOTALtime :', finishtime
+    # terminals per groups testing
+    leng = len(g[0][2])
+    for i in xrange(leng) :
+    	print '***Test with ' + str(leng-i) + ' edges****'
+    	starttime = time.time()
+    	r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    	for j in xrange(len(g)) :
+    		g[j][2].pop(-1)
+    	print 'LPtime :', r[5]
+    	finishtime = time.time() - starttime
+    	print 'TOTALtime :', finishtime
 
 
     		#G.append(g[i][0]
@@ -604,25 +613,29 @@ def main():
 
     # link testing
 
-#    starttime = time.time()
-#    flat_edge = sum(sE.values(), [])
-#    for i in xrange(1, 101):
-#    #for i in range(1, 101, 20):
-#         sampledSE = random.sample(flat_edge, int((i/100.0)*len(flat_edge)))
-# 
-#         SSE = defaultdict(list)
-#         for (src, dest, bw) in sampledSE:
-#             SSE[src] += [(src,dest,bw)]
-#         SSE[0] = sE[0]
-# 
-#         FindPathResults = {}
-#         STCP_IN = []
-#         STCP_LEN = 0
-#         STCP_SET = set()
-# 
-#         r = DecisionEngine(g, SSE, int(float(sys.argv[2])))
-#         print 'LPtime :', r[5]
- 
+    #starttime = time.time()
+    #flat_edge = sum(sE.values(), [])
+    #for i in xrange(1,101):
+    ##for i in range(1, 101, 20):
+         #sampledSE = random.sample(flat_edge, int((i/100.0)*len(flat_edge)))
+##
+         #SSE = defaultdict(list)
+         #for (src, dest, bw) in sampledSE:
+             #SSE[src] += [(src,dest,bw)]
+         #SSE[0] = sE[0]
+#
+         #FindPathResults = {}
+         #STCP_IN = []
+         #STCP_LEN = 0
+         #STCP_SET = set()
+#
+         #r = DecisionEngine(g, SSE, int(float(sys.argv[2])))
+         #print 'LPtime :', r[5]
+
+    #r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    #print 'LPtime :', r[5]
+    #finishtime = time.time() - starttime
+    #print 'TOTALtime :', finishtime
 #    f3.close()
 
 #     # variance testing
@@ -648,13 +661,11 @@ def main():
 #         print r
 
     # scalability testing
-    starttime = time.time()
-    for i in range(100) :
-	    r = DecisionEngine(g, sE, int(float(sys.argv[2])))
-    finishtime = time.time() - starttime
-    print 'LPtime :', r[5]
-    print 'TOTALtime :', finishtime
-
+    #starttime = time.time()
+    #r = DecisionEngine(g, sE, int(float(sys.argv[2])))
+    #finishtime = time.time() - starttime
+    #print 'LPtime :', r[5]
+    #print 'TOTALtime :', finishtime
     #f2.close()
     #f1.close()
     #f_lp.close()

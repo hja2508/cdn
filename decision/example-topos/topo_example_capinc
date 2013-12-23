@@ -1,0 +1,18 @@
+//these are comments, separator is tab
+//in this example, the topology has four nodes, connected as follows
+//	    n_0
+//	     |
+//	    n_1
+//     /   \
+//   n_2   n_3
+//there are two groups, one from n_2, one from n_2 and n_3
+
+//TOPOLOGY
+//node_id
+Node:
+n_0
+n_1
+n_2
+n_3
+//link_id	capacity	node_src	node_dst
+Link:
